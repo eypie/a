@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Physics: Unit 1 - Foundation of Materials Science</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
+            color: #1e1e2f;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fefefe;
+        }
+
+        h1, h2, h3 {
+            color: #0a0a1a;
+            border-bottom: 2px solid #e2e6ea;
+            padding-bottom: 0.5rem;
+            margin-top: 1.8rem;
+            letter-spacing: -0.2px;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 3px double #ccc;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        th, td {
+            border: 1px solid #d4d8dd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f4f6f9;
+            font-weight: 600;
+            color: #0a2540;
+        }
+
+        .formula-box {
+            background-color: #fafcff;
+            border-left: 5px solid #2c3e66;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: normal;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.4rem 0;
+        }
+
+        .formula-box p {
+            margin: 0.5rem 0;
+        }
+
+        .tip-box {
+            background-color: #f0f7ff;
+            border-left: 5px solid #1e6fdf;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: normal;
+        }
+
+        @media print {
+            body {
+                padding: 0.2in;
+                background: white;
+                font-size: 11pt;
+            }
+            @page {
+                margin: 1.8cm;
+            }
+            h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .formula-box, .tip-box {
+                break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 1rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solid State Physics: Unit 1</h1>
+    <p style="text-align: center; font-size: 1.1rem; margin-top: -0.5rem;">Foundation of Materials Science — 3D Geometry with Higher Stakes</p>
+
+    <div class="section">
+        <h2>1. Bonding in Solids</h2>
+        <h3>Definitions:</h3>
+        <ul>
+            <li><strong>Lattice Energy:</strong> The energy required to separate one mole of a solid into its constituent gaseous ions.</li>
+            <li><strong>Primary Bonds:</strong> Strong chemical bonds (Ionic, Covalent, Metallic) involving the sharing or transfer of electrons.</li>
+            <li><strong>Secondary Bonds:</strong> Weaker physical bonds (Van der Waals, Hydrogen) arising from dipole interactions.</li>
+        </ul>
+
+        <h3>Key Formulas:</h3>
+        <p>The force \(F\) between two atoms at a distance \(r\) is the negative gradient of the potential energy \(U\):</p>
+        <div class="formula-box">
+            $$F = -\frac{dU}{dr}$$
+        </div>
+        <p>At the equilibrium distance \(r_0\), the net force is zero (\(F=0\)), and the potential energy \(U\) is at its minimum.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Crystal Structure Fundamentals</h2>
+        <h3>Definitions:</h3>
+        <ul>
+            <li><strong>Space Lattice:</strong> An infinite periodic array of points in space.</li>
+            <li><strong>Basis (Motif):</strong> A group of one or more atoms associated with each lattice point.</li>
+            <li><strong>Crystal Structure:</strong> Lattice + Basis.</li>
+            <li><strong>Unit Cell:</strong> The smallest repeating unit of a crystal that carries the full symmetry of the lattice.</li>
+            <li><strong>Primitive Cell:</strong> A unit cell that contains exactly <strong>one</strong> lattice point.</li>
+            <li><strong>Coordination Number (CN):</strong> The number of nearest neighbors surrounding a specific atom.</li>
+        </ul>
+
+        <h3>Atomic Packing Fraction (APF):</h3>
+        <p>The ratio of the volume occupied by atoms in a unit cell to the total volume of the unit cell.</p>
+        <div class="formula-box">
+            $$APF = \frac{N \times \frac{4}{3}\pi r^3}{a^3}$$
+            <p><em>(Where \(N\) is the number of effective atoms, \(r\) is the atomic radius, and \(a\) is the lattice constant.)</em></p>
+        </div>
+
+        <h3>Summary Table: Cubic Systems</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Simple Cubic (SC)</th>
+                    <th>Body-Centered (BCC)</th>
+                    <th>Face-Centered (FCC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Atoms per cell (\(N\))</strong></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td><strong>Relation (\(a\) and \(r\))</strong></td>
+                    <td>\(a = 2r\)</td>
+                    <td>\(a = \frac{4r}{\sqrt{3}}\)</td>
+                    <td>\(a = \frac{4r}{\sqrt{2}}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Coordination No.</strong></td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td><strong>Packing Fraction</strong></td>
+                    <td>0.52 (52%)</td>
+                    <td>0.68 (68%)</td>
+                    <td>0.74 (74%)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Note:</strong> For <strong>HCP (Hexagonal Close Packed)</strong>, the APF is also <strong>0.74</strong>, and the \(c/a\) ratio is approximately \(1.633\).</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Crystallography & Miller Indices</h2>
+        <h3>Definitions:</h3>
+        <ul>
+            <li><strong>Miller Indices \((hkl)\):</strong> A symbolic vector representation for the orientation of atomic planes in a crystal lattice.</li>
+            <li><strong>Reciprocal Lattice:</strong> A conceptual lattice where each point corresponds to a set of planes in the real lattice. It simplifies the geometry of diffraction.</li>
+        </ul>
+
+        <h3>Key Formulas:</h3>
+        <ul>
+            <li><strong>Interplanar Spacing (\(d_{hkl}\)):</strong> For a cubic system with lattice constant \(a\):</li>
+        </ul>
+        <div class="formula-box">
+            $$d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}$$
+        </div>
+
+        <ul>
+            <li><strong>Reciprocal Lattice Vectors:</strong></li>
+        </ul>
+        <div class="formula-box">
+            $$\vec{a^*} = 2\pi \frac{\vec{b} \times \vec{c}}{\vec{a} \cdot (\vec{b} \times \vec{c})}$$
+        </div>
+        <p><em>(Note: The reciprocal of an FCC lattice is a BCC lattice, and vice versa.)</em></p>
+    </div>
+
+    <div class="section">
+        <h2>4. X-Ray Diffraction (XRD)</h2>
+        <h3>Definitions:</h3>
+        <ul>
+            <li><strong>Bragg's Law:</strong> The condition for constructive interference of waves scattered from successive planes of a crystal.</li>
+            <li><strong>Crystalline:</strong> Atoms arranged in a long-range periodic order.</li>
+            <li><strong>Polycrystalline:</strong> Made of many small crystals (grains) in random orientations.</li>
+            <li><strong>Amorphous:</strong> No long-range order (e.g., glass).</li>
+        </ul>
+
+        <h3>Key Formulas:</h3>
+        <ul>
+            <li><strong>Bragg's Law:</strong></li>
+        </ul>
+        <div class="formula-box">
+            $$n\lambda = 2d \sin \theta$$
+            <p><em>(Where \(n\) is the order of reflection, \(\lambda\) is wavelength, \(d\) is interplanar spacing, and \(\theta\) is the glancing angle.)</em></p>
+        </div>
+
+        <ul>
+            <li><strong>Lattice Constant from Density:</strong></li>
+        </ul>
+        <div class="formula-box">
+            $$a = \left( \frac{N \times M}{\rho \times N_A} \right)^{1/3}$$
+            <p><em>(Where \(\rho\) is density, \(M\) is molecular weight, and \(N_A\) is Avogadro's number.)</em></p>
+        </div>
+
+        <ul>
+            <li><strong>Scherrer Formula:</strong> Used to estimate the size of very small crystals (crystallite size \(D\)):</li>
+        </ul>
+        <div class="formula-box">
+            $$D = \frac{K \lambda}{\beta \cos \theta}$$
+            <p><em>(Where \(K\) is a dimensionless shape factor (~0.9) and \(\beta\) is the line broadening at half the maximum intensity, FWHM.)</em></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Diffraction Types (Qualitative)</h2>
+        <ul>
+            <li><strong>X-Ray Diffraction:</strong> Interacts with electron clouds; standard for crystal structure.</li>
+            <li><strong>Electron Diffraction:</strong> High scattering power; used for thin films and surfaces (requires vacuum).</li>
+            <li><strong>Neutron Diffraction:</strong> Interacts with the nucleus; ideal for locating light atoms (like Hydrogen) or studying magnetic properties.</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>💡 Quick Tip:</strong> When solving Miller Indices problems, if a plane is parallel to an axis, the intercept is \(\infty\), and the index becomes \(0\) (since \(1/\infty = 0\)).
+        </div>
+    </div>
+
+</body>
+</html>
