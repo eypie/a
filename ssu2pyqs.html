@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid State Physics: Unit-II Solved Questions</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, "Times New Roman", Times, serif;
+            line-height: 1.6;
+            color: #1e1e2f;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fefefe;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0a0a1a;
+            border-bottom: 3px double #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .subhead {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #2c3e66;
+            margin-bottom: 2rem;
+        }
+
+        .qa-block {
+            margin-bottom: 2.5rem;
+            page-break-inside: avoid;
+        }
+
+        .question {
+            background-color: #f0f4ff;
+            padding: 1rem 1.2rem;
+            border-left: 5px solid #2c3e66;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .solution {
+            padding-left: 1rem;
+        }
+
+        .formula-box {
+            background-color: #fafcff;
+            border-left: 5px solid #2c3e66;
+            padding: 0.75rem 1.2rem;
+            margin: 1rem 0;
+            font-style: normal;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .definition-box {
+            background-color: #eef4ff;
+            border-left: 4px solid #3a6ea5;
+            padding: 0.6rem 1rem;
+            margin: 0.8rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #d4d8dd;
+            padding: 0.6rem 0.8rem;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f4f6f9;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        @media print {
+            body {
+                padding: 0.2in;
+            }
+            .qa-block {
+                break-inside: avoid;
+            }
+            .formula-box, .definition-box {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Solid State Physics: Unit-II</h1>
+    <div class="subhead">Solved Questions — Band Theory & Semiconductors</div>
+
+    <!-- Q1 -->
+    <div class="qa-block">
+        <div class="question">1. If the energy of an electron in a band is given by \(E = A + Bk + Ck^2\), calculate the effective mass of an electron.</div>
+        <div class="solution">
+            <p><strong>Explanation:</strong> The effective mass (\(m^*\)) is determined by how "curvy" the energy-momentum (\(E-k\)) graph is. Mathematically, it relates to the second derivative of Energy with respect to the wave vector \(k\).</p>
+            <p><strong>Solution:</strong> The formula for effective mass is:</p>
+            <div class="formula-box">
+                \[
+                m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}
+                \]
+            </div>
+            <p>1. <strong>First Derivative:</strong></p>
+            <div class="formula-box">
+                \[
+                \frac{dE}{dk} = \frac{d}{dk}(A + Bk + Ck^2) = B + 2Ck
+                \]
+            </div>
+            <p>2. <strong>Second Derivative:</strong></p>
+            <div class="formula-box">
+                \[
+                \frac{d^2E}{dk^2} = \frac{d}{dk}(B + 2Ck) = 2C
+                \]
+            </div>
+            <p>3. <strong>Substitute into the formula:</strong></p>
+            <div class="formula-box">
+                \[
+                m^* = \frac{\hbar^2}{2C}
+                \]
+            </div>
+        </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-block">
+        <div class="question">2. In a Cu specimen, the drift velocity of an electron in an electric field of 500 V/m is 2.17 m/s. Determine (i) mobility (ii) relaxation time for electrons.</div>
+        <div class="solution">
+            <p><strong>Explanation:</strong> Mobility measures how easily electrons move under an electric field. Relaxation time is the average time between collisions.</p>
+            <p><strong>Given:</strong> \(E = 500\ \text{V/m}\), \(v_d = 2.17\ \text{m/s}\), \(m = 9.1 \times 10^{-31}\ \text{kg}\), \(e = 1.6 \times 10^{-19}\ \text{C}\).</p>
+            <p><strong>(i) Mobility (\(\mu\)):</strong></p>
+            <div class="formula-box">
+                \[
+                \mu = \frac{v_d}{E} = \frac{2.17}{500} = 4.34 \times 10^{-3}\ \text{m}^2\text{V}^{-1}\text{s}^{-1}
+                \]
+            </div>
+            <p><strong>(ii) Relaxation Time (\(\tau\)):</strong><br>We know \(\mu = \frac{e\tau}{m}\), so:</p>
+            <div class="formula-box">
+                \[
+                \tau = \frac{\mu m}{e} = \frac{(4.34 \times 10^{-3}) \times (9.1 \times 10^{-31})}{1.6 \times 10^{-19}}
+                \]
+            </div>
+            <div class="formula-box">
+                \[
+                \tau \approx 2.47 \times 10^{-14}\ \text{seconds}
+                \]
+            </div>
+        </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-block">
+        <div class="question">3. What is Hall effect? Obtain an expression for Hall coefficient in metals.</div>
+        <div class="solution">
+            <p><strong>Explanation:</strong> When you place a current-carrying conductor in a magnetic field that is perpendicular to the current, a voltage is generated across the conductor. This is the <strong>Hall Effect</strong>. It happens because the magnetic field pushes the moving electrons to one side of the material.</p>
+            <p><strong>Derivation:</strong></p>
+            <p>1. In equilibrium, the Magnetic Force (\(F_m\)) equals the Electric Force (\(F_e\)):</p>
+            <div class="formula-box">
+                \[
+                eE_H = ev_dB \quad \Rightarrow \quad E_H = v_dB
+                \]
+            </div>
+            <p>2. Since current density \(J = nev_d\), we have \(v_d = \frac{J}{ne}\).</p>
+            <p>3. Substitute \(v_d\):</p>
+            <div class="formula-box">
+                \[
+                E_H = \frac{J B}{ne}
+                \]
+            </div>
+            <p>4. The <strong>Hall Coefficient (\(R_H\))</strong> is defined as the Hall field per unit current density per unit magnetic field:</p>
+            <div class="formula-box">
+                \[
+                R_H = \frac{E_H}{JB} = \frac{1}{ne}
+                \]
+            </div>
+            <p>The sign of \(R_H\) indicates the type of charge carriers (negative for electrons, positive for holes).</p>
+        </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa-block">
+        <div class="question">4. What do you mean by forbidden band?</div>
+        <div class="solution">
+            <p><strong>Definition:</strong> A <strong>Forbidden Band</strong> (or Energy Gap, \(E_g\)) is a range of energy levels in a solid where no electron states can exist.</p>
+            <p><strong>Easy wording:</strong> Think of it like a "no-man's land" between the valence band and the conduction band. Electrons must gain enough energy to "jump" across this gap to conduct electricity.</p>
+            <div class="definition-box">
+                <strong>Key points:</strong>
+                <ul>
+                    <li>Electrons cannot stay in the forbidden band.</li>
+                    <li>The size of the forbidden band determines whether a material is a conductor, semiconductor, or insulator.</li>
+                    <li>In semiconductors, the forbidden band is small (~1 eV), so electrons can jump across with thermal energy.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-block">
+        <div class="question">5. What do you mean by effective mass of electron?</div>
+        <div class="solution">
+            <p><strong>Definition:</strong> The <strong>Effective Mass (\(m^*\))** is the mass that an electron <em>seems</em> to have when it is moving inside a crystal lattice.</p>
+            <p><strong>Why it exists:</strong> Inside a solid, an electron isn't just moving in a vacuum; it's being pushed and pulled by the atoms in the lattice. This makes it accelerate differently than a free electron. We use \(m^*\) to simplify the math so we can still use Newton's Second Law (\(F = m^*a\)).</p>
+            <div class="formula-box">
+                \[
+                m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}
+                \]
+            </div>
+            <div class="definition-box">
+                <strong>Important points:</strong>
+                <ul>
+                    <li>\(m^*\) can be different from the free electron mass (\(9.1 \times 10^{-31}\) kg).</li>
+                    <li>Near the bottom of a band, \(m^*\) is positive.</li>
+                    <li>Near the top of a band, \(m^*\) becomes negative (which leads to the concept of holes).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="qa-block">
+        <div class="question">6. Define Relaxation Time.</div>
+        <div class="solution">
+            <p><strong>Definition:</strong> <strong>Relaxation Time (\(\tau\))** is the average time that passes between two successive collisions of an electron with the lattice ions.</p>
+            <p><strong>Easy wording:</strong> It is the "free time" an electron has to accelerate before it bumps into something and loses its momentum.</p>
+            <div class="formula-box">
+                \[
+                \mu = \frac{e\tau}{m}
+                \]
+            </div>
+            <div class="definition-box">
+                <strong>Significance:</strong>
+                <ul>
+                    <li>Larger \(\tau\) means fewer collisions, hence higher mobility and conductivity.</li>
+                    <li>Relaxation time decreases with increasing temperature because atoms vibrate more.</li>
+                    <li>Typical values are around \(10^{-14}\) seconds for metals at room temperature.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="qa-block">
+        <div class="question">7. How are conductors, insulators and semiconductors differentiated on the basis of energy band theory?</div>
+        <div class="solution">
+            <p><strong>Answer:</strong> Based on the energy band theory, materials are differentiated by the size of the band gap (\(E_g\)) and the occupancy of bands.</p>
+            <table>
+                <thead>
+                    <tr><th>Feature</th><th>Conductors</th><th>Insulators</th><th>Semiconductors</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Band Gap (\(E_g\))</strong></td><td>Zero (Bands overlap)</td><td>Very Large (\(> 3\) eV)</td><td>Small (\(\approx 1\) eV)</td></tr>
+                    <tr><td><strong>Conductivity</strong></td><td>Very High</td><td>Negligible</td><td>Increases with Temperature</td></tr>
+                    <tr><td><strong>At 0K</strong></td><td>Conductive</td><td>Insulator</td><td>Insulator</td></tr>
+                    <tr><td><strong>Example</strong></td><td>Copper, Silver</td><td>Diamond, Glass</td><td>Silicon, Germanium</td></tr>
+                </tbody>
+            </table>
+            <div class="definition-box">
+                <strong>Explanation:</strong>
+                <ul>
+                    <li><strong>Conductors:</strong> Valence and conduction bands overlap, so electrons can move freely even at absolute zero.</li>
+                    <li><strong>Insulators:</strong> Large band gap prevents electrons from jumping to the conduction band at room temperature.</li>
+                    <li><strong>Semiconductors:</strong> Small band gap allows some electrons to jump to the conduction band with thermal energy at room temperature.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="qa-block">
+        <div class="question">8. State and prove Bloch theorem.</div>
+        <div class="solution">
+            <p><strong>Statement:</strong> The wave function of an electron moving in a periodic potential \(V(x)\) of a crystal lattice is a plane wave modulated by a periodic function \(u_k(x)\) having the same periodicity as the lattice.</p>
+            <div class="formula-box">
+                \[
+                \psi_k(x) = u_k(x) e^{ikx} \quad \text{where } u_k(x) = u_k(x+a)
+                \]
+            </div>
+            <p><strong>Proof (Summary):</strong></p>
+            <p>1. Schrödinger equation for a periodic potential:</p>
+            <div class="formula-box">
+                \[
+                -\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\psi = E\psi
+                \]
+            </div>
+            <p>2. Because the potential is periodic (\(V(x) = V(x+a)\)), the probability density \(|\psi(x)|^2\) must also be periodic: \(|\psi(x+a)|^2 = |\psi(x)|^2\).</p>
+            <p>3. This implies \(\psi(x+a) = \lambda \psi(x)\), where \(|\lambda|^2 = 1\), so \(\lambda = e^{ika}\).</p>
+            <p>4. Let us assume a solution of the form \(\psi(x) = u(x)e^{ikx}\). Then:</p>
+            <div class="formula-box">
+                \[
+                \psi(x+a) = u(x+a)e^{ik(x+a)} = u(x+a)e^{ikx}e^{ika}
+                \]
+            </div>
+            <p>5. For this to equal \(e^{ika}\psi(x) = e^{ika}u(x)e^{ikx}\), we must have \(u(x+a) = u(x)\).</p>
+            <p>6. Therefore, \(\psi_k(x) = u_k(x)e^{ikx}\) with \(u_k(x)\) periodic satisfies the required condition, proving Bloch's theorem.</p>
+        </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="qa-block">
+        <div class="question">9. Discuss the Crystal momentum and obtain the expression for the effective mass of electron in the lattice.</div>
+        <div class="solution">
+            <p><strong>Crystal Momentum:</strong> Even though an electron in a crystal is not "free," it reacts to external forces as if it has a momentum \(p = \hbar k\). This is called <strong>Crystal Momentum</strong>. It is not the same as classical momentum because it includes the interaction with the lattice.</p>
+            
+            <p><strong>Derivation of Effective Mass:</strong></p>
+            <p>1. Velocity of an electron (group velocity):</p>
+            <div class="formula-box">
+                \[
+                v_g = \frac{d\omega}{dk}
+                \]
+            </div>
+            <p>Since \(E = \hbar\omega\), then:</p>
+            <div class="formula-box">
+                \[
+                v_g = \frac{1}{\hbar} \frac{dE}{dk}
+                \]
+            </div>
+            
+            <p>2. Acceleration (\(a\)):</p>
+            <div class="formula-box">
+                \[
+                a = \frac{dv_g}{dt} = \frac{d}{dt} \left( \frac{1}{\hbar} \frac{dE}{dk} \right) = \frac{1}{\hbar} \frac{d^2E}{dk^2} \frac{dk}{dt}
+                \]
+            </div>
+            
+            <p>3. Force (\(F\)) from external field relates to crystal momentum:</p>
+            <div class="formula-box">
+                \[
+                F = \hbar \frac{dk}{dt} \quad \Rightarrow \quad \frac{dk}{dt} = \frac{F}{\hbar}
+                \]
+            </div>
+            
+            <p>4. Substitute \(\frac{dk}{dt}\) into the acceleration equation:</p>
+            <div class="formula-box">
+                \[
+                a = \frac{1}{\hbar} \frac{d^2E}{dk^2} \left( \frac{F}{\hbar} \right) = \frac{F}{\hbar^2} \frac{d^2E}{dk^2}
+                \]
+            </div>
+            
+            <p>5. Rearranging to find \(F\):</p>
+            <div class="formula-box">
+                \[
+                F = \left[ \frac{\hbar^2}{d^2E/dk^2} \right] a
+                \]
+            </div>
+            
+            <p>6. Comparing with Newton's second law \(F = m^*a\), we get the effective mass:</p>
+            <div class="formula-box">
+                \[
+                m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}
+                \]
+            </div>
+            
+            <p><strong>Physical Interpretation:</strong> The effective mass depends on the curvature of the \(E-k\) diagram. Large curvature (steep parabola) → small \(m^*\); small curvature (flat band) → large \(m^*\).</p>
+        </div>
+    </div>
+
+</body>
+</html>
