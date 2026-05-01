@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIT-II: Band Theory of Solids + Semiconductors - Short Notes</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
+            color: #1e1e2f;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fefefe;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #0a0a1a;
+        }
+
+        .subhead {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #2c3e66;
+            border-bottom: 3px double #ccc;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #0a0a1a;
+            border-bottom: 2px solid #2c3e66;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            color: #1a4a6e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-block {
+            margin-bottom: 2rem;
+        }
+
+        .formula-box {
+            background-color: #fafcff;
+            border-left: 5px solid #2c3e66;
+            padding: 0.75rem 1.2rem;
+            margin: 1rem 0;
+            font-style: normal;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-radius: 0 6px 6px 0;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background-color: #fef8e7;
+            border-left: 5px solid #e6a017;
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .definition-box {
+            background-color: #eef4ff;
+            border-left: 4px solid #3a6ea5;
+            padding: 0.6rem 1rem;
+            margin: 0.8rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #d4d8dd;
+            padding: 0.6rem 0.8rem;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f4f6f9;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        .note-tip {
+            background-color: #e6f7e6;
+            border-left: 5px solid #2e7d32;
+            padding: 0.6rem 1rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        @media print {
+            body {
+                padding: 0.2in;
+            }
+            .formula-box, .definition-box, .highlight-box {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌟 UNIT-II: BAND THEORY OF SOLIDS + SEMICONDUCTORS</h1>
+    <div class="subhead">SHORT NOTES — Exam-Ready Quick Revision</div>
+
+    <!-- ==================== SECTION 1: BAND THEORY ==================== -->
+    <h2>🔷 1. BAND THEORY OF SOLIDS</h2>
+
+    <div class="section-block">
+        <h3>🔹 1.1 Formation of Energy Bands</h3>
+        <div class="highlight-box">
+            <strong>📌 Idea:</strong>
+            <ul>
+                <li>In an <strong>isolated atom</strong> → electrons have <strong>discrete energy levels</strong></li>
+                <li>In a <strong>solid (many atoms close together)</strong> → Energy levels <strong>split and form bands</strong></li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Why splitting happens?</strong><br>
+            Because of:
+            <ul>
+                <li>Overlapping electron wave functions</li>
+                <li>Interaction between neighboring atoms</li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Result:</strong><br>
+            Large number of atoms → <strong>very closely spaced energy levels</strong> → forms <strong>Energy Bands</strong>
+        </div>
+
+        <h3>🔹 Definitions</h3>
+        <div class="definition-box">
+            <strong>✔️ Energy Band:</strong> A continuous range of allowed electron energies.
+        </div>
+        <div class="definition-box">
+            <strong>✔️ Forbidden Gap (Band Gap):</strong> Energy region where <strong>no electron states exist</strong>
+        </div>
+
+        <h3>🔹 Important Bands</h3>
+        <ul>
+            <li><strong>Valence Band (VB)</strong> → filled with electrons</li>
+            <li><strong>Conduction Band (CB)</strong> → electrons can move freely</li>
+            <li><strong>Band Gap (E<sub>g</sub>)</strong> → gap between VB and CB</li>
+        </ul>
+    </div>
+
+    <!-- 1.2 Periodic Potential & Bloch Theorem -->
+    <div class="section-block">
+        <h3>🔷 1.2 Periodic Potential &amp; Bloch Theorem</h3>
+        <div class="highlight-box">
+            <strong>📌 Concept:</strong><br>
+            In crystals: Atoms arranged in <strong>periodic lattice</strong><br>
+            So potential is periodic:
+            \[
+            V(x) = V(x + a)
+            \]
+        </div>
+
+        <h3>✔️ Bloch Theorem (VERY IMPORTANT)</h3>
+        <div class="definition-box">
+            <strong>📌 Statement:</strong><br>
+            Electron wave function in periodic potential is:
+            <div class="formula-box">
+                \[
+                \psi(x) = e^{ikx} u(x)
+                \]
+            </div>
+            where:
+            <ul>
+                <li>\( u(x) \) is periodic: \( u(x+a)=u(x) \)</li>
+                <li>\( k \) = wave vector</li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Meaning:</strong><br>
+            Electron behaves like:
+            <ul>
+                <li>free particle (via \( e^{ikx} \))</li>
+                <li>influenced by lattice (via \( u(x) \))</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 1.3 Number of States in a Band -->
+    <div class="section-block">
+        <h3>🔷 1.3 Number of States in a Band</h3>
+        <div class="formula-box">
+            \[
+            \text{Number of states} = 2N
+            \]
+        </div>
+        <p>where:</p>
+        <ul>
+            <li>\( N \) = number of atoms</li>
+            <li>Factor 2 → due to <strong>spin</strong></li>
+        </ul>
+    </div>
+
+    <!-- 1.4 Kronig-Penney Model -->
+    <div class="section-block">
+        <h3>🔷 1.4 Kronig-Penney Model</h3>
+        <div class="definition-box">
+            <strong>📌 Purpose:</strong> Explains how <strong>bands and gaps form</strong>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Assumption:</strong> Periodic potential → rectangular barriers
+        </div>
+        <div class="definition-box">
+            <strong>📌 Result:</strong> Gives relation:
+            \[
+            \cos(ka) = f(E)
+            \]
+            <ul>
+                <li>Allowed energies → when RHS lies between -1 and 1</li>
+                <li>Forbidden → otherwise</li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Key Insight:</strong> Explains <strong>existence of allowed &amp; forbidden bands</strong>
+        </div>
+    </div>
+
+    <!-- 1.5 Brillouin Zones -->
+    <div class="section-block">
+        <h3>🔷 1.5 Brillouin Zones</h3>
+        <div class="definition-box">
+            <strong>📌 Definition:</strong> Region in <strong>k-space</strong> defining allowed electron wave vectors.
+        </div>
+        <div class="definition-box">
+            <strong>📌 First Brillouin Zone:</strong>
+            \[
+            -\frac{\pi}{a} \le k \le \frac{\pi}{a}
+            \]
+        </div>
+        <div class="definition-box">
+            <strong>📌 Importance:</strong>
+            <ul>
+                <li>Defines energy structure</li>
+                <li>Band edges occur at zone boundaries</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 1.6 Crystal Momentum -->
+    <div class="section-block">
+        <h3>🔷 1.6 Crystal Momentum</h3>
+        <div class="formula-box">
+            \[
+            p = \hbar k
+            \]
+        </div>
+        <p>where: \( \hbar = \frac{h}{2\pi} \)</p>
+        <div class="definition-box">
+            <strong>📌 Meaning:</strong> Electron behaves like it has momentum inside crystal
+        </div>
+    </div>
+
+    <!-- 1.7 Effective Mass -->
+    <div class="section-block">
+        <h3>🔷 1.7 Effective Mass of Electron</h3>
+        <div class="formula-box">
+            \[
+            m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}
+            \]
+        </div>
+        <div class="definition-box">
+            <strong>📌 Meaning:</strong> Electron behaves as if it has <strong>different mass inside crystal</strong>
+        </div>
+        <div class="definition-box">
+            <strong>🔹 Physical Origin:</strong> Due to interaction with lattice
+        </div>
+
+        <h3>🔹 Negative Effective Mass</h3>
+        <div class="definition-box">
+            <strong>📌 When:</strong>
+            \[
+            \frac{d^2E}{dk^2} < 0 \quad \Rightarrow \quad m^* < 0
+            \]
+        </div>
+        <div class="definition-box">
+            <strong>📌 Meaning:</strong> Electron moves opposite to applied force
+        </div>
+
+        <h3>🔹 Holes</h3>
+        <div class="definition-box">
+            <strong>📌 Definition:</strong> Absence of electron behaves like <strong>positive charge</strong>
+        </div>
+        <div class="definition-box">
+            <strong>📌 Properties:</strong>
+            <ul>
+                <li>Positive charge</li>
+                <li>Positive effective mass</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 1.8 Energy Dispersion Relations -->
+    <div class="section-block">
+        <h3>🔷 1.8 Energy Dispersion Relations</h3>
+
+        <h3>✔️ (A) Weak Binding Approximation</h3>
+        <div class="definition-box">
+            <strong>📌 Idea:</strong> Electrons almost free
+        </div>
+        <div class="definition-box">
+            <strong>📌 Result:</strong> Slight modification of free electron energy
+            \[
+            E = \frac{\hbar^2 k^2}{2m}
+            \]
+        </div>
+
+        <h3>✔️ (B) Tight Binding Approximation</h3>
+        <div class="definition-box">
+            <strong>📌 Idea:</strong> Electrons strongly bound to atoms
+        </div>
+        <div class="definition-box">
+            <strong>📌 Result:</strong>
+            \[
+            E(k) = E_0 - A\cos(ka)
+            \]
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 2: SEMICONDUCTORS ==================== -->
+    <h2>🔷 2. SEMICONDUCTORS</h2>
+
+    <div class="section-block">
+        <h3>🔹 2.1 Energy Band Structures</h3>
+        <div class="definition-box">
+            <strong>✔️ Conductors (Metals):</strong>
+            <ul>
+                <li>VB and CB overlap</li>
+                <li>\( E_g = 0 \)</li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>✔️ Insulators:</strong>
+            <ul>
+                <li>Large band gap (~5 eV)</li>
+                <li>No conduction</li>
+            </ul>
+        </div>
+        <div class="definition-box">
+            <strong>✔️ Semiconductors:</strong>
+            <ul>
+                <li>Small band gap (~1 eV)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2.2 Direct vs Indirect Band Gap -->
+    <div class="section-block">
+        <h3>🔹 2.2 Direct vs Indirect Band Gap</h3>
+
+        <div class="definition-box">
+            <strong>✔️ Direct Band Gap</strong>
+            <ul>
+                <li><strong>Condition:</strong> CB minimum and VB maximum at same k</li>
+                <li><strong>Example:</strong> GaAs</li>
+            </ul>
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Indirect Band Gap</strong>
+            <ul>
+                <li><strong>Condition:</strong> CB minimum and VB maximum at different k</li>
+                <li><strong>Example:</strong> Silicon</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2.3 Generation & Recombination -->
+    <div class="section-block">
+        <h3>🔹 2.3 Generation &amp; Recombination</h3>
+
+        <div class="definition-box">
+            <strong>✔️ Generation</strong><br>
+            Electron jumps VB → CB
+            <ul>
+                <li><strong>Causes:</strong> Heat, Light</li>
+            </ul>
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Recombination</strong><br>
+            Electron falls back to VB
+        </div>
+    </div>
+
+    <!-- 2.4 Mobility -->
+    <div class="section-block">
+        <h3>🔹 2.4 Mobility</h3>
+        <div class="formula-box">
+            \[
+            \mu = \frac{v_d}{E}
+            \]
+        </div>
+        <p>where:</p>
+        <ul>
+            <li>\( v_d \) = drift velocity</li>
+            <li>\( E \) = electric field</li>
+        </ul>
+    </div>
+
+    <!-- 2.5 Hall Effect -->
+    <div class="section-block">
+        <h3>🔹 2.5 Hall Effect</h3>
+
+        <div class="definition-box">
+            <strong>✔️ Concept:</strong> Magnetic field causes charge separation
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Hall Voltage:</strong> Voltage across conductor perpendicular to current
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Hall Coefficient</strong>
+            \[
+            R_H = \frac{1}{ne}
+            \]
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Charge Carrier Concentration</strong>
+            \[
+            n = \frac{1}{eR_H}
+            \]
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Mobility (Hall Mobility)</strong>
+            \[
+            \mu = \sigma R_H
+            \]
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Conductivity</strong>
+            \[
+            \sigma = ne\mu
+            \]
+        </div>
+
+        <div class="definition-box">
+            <strong>✔️ Hall Angle</strong>
+            \[
+            \tan\theta = \mu B
+            \]
+        </div>
+    </div>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <h2>🔷 Summary (Quick Revision)</h2>
+    <div class="note-tip">
+        <ul>
+            <li><strong>Bands</strong> form due to <strong>interaction of atoms</strong></li>
+            <li><strong>Bloch theorem</strong> → electron wave inside periodic lattice</li>
+            <li><strong>Effective mass</strong> → modified electron behavior</li>
+            <li><strong>Negative mass</strong> → leads to <strong>holes</strong></li>
+            <li><strong>Weak binding</strong> → free electron-like</li>
+            <li><strong>Tight binding</strong> → localized electron</li>
+            <li><strong>Semiconductors</strong> → small band gap</li>
+            <li><strong>Hall effect</strong> → gives <strong>carrier type, concentration, mobility</strong></li>
+        </ul>
+    </div>
+
+</body>
+</html>
