@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit-II: Band Theory of Solids and Semiconductors</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, "Times New Roman", Times, serif;
+            line-height: 1.6;
+            color: #1e1e2f;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fefefe;
+        }
+
+        h1, h2, h3 {
+            color: #0a0a1a;
+            border-bottom: 2px solid #e2e6ea;
+            padding-bottom: 0.5rem;
+            margin-top: 1.8rem;
+            letter-spacing: -0.2px;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 3px double #ccc;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        th, td {
+            border: 1px solid #d4d8dd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f4f6f9;
+            font-weight: 600;
+            color: #0a2540;
+        }
+
+        .formula-box {
+            background-color: #fafcff;
+            border-left: 5px solid #2c3e66;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: normal;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .definition-box {
+            background-color: #fef8e7;
+            border-left: 5px solid #e6a017;
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.4rem 0;
+        }
+
+        .sub-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e66;
+        }
+
+        .image-placeholder {
+            background-color: #f0f4f8;
+            border: 1px dashed #99b3cc;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            border-radius: 8px;
+            color: #4a6a8a;
+        }
+
+        @media print {
+            body {
+                padding: 0.2in;
+                background: white;
+                font-size: 11pt;
+            }
+            @page {
+                margin: 1.8cm;
+            }
+            h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .formula-box {
+                break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 1rem;
+            }
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Unit-II: Band Theory of Solids and Semiconductors</h1>
+    <p style="text-align: center; font-size: 1.1rem;">How electrons behave in solid materials — from discrete energy levels to continuous energy bands.</p>
+
+    <!-- Section 1: Band Theory of Solids -->
+    <div class="section">
+        <h2>1. Band Theory of Solids</h2>
+
+        <h3>Formation of Bands</h3>
+        <p>When atoms are far apart, they have discrete energy levels. As they come closer to form a solid, their wave functions overlap. Due to the <strong>Pauli Exclusion Principle</strong>, no two electrons can have the same set of quantum numbers. Consequently, each discrete energy level splits into a large number of closely spaced levels, forming a continuous <strong>Energy Band</strong>.</p>
+        <div class="image-placeholder">📊 [Diagram: Discrete atomic levels splitting into energy bands as interatomic distance decreases]</div>
+
+        <h3>Periodic Potential and Bloch Theorem</h3>
+        <p>In a crystal, the nuclei are arranged in a regular, repeating lattice. An electron moves in a <strong>periodic potential</strong> \(V(x) = V(x+a)\), where \(a\) is the lattice constant.</p>
+        <ul>
+            <li><strong>Bloch Theorem:</strong> It states that the wave function \(\psi(x)\) for an electron in a periodic potential is a plane wave modulated by a periodic function \(u_k(x)\).</li>
+            <li><strong>Formula:</strong> 
+                <div class="formula-box">
+                    $$\psi_k(x) = u_k(x) e^{ikx}$$
+                </div>
+                Where \(u_k(x) = u_k(x+a)\) is periodic and \(k\) is the wave vector.
+            </li>
+        </ul>
+
+        <h3>Kronig-Penney Model</h3>
+        <p>This is a mathematical model that simplifies the periodic potential into a series of rectangular potential wells. It explains the existence of <strong>Energy Gaps</strong> (Forbidden Bands).</p>
+        <ul>
+            <li><strong>Key Result:</strong> The allowed values of energy are determined by the condition:
+                <div class="formula-box">
+                    $$P \frac{\sin \alpha a}{\alpha a} + \cos \alpha a = \cos ka$$
+                </div>
+                Where \(P\) is the "scattering power" of the potential barrier. If the equation is not satisfied, that energy region is a <strong>Forbidden Band</strong>.
+            </li>
+        </ul>
+        <div class="image-placeholder">📊 [Diagram: Kronig-Penney periodic potential wells and resulting E-k dispersion]</div>
+
+        <h3>Brillouin Zones</h3>
+        <p>Brillouin zones are boundaries in \(k\)-space (momentum space) where the electron undergoes Bragg reflection.</p>
+        <ul>
+            <li><strong>First Brillouin Zone:</strong> The region between \(k = -\frac{\pi}{a}\) and \(k = +\frac{\pi}{a}\).</li>
+            <li><strong>Physical significance:</strong> At these boundaries, energy gaps appear.</li>
+        </ul>
+
+        <h3>Crystal Momentum and Effective Mass</h3>
+        <ul>
+            <li><strong>Crystal Momentum:</strong> Defined as \(p = \hbar k\). It is not the same as classical momentum because the electron interacts with the lattice.</li>
+            <li><strong>Effective Mass (\(m^*\)):</strong> In a crystal, an electron moves as if it has a different mass than its rest mass due to internal forces from the lattice.</li>
+            <li><strong>Formula:</strong>
+                <div class="formula-box">
+                    $$m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}$$
+                </div>
+            </li>
+            <li><strong>Physical Origin:</strong> It depends on the <strong>curvature</strong> of the \(E-k\) (Energy-momentum) diagram.
+                <ul>
+                    <li>Large curvature → Small effective mass.</li>
+                    <li>Small curvature → Large effective mass.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Negative Effective Mass and Holes</h3>
+        <p>Near the top of an energy band, the curvature \(\frac{d^2E}{dk^2}\) becomes negative, meaning the effective mass is <strong>negative</strong>.</p>
+        <ul>
+            <li><strong>Holes:</strong> A vacant state in the valence band (missing electron) behaves like a particle with a <strong>positive charge</strong> and <strong>positive mass</strong>.</li>
+        </ul>
+
+        <h3>Energy Dispersion Relations</h3>
+        <p>This relates the energy \(E\) of an electron to its wave vector \(k\).</p>
+        <ol>
+            <li><strong>Weak Binding (Nearly Free Electron Model):</strong> Assumes electrons are almost free, and the periodic potential is a small perturbation. It explains energy gaps at zone boundaries.</li>
+            <li><strong>Tight Binding Model:</strong> Assumes electrons are tightly bound to their parent atoms. Energy bands arise from the slight overlapping of atomic wave functions.</li>
+        </ol>
+    </div>
+
+    <!-- Section 2: Semiconductors -->
+    <div class="section">
+        <h2>2. Semiconductors</h2>
+
+        <h3>Band Structure Comparison</h3>
+        <ul>
+            <li><strong>Conductors:</strong> The valence and conduction bands overlap. There is no energy gap (\(E_g = 0\)).</li>
+            <li><strong>Insulators:</strong> Large energy gap (\(E_g > 3\text{ eV}\)). Electrons cannot jump to the conduction band.</li>
+            <li><strong>Semiconductors:</strong> Small energy gap (\(E_g \approx 1\text{ eV}\)). Thermal energy can excite electrons at room temperature.</li>
+        </ul>
+        <div class="image-placeholder">📊 [Diagram: Band structure comparison - Conductor (overlap), Semiconductor (small gap), Insulator (large gap)]</div>
+
+        <h3>Direct and Indirect Band Gaps</h3>
+        <ul>
+            <li><strong>Direct Band Gap:</strong> The maximum of the valence band and minimum of the conduction band occur at the <strong>same \(k\) value</strong>. (e.g., GaAs). Useful for LEDs and Lasers.</li>
+            <li><strong>Indirect Band Gap:</strong> The maximum and minimum occur at <strong>different \(k\) values</strong>. (e.g., Silicon, Germanium). Energy is lost as heat (phonons).</li>
+        </ul>
+        <div class="image-placeholder">📊 [Diagram: Direct vs Indirect band gap showing E vs k curves]</div>
+
+        <h3>Generation and Recombination</h3>
+        <ul>
+            <li><strong>Generation:</strong> Process where an electron-hole pair is created (usually by absorbing light or heat).</li>
+            <li><strong>Recombination:</strong> Process where an electron from the conduction band falls into a hole in the valence band, releasing energy.</li>
+        </ul>
+
+        <h3>Mobility (\(\mu\))</h3>
+        <p>It is the ease with which charge carriers move through a conductor/semiconductor when an electric field is applied.</p>
+        <ul>
+            <li><strong>Formula:</strong>
+                <div class="formula-box">
+                    $$\mu = \frac{v_d}{E}$$
+                </div>
+                Where \(v_d\) is drift velocity and \(E\) is the electric field. Unit: \(m^2/V \cdot s\).
+            </li>
+        </ul>
+    </div>
+
+    <!-- Section 3: Hall Effect -->
+    <div class="section">
+        <h2>3. Hall Effect in Semiconductors</h2>
+        <p>If a magnetic field (\(B\)) is applied perpendicular to the direction of current (\(I\)) in a sample, a voltage (\(V_H\)) is developed perpendicular to both \(I\) and \(B\). This is the <strong>Hall Effect</strong>.</p>
+        <div class="image-placeholder">📊 [Diagram: Hall Effect setup showing current I, magnetic field B, and Hall voltage V_H]</div>
+
+        <h3>Key Definitions and Formulas</h3>
+        <ol>
+            <li><strong>Hall Voltage (\(V_H\)):</strong>
+                <div class="formula-box">
+                    $$V_H = \frac{BI}{\rho w}$$
+                </div>
+                (where \(\rho\) is charge density and \(w\) is width).
+            </li>
+            <li><strong>Hall Coefficient (\(R_H\)):</strong> It indicates the type of charge carriers.
+                <div class="formula-box">
+                    $$R_H = \frac{1}{ne} \text{ (for electrons)} \quad \text{or} \quad R_H = \frac{1}{pe} \text{ (for holes)}$$
+                </div>
+                <ul>
+                    <li>Negative \(R_H\) → n-type semiconductor.</li>
+                    <li>Positive \(R_H\) → p-type semiconductor.</li>
+                </ul>
+            </li>
+            <li><strong>Carrier Concentration (\(n\) or \(p\)):</strong>
+                <div class="formula-box">
+                    $$n = \frac{1}{R_H e}$$
+                </div>
+            </li>
+            <li><strong>Mobility (\(\mu\)):</strong>
+                <div class="formula-box">
+                    $$\mu = \sigma |R_H|$$
+                </div>
+                Where \(\sigma\) is conductivity.
+            </li>
+            <li><strong>Hall Angle (\(\theta_H\)):</strong> The angle between the net electric field and the applied electric field.
+                <div class="formula-box">
+                    $$\tan \theta_H = \frac{E_y}{E_x} = \mu B$$
+                </div>
+            </li>
+        </ol>
+
+        <h3>Applications of Hall Effect:</h3>
+        <ul>
+            <li>Determining the sign of charge carriers (n-type or p-type).</li>
+            <li>Measuring carrier concentration (\(n\)).</li>
+            <li>Measuring mobility (\(\mu\)).</li>
+            <li>Measuring magnetic flux density.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
