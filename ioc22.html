@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inorganic Chemistry — Solutions 2022</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --surface: #1a1814;
+    --card: #211f1b;
+    --border: #2e2b26;
+    --accent: #d4a853;
+    --accent2: #7eb8a4;
+    --accent3: #c97b5a;
+    --text: #e8e2d9;
+    --muted: #8a8278;
+    --q-label: #d4a853;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1a1410 0%, #0f0e0c 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.25rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(212,168,83,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .exam-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #0f0e0c;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 0.9rem;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  header h1 span { color: var(--accent); }
+  header p.subtitle {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 2px;
+    background: var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  /* Nav Pills */
+  .nav-strip {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 2px;
+    z-index: 99;
+  }
+  .nav-strip::-webkit-scrollbar { display: none; }
+  .nav-pill {
+    flex-shrink: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-pill:hover, .nav-pill.active {
+    background: var(--accent);
+    color: #0f0e0c;
+    border-color: var(--accent);
+  }
+
+  /* Main layout */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.1rem 4rem;
+  }
+
+  /* Question Card */
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .q-card:nth-child(2) { animation-delay: 0.05s; }
+  .q-card:nth-child(3) { animation-delay: 0.10s; }
+  .q-card:nth-child(4) { animation-delay: 0.15s; }
+
+  .q-header {
+    background: linear-gradient(90deg, rgba(212,168,83,0.12), transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .q-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .q-meta { flex: 1; }
+  .q-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .q-marks {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent2);
+    margin-top: 0.2rem;
+  }
+
+  .q-body { padding: 1.25rem; }
+
+  /* Sub-question */
+  .sub-q {
+    margin-bottom: 1.5rem;
+  }
+  .sub-q:last-child { margin-bottom: 0; }
+
+  .sub-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #0f0e0c;
+    background: var(--accent2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+  }
+
+  .sub-question-text {
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .answer-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin: 1rem 0 0.4rem;
+  }
+  .answer-block h4:first-child { margin-top: 0; }
+
+  .answer-block p {
+    font-size: 0.9rem;
+    color: #ccc5ba;
+    margin-bottom: 0.65rem;
+    line-height: 1.8;
+  }
+
+  .answer-block ul, .answer-block ol {
+    padding-left: 1.3rem;
+    margin-bottom: 0.65rem;
+  }
+  .answer-block li {
+    font-size: 0.88rem;
+    color: #ccc5ba;
+    margin-bottom: 0.4rem;
+    line-height: 1.75;
+  }
+
+  /* Divider between OR */
+  .or-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.75rem 0;
+  }
+  .or-divider::before, .or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .or-divider span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent3);
+    letter-spacing: 0.15em;
+    background: var(--card);
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  /* Info box */
+  .info-box {
+    background: rgba(126,184,164,0.08);
+    border: 1px solid rgba(126,184,164,0.25);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin: 0.75rem 0;
+  }
+  .info-box.warm {
+    background: rgba(212,168,83,0.07);
+    border-color: rgba(212,168,83,0.2);
+  }
+  .info-box p { margin: 0; font-size: 0.87rem; }
+  .info-box strong { color: var(--accent2); }
+  .info-box.warm strong { color: var(--accent); }
+
+  /* Table */
+  .chem-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    font-size: 0.83rem;
+  }
+  .chem-table th {
+    background: rgba(212,168,83,0.15);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border);
+  }
+  .chem-table td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    color: #ccc5ba;
+    vertical-align: top;
+  }
+  .chem-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  /* Reaction block */
+  .reaction {
+    background: #161513;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin: 0.6rem 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent2);
+  }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    background: rgba(201,123,90,0.15);
+    color: var(--accent3);
+    border: 1px solid rgba(201,123,90,0.3);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* MathJax override */
+  .MathJax { color: var(--accent2) !important; }
+
+  @media (max-width: 480px) {
+    .q-header { padding: 0.9rem 1rem; }
+    .q-body { padding: 1rem; }
+    .q-number { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
+
+<header>
+  <div class="exam-badge">B.Sc.-B.Ed. Part III · 2022</div>
+  <h1>Inorganic <span>Chemistry</span></h1>
+  <p class="subtitle">Paper-I · Complete Solutions · Max Marks: 33</p>
+</header>
+
+<nav class="nav-strip" id="nav">
+  <a class="nav-pill" href="#q1">Q1</a>
+  <a class="nav-pill" href="#q2">Q2</a>
+  <a class="nav-pill" href="#q3">Q3</a>
+  <a class="nav-pill" href="#q4">Q4</a>
+  <a class="nav-pill" href="#q5">Q5</a>
+  <a class="nav-pill" href="#q6">Q6</a>
+  <a class="nav-pill" href="#q7">Q7</a>
+  <a class="nav-pill" href="#q8">Q8</a>
+  <a class="nav-pill" href="#q9">Q9</a>
+  <a class="nav-pill" href="#q10">Q10</a>
+</nav>
+
+<main>
+
+<!-- ====== Q1 ====== -->
+<div class="q-card" id="q1">
+  <div class="q-header">
+    <div class="q-number">1</div>
+    <div class="q-meta">
+      <div class="q-title">HSAB — Electronegativity, Hardness, Softness & Theories</div>
+      <div class="q-marks">3½ + 3½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+
+    <div class="sub-q">
+      <span class="sub-label">Part A</span>
+      <div class="sub-question-text">Establish a relationship between electronegativity of a species with its hardness and softness.</div>
+      <div class="answer-block">
+        <h4>What is Electronegativity?</h4>
+        <p>Electronegativity is the ability of an atom or ion to attract electrons toward itself. Higher electronegativity means the species holds electrons tightly.</p>
+        <h4>Relationship with Hard and Soft Species</h4>
+        <p><strong style="color:var(--accent)">Hard acids/bases</strong> have <em>high electronegativity, small size, and high charge density</em>. They hold their electrons tightly, so they are <strong>not easily polarised</strong> (non-polarisable). Examples: \( \text{H}^+, \text{Li}^+, \text{Mg}^{2+}, \text{F}^-, \text{OH}^- \)</p>
+        <p><strong style="color:var(--accent2)">Soft acids/bases</strong> have <em>low electronegativity, large size, and low charge density</em>. Their electrons are loosely held, so they are <strong>easily polarised</strong>. Examples: \( \text{Cu}^+, \text{Ag}^+, \text{I}^-, \text{S}^{2-} \)</p>
+        <div class="info-box warm">
+          <p><strong>Key Rule:</strong> High electronegativity → Tight electron hold → Hard species. Low electronegativity → Loose electron hold → Soft species.</p>
+        </div>
+        <table class="chem-table">
+          <tr><th>Property</th><th>Hard</th><th>Soft</th></tr>
+          <tr><td>Electronegativity</td><td>High</td><td>Low</td></tr>
+          <tr><td>Polarisability</td><td>Low</td><td>High</td></tr>
+          <tr><td>Size</td><td>Small</td><td>Large</td></tr>
+          <tr><td>Charge</td><td>High (+)</td><td>Low or zero</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-label">Part B</span>
+      <div class="sub-question-text">Explain various theories related with the HSAB concept.</div>
+      <div class="answer-block">
+        <h4>1. Pearson's HSAB Principle (1963)</h4>
+        <p>R.G. Pearson classified acids and bases as Hard, Soft, or Borderline. The principle states: <em>"Hard acids prefer to bind with hard bases, and soft acids prefer to bind with soft bases."</em></p>
+        <h4>2. Klopman's Frontier Orbital Theory</h4>
+        <p>This theory explains HSAB using HOMO (Highest Occupied MO) and LUMO (Lowest Unoccupied MO) energies. Soft–soft interactions are <strong>orbital-controlled</strong> (covalent), while hard–hard interactions are <strong>charge-controlled</strong> (electrostatic/ionic).</p>
+        <h4>3. Drago–Wayland Model (E & C Equation)</h4>
+        <p>This model calculates the enthalpy of acid–base interaction using:</p>
+        <p>\[ -\Delta H = E_A E_B + C_A C_B \]</p>
+        <p>Where \(E\) = electrostatic contribution and \(C\) = covalent contribution. This gives a quantitative measure of stability.</p>
+        <h4>4. Absolute Hardness (Pearson, 1988)</h4>
+        <p>Hardness \(\eta\) is defined as:</p>
+        <p>\[ \eta = \frac{IP - EA}{2} \]</p>
+        <p>Where IP = Ionisation Potential, EA = Electron Affinity. High \(\eta\) → Hard; Low \(\eta\) → Soft.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q2 ====== -->
+<div class="q-card" id="q2">
+  <div class="q-header">
+    <div class="q-number">2</div>
+    <div class="q-meta">
+      <div class="q-title">Symbiosis · Characteristics of Hard & Soft Acids/Bases</div>
+      <div class="q-marks">3 + 4 marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+
+    <div class="sub-q">
+      <span class="sub-label">Part A</span>
+      <div class="sub-question-text">Explain symbiosis with examples.</div>
+      <div class="answer-block">
+        <h4>What is Symbiosis?</h4>
+        <p>The term <strong>symbiosis</strong> (introduced by Jørgensen) in HSAB context means: <em>when multiple soft ligands are attached to a metal, the metal becomes softer, and vice-versa for hard ligands.</em></p>
+        <p>In short: "Like ligands reinforce each other's effect on the metal centre."</p>
+        <h4>Examples</h4>
+        <div class="info-box">
+          <p><strong>\( \text{BF}_3 \)</strong> — Three hard F⁻ ligands make B harder → it prefers other hard donors.</p>
+        </div>
+        <div class="info-box">
+          <p><strong>\( \text{B(CH}_3)_3 \)</strong> — Three soft methyl groups make B softer → it prefers soft donors like sulfur-based ligands.</p>
+        </div>
+        <p>This concept explains why certain combinations of ligands are more stable than mixed ones.</p>
+      </div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-label">Part B</span>
+      <div class="sub-question-text">What are the characteristics of hard and soft acids and bases?</div>
+      <div class="answer-block">
+        <h4>Hard Acids</h4>
+        <ul>
+          <li>Small size, high positive charge</li>
+          <li>High electronegativity, not easily polarised</li>
+          <li>Outer electrons held tightly</li>
+          <li>Examples: \( \text{H}^+, \text{Li}^+, \text{Na}^+, \text{Mg}^{2+}, \text{Al}^{3+}, \text{BF}_3 \)</li>
+        </ul>
+        <h4>Soft Acids</h4>
+        <ul>
+          <li>Large size, low or zero positive charge</li>
+          <li>Low electronegativity, easily polarised</li>
+          <li>Several outer electrons loosely held</li>
+          <li>Examples: \( \text{Cu}^+, \text{Ag}^+, \text{Hg}^{2+}, \text{Pt}^{2+}, \text{BH}_3 \)</li>
+        </ul>
+        <h4>Hard Bases</h4>
+        <ul>
+          <li>High electronegativity donor atom</li>
+          <li>Low polarisability, hard to oxidise</li>
+          <li>Examples: \( \text{F}^-, \text{OH}^-, \text{H}_2\text{O}, \text{NH}_3, \text{ROH} \)</li>
+        </ul>
+        <h4>Soft Bases</h4>
+        <ul>
+          <li>Low electronegativity donor atom</li>
+          <li>High polarisability, easily oxidised</li>
+          <li>Examples: \( \text{I}^-, \text{S}^{2-}, \text{CN}^-, \text{CO}, \text{PR}_3 \)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q3 ====== -->
+<div class="q-card" id="q3">
+  <div class="q-header">
+    <div class="q-number">3</div>
+    <div class="q-meta">
+      <div class="q-title">Magnetic Behaviour of Transition Metal Complexes · Crystal Field Parameters</div>
+      <div class="q-marks">3½ + 3 marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+
+    <div class="sub-q">
+      <span class="sub-label">Part A</span>
+      <div class="sub-question-text">How many types of magnetic behaviour are found in transition metal complexes? Explain.</div>
+      <div class="answer-block">
+        <h4>Types of Magnetic Behaviour</h4>
+        <p>Magnetic behaviour depends on whether a complex has <strong>unpaired electrons</strong> or not.</p>
+        <ol>
+          <li><strong>Diamagnetic</strong> — All electrons are paired. The substance is weakly <em>repelled</em> by a magnetic field. Example: \([\text{Ni(CN)}_4]^{2-}\), \([\text{Co(NH}_3)_6]^{3+}\)</li>
+          <li><strong>Paramagnetic</strong> — Has one or more unpaired electrons. The substance is <em>attracted</em> to a magnetic field. Example: \([\text{Fe(H}_2\text{O)}_6]^{3+}\)</li>
+          <li><strong>Ferromagnetic</strong> — Unpaired electrons aligned <em>parallel</em> in same direction → very strong attraction. Example: Fe, Co, Ni metals.</li>
+          <li><strong>Antiferromagnetic</strong> — Unpaired electrons aligned <em>anti-parallel</em> → cancel each other → net zero magnetism. Example: MnO</li>
+          <li><strong>Ferrimagnetic</strong> — Unequal anti-parallel spins → small net magnetism. Example: \(\text{Fe}_3\text{O}_4\)</li>
+        </ol>
+        <div class="info-box">
+          <p><strong>Magnetic Moment Formula:</strong> \[ \mu_s = \sqrt{n(n+2)} \text{ B.M.} \] where \(n\) = number of unpaired electrons, B.M. = Bohr Magneton</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-label">Part B</span>
+      <div class="sub-question-text">What are the factors affecting Crystal Field Parameters? Explain with suitable examples.</div>
+      <div class="answer-block">
+        <h4>Crystal Field Parameter \(\Delta\) (or 10Dq)</h4>
+        <p>The crystal field splitting energy \(\Delta\) depends on several factors:</p>
+        <h4>1. Nature of the Ligand (Spectrochemical Series)</h4>
+        <p>Stronger field ligands cause larger \(\Delta\). Order: \[\text{I}^- < \text{Br}^- < \text{Cl}^- < \text{F}^- < \text{OH}^- < \text{H}_2\text{O} < \text{NH}_3 < \text{en} < \text{CN}^- < \text{CO}\]</p>
+        <p>Example: \([\text{Co(CN)}_6]^{3-}\) has larger \(\Delta\) than \([\text{CoF}_6]^{3-}\)</p>
+        <h4>2. Charge on the Metal Ion</h4>
+        <p>Higher oxidation state → stronger attraction of ligands → larger \(\Delta\). Example: \(\text{Co}^{3+}\) gives larger \(\Delta\) than \(\text{Co}^{2+}\)</p>
+        <h4>3. Period of the Metal</h4>
+        <p>3rd row > 2nd row > 1st row transition metals. Example: \(\Delta\) increases from Fe → Ru → Os.</p>
+        <h4>4. Geometry of the Complex</h4>
+        <p>\(\Delta_{\text{oct}} > \Delta_{\text{tet}}\). For same metal and ligands: \(\Delta_{\text{tet}} = \frac{4}{9} \Delta_{\text{oct}}\)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q4 ====== -->
+<div class="q-card" id="q4">
+  <div class="q-header">
+    <div class="q-number">4</div>
+    <div class="q-meta">
+      <div class="q-title">Crystal Field Splitting — Octahedral & Tetrahedral · Colour of Complexes</div>
+      <div class="q-marks">6½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="answer-block">
+      <h4>Crystal Field Splitting in Octahedral Complexes</h4>
+      <p>In an octahedral complex, 6 ligands approach along the x, y, and z axes. This causes the five d-orbitals to split into two sets:</p>
+      <ul>
+        <li><strong>\(e_g\) set</strong> (higher energy): \(d_{z^2}\) and \(d_{x^2-y^2}\) — these point directly at ligands → greater repulsion</li>
+        <li><strong>\(t_{2g}\) set</strong> (lower energy): \(d_{xy}, d_{yz}, d_{xz}\) — these point between ligands → less repulsion</li>
+      </ul>
+      <p>Energy difference: \(\Delta_o\) (or 10Dq). The \(e_g\) set is raised by \(+0.6\Delta_o\) and \(t_{2g}\) is lowered by \(-0.4\Delta_o\).</p>
+
+      <h4>Crystal Field Splitting in Tetrahedral Complexes</h4>
+      <p>In a tetrahedral complex, 4 ligands approach from alternate corners of a cube. The splitting is reversed:</p>
+      <ul>
+        <li><strong>\(e\) set</strong> (lower energy): \(d_{z^2}\) and \(d_{x^2-y^2}\)</li>
+        <li><strong>\(t_2\) set</strong> (higher energy): \(d_{xy}, d_{yz}, d_{xz}\)</li>
+      </ul>
+      <p>\[\Delta_t = \frac{4}{9} \Delta_o\] (tetrahedral splitting is much smaller than octahedral)</p>
+
+      <h4>How CFT Explains Colour of Complexes</h4>
+      <p>When white light falls on a complex, the metal absorbs photons of a specific energy that matches the \(\Delta\) value. Electrons jump from the lower d-level to the upper d-level (<strong>d–d transition</strong>). The <strong>complementary colour</strong> of the absorbed light is what we see.</p>
+      <div class="info-box warm">
+        <p><strong>Example 1:</strong> \([\text{Ti(H}_2\text{O)}_6]^{3+}\) absorbs green light (~500 nm) → appears <strong>purple/violet</strong></p>
+      </div>
+      <div class="info-box">
+        <p><strong>Example 2:</strong> \([\text{Cu(H}_2\text{O)}_6]^{2+}\) absorbs red light → appears <strong>blue</strong></p>
+      </div>
+      <p>A complex with no unpaired electrons (all d⁰ or d¹⁰) <strong>cannot</strong> show d–d transitions → appears colourless. Examples: \(\text{Zn}^{2+}\), \(\text{Sc}^{3+}\)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q5 ====== -->
+<div class="q-card" id="q5">
+  <div class="q-header">
+    <div class="q-number">5</div>
+    <div class="q-meta">
+      <div class="q-title">Kinetic & Thermodynamic Stability · Trans Effect</div>
+      <div class="q-marks">3½ + 3 marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+
+    <div class="sub-q">
+      <span class="sub-label">Part A</span>
+      <div class="sub-question-text">Describe the kinetic and thermodynamic stability of the Complex Compounds.</div>
+      <div class="answer-block">
+        <h4>Thermodynamic Stability</h4>
+        <p>This refers to how stable a complex is at <strong>equilibrium</strong>. It is measured by the <strong>stability constant \(K_f\)</strong>:</p>
+        <p>\[ \text{M} + n\text{L} \rightleftharpoons [\text{ML}_n] \quad K_f = \frac{[\text{ML}_n]}{[\text{M}][\text{L}]^n} \]</p>
+        <p>Higher \(K_f\) → more stable complex. This does NOT tell us how fast the reaction is — only the final state.</p>
+        <h4>Kinetic Stability</h4>
+        <p>This refers to the <strong>rate of ligand substitution</strong> (how fast a ligand is replaced). Complexes are classified as:</p>
+        <ul>
+          <li><strong>Labile</strong>: react quickly (seconds or less). Example: \([\text{Co(NH}_3)_6]^{2+}\)</li>
+          <li><strong>Inert</strong>: react very slowly. Example: \([\text{Co(NH}_3)_6]^{3+}\), \([\text{Cr(NH}_3)_6]^{3+}\)</li>
+        </ul>
+        <div class="info-box">
+          <p>A complex can be thermodynamically stable but kinetically labile — or thermodynamically unstable but kinetically inert. These are <strong>independent</strong> properties!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-label">Part B</span>
+      <div class="sub-question-text">What is the trans effect? Explain.</div>
+      <div class="answer-block">
+        <h4>Definition</h4>
+        <p>The <strong>trans effect</strong> is the ability of a ligand to increase the <em>rate of substitution of the ligand in the trans position</em> to itself, in square planar complexes (especially Pt²⁺).</p>
+        <h4>Trans Effect Series</h4>
+        <p>\[ \text{F}^- \approx \text{H}_2\text{O} < \text{OH}^- < \text{NH}_3 < \text{Cl}^- < \text{Br}^- < \text{I}^- < \text{NO}_2^- < \text{CN}^- \approx \text{CO} \approx \text{H}^- \]</p>
+        <h4>Theories Explaining Trans Effect</h4>
+        <ul>
+          <li><strong>Electrostatic (Polarisation) Theory</strong>: Trans ligands with high polarisability weaken the metal–trans bond by distorting electron density.</li>
+          <li><strong>π-bonding Theory</strong>: Strong π-acceptors like CO and CN⁻ drain electron density from the metal in the trans direction, labilising the trans ligand.</li>
+        </ul>
+        <h4>Application — Synthesis of Pt Complexes</h4>
+        <div class="info-box warm">
+          <p><strong>cis-[Pt(NH₃)₂Cl₂]</strong> (cisplatin — anticancer drug) is made using the trans effect of Cl⁻ ligand to control where NH₃ substitutes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q6 ====== -->
+<div class="q-card" id="q6">
+  <div class="q-header">
+    <div class="q-number">6</div>
+    <div class="q-meta">
+      <div class="q-title">d–d Transition Rules · Laporte Rules · Orgel Diagrams</div>
+      <div class="q-marks">2½ + 2 + 2 marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="answer-block">
+      <h4>(i) Selection Rules for d–d Transition</h4>
+      <p>For an electron to undergo a d–d transition, it must obey:</p>
+      <ul>
+        <li><strong>Spin selection rule:</strong> \(\Delta S = 0\). Transitions between states of same spin multiplicity are allowed. Spin-forbidden transitions are weak.</li>
+        <li><strong>Laporte selection rule:</strong> \(\Delta l = \pm 1\). d–d transitions are formally forbidden (both states have \(l = 2\)).</li>
+      </ul>
+      <p>Despite being forbidden, d–d bands appear due to <strong>vibronic coupling</strong> (mixing with vibrations breaks symmetry).</p>
+
+      <h4>(ii) Laporte Selection Rules</h4>
+      <p>Laporte's rule states: <em>transitions between orbitals of the same parity (g↔g or u↔u) are forbidden.</em></p>
+      <p>Since d-orbitals are gerade (g), d→d transitions are <strong>Laporte-forbidden</strong>.</p>
+      <ul>
+        <li>Allowed: \(g \to u\) or \(u \to g\) (e.g., d→p transitions)</li>
+        <li>Forbidden: \(g \to g\) (d–d) or \(u \to u\)</li>
+      </ul>
+      <div class="info-box">
+        <p>Laporte-forbidden transitions still occur in complexes due to: <strong>vibronic coupling</strong> (non-centrosymmetric vibrations) and <strong>spin-orbit coupling</strong>. Their molar absorptivity \(\varepsilon\) is low (~1–100 L mol⁻¹ cm⁻¹).</p>
+      </div>
+
+      <h4>(iii) Orgel Diagrams</h4>
+      <p>Orgel diagrams are energy-level diagrams that show how d-orbital terms split in a crystal field as ligand field strength increases. They are used to predict the number and type of d–d electronic transitions.</p>
+      <ul>
+        <li><strong>For \(d^1, d^6\) (octahedral) and \(d^4, d^9\) (tetrahedral)</strong>: One spin-allowed transition — one absorption band expected.</li>
+        <li><strong>For \(d^2, d^7\) (octahedral) and \(d^3, d^8\) (tetrahedral)</strong>: Three spin-allowed transitions — up to three absorption bands possible.</li>
+      </ul>
+      <p>Orgel diagrams are simplified (strong-field effects are not shown); Tanabe–Sugano diagrams are used for more complete analysis.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q7 ====== -->
+<div class="q-card" id="q7">
+  <div class="q-header">
+    <div class="q-number">7</div>
+    <div class="q-meta">
+      <div class="q-title">Organolithium Compounds — Preparation & Reactions</div>
+      <div class="q-marks">6½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="answer-block">
+      <h4>What are Organolithium Compounds?</h4>
+      <p>Organolithium compounds (R–Li) contain a carbon–lithium bond. The C–Li bond is highly polar (almost ionic), making these extremely reactive and strong nucleophiles/bases.</p>
+
+      <h4>Methods of Preparation</h4>
+      <p><strong>1. From alkyl halide + lithium metal:</strong></p>
+      <div class="reaction">\[ 2\text{Li} + \text{RX} \xrightarrow{\text{dry ether}} \text{RLi} + \text{LiX} \]</div>
+      <p>Example: \(2\text{Li} + \text{C}_2\text{H}_5\text{Br} \to \text{C}_2\text{H}_5\text{Li} + \text{LiBr}\)</p>
+      <p><strong>2. Transmetalation (from R–Hg or R–Sn):</strong></p>
+      <div class="reaction">\[ \text{R}_2\text{Hg} + 2\text{Li} \to 2\text{RLi} + \text{Hg} \]</div>
+
+      <h4>Reactions</h4>
+      <p><strong>(i) With CO₂:</strong></p>
+      <div class="reaction">\[ \text{RLi} + \text{CO}_2 \to \text{RCOOLi} \xrightarrow{\text{H}_3\text{O}^+} \text{RCOOH} \]</div>
+      <p>This gives a <strong>carboxylic acid</strong> — useful in synthesis.</p>
+
+      <p><strong>(ii) With H₂O:</strong></p>
+      <div class="reaction">\[ \text{RLi} + \text{H}_2\text{O} \to \text{RH} + \text{LiOH} \]</div>
+      <p>R–Li is destroyed by water — these must be handled in dry, inert conditions.</p>
+
+      <p><strong>(iii) With Bg₂ (Diborane):</strong></p>
+      <div class="reaction">\[ \text{RLi} + \text{B}_2\text{H}_6 \to \text{R}_3\text{B} + \text{LiBH}_4 \]</div>
+      <p>Gives trialkylborane — used in hydroboration reactions.</p>
+
+      <p><strong>(iv) With C₆H₅CHO (Benzaldehyde):</strong></p>
+      <div class="reaction">\[ \text{RLi} + \text{C}_6\text{H}_5\text{CHO} \to \text{C}_6\text{H}_5\text{CH(OH)R} \]</div>
+      <p>Nucleophilic addition to the aldehyde group → gives a <strong>secondary alcohol</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q8 ====== -->
+<div class="q-card" id="q8">
+  <div class="q-header">
+    <div class="q-number">8</div>
+    <div class="q-meta">
+      <div class="q-title">Organometallic Compounds — Bonds & Classification by Ligand Nature</div>
+      <div class="q-marks">6½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="answer-block">
+      <h4>What are Organometallic Compounds?</h4>
+      <p>Organometallic compounds contain at least one <strong>direct metal–carbon bond</strong> (M–C). They combine properties of both organic and inorganic chemistry.</p>
+      <p>Examples: \(\text{(C}_2\text{H}_5)_2\text{Zn}\) (diethylzinc), \(\text{C}_6\text{H}_5\text{Li}\) (phenyllithium), \(\text{Ferrocene Fe(C}_5\text{H}_5)_2\)</p>
+
+      <h4>Types of Bonds in Organometallic Compounds</h4>
+      <ul>
+        <li><strong>Ionic M–C bond</strong>: Highly electropositive metals (Na, K). Example: \(\text{C}_2\text{H}_5^-\text{Na}^+\)</li>
+        <li><strong>Covalent M–C bond (σ-bond)</strong>: Most common. Example: \(\text{Grignard reagent RMgX}\)</li>
+        <li><strong>π-bond (backbonding)</strong>: Metal donates electrons to π* orbital of ligand. Example: Metal carbonyls — \(\text{Ni(CO)}_4\)</li>
+        <li><strong>Multicentre bonds</strong>: Bridging M–C–M bonds, as in \(\text{Al}_2(\text{CH}_3)_6\)</li>
+      </ul>
+
+      <h4>Classification Based on Nature of Ligands</h4>
+      <table class="chem-table">
+        <tr><th>Class</th><th>Ligand Type</th><th>Example</th></tr>
+        <tr><td>σ-bonded (alkyl/aryl)</td><td>Pure σ-donor</td><td>\(\text{R}_4\text{Sn}\), \(\text{RLi}\)</td></tr>
+        <tr><td>π-bonded (alkene)</td><td>π-donor ligands</td><td>Zeise's salt \([\text{PtCl}_3(\text{C}_2\text{H}_4)]^-\)</td></tr>
+        <tr><td>Carbonyl complexes</td><td>σ-donor + π-acceptor</td><td>\(\text{Ni(CO)}_4\), \(\text{Cr(CO)}_6\)</td></tr>
+        <tr><td>Sandwich compounds</td><td>Cyclopentadienyl (η⁵)</td><td>Ferrocene \(\text{Fe(C}_5\text{H}_5)_2\)</td></tr>
+        <tr><td>Cyclobutadiene type</td><td>η⁴ ligands</td><td>\([\text{Fe(CO)}_3(\text{C}_4\text{H}_4)]\)</td></tr>
+      </table>
+      <div class="info-box">
+        <p><strong>Hapticity (η)</strong>: η¹ = 1 carbon bonded, η⁵ = 5 carbons bonded to metal (as in ferrocene)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q9 ====== -->
+<div class="q-card" id="q9">
+  <div class="q-header">
+    <div class="q-number">9</div>
+    <div class="q-meta">
+      <div class="q-title">Phosphonitrilic Compounds — \((\text{PNCl}_2)_3\)</div>
+      <div class="q-marks">2 + 1½ + 1½ + 1½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="answer-block">
+      <h4>What are Phosphonitrilic Compounds?</h4>
+      <p>Phosphonitrilic compounds (also called phosphazenes) have the general formula \((\text{PNX}_2)_n\) where X is typically Cl, F, or organic group. They have a backbone of alternating phosphorus and nitrogen atoms.</p>
+      <p>Example: \((\text{PNCl}_2)_3\) = trimeric phosphonitrilic chloride = phosphonitrilic chloride trimer</p>
+
+      <h4>Preparation of \((\text{PNCl}_2)_3\)</h4>
+      <p>Prepared by heating \(\text{PCl}_5\) and \(\text{NH}_4\text{Cl}\) in a chlorinated solvent (e.g., tetrachloroethane) at ~130°C:</p>
+      <div class="reaction">\[ n\text{PCl}_5 + n\text{NH}_4\text{Cl} \xrightarrow{\Delta} (\text{PNCl}_2)_n + 4n\text{HCl} \]</div>
+      <p>The product is a mixture; the trimer \((\text{PNCl}_2)_3\) and tetramer \((\text{PNCl}_2)_4\) are isolated by distillation.</p>
+
+      <h4>Properties of \((\text{PNCl}_2)_3\)</h4>
+      <ul>
+        <li>White crystalline solid, melting point ~114°C</li>
+        <li>Soluble in organic solvents like benzene, CCl₄</li>
+        <li>Thermally stable up to ~300°C</li>
+        <li>Reacts with water (hydrolysis) to give \(\text{H}_3\text{PO}_4\) and \(\text{NH}_3\)</li>
+        <li>Reacts with nucleophiles — Cl can be replaced by F, OR, NR₂ groups</li>
+      </ul>
+
+      <h4>Structure of \((\text{PNCl}_2)_3\)</h4>
+      <p>The molecule is a <strong>6-membered planar ring</strong> with alternating P and N atoms. Each P carries 2 Cl atoms. All P–N bonds are equal in length (~158 pm) — shorter than a single P–N bond — indicating <strong>delocalisation</strong> of electrons.</p>
+      <div class="info-box warm">
+        <p>The P–N bond has partial double bond character due to back-donation of lone pair from N into empty d-orbitals of P → delocalized π-system over the ring (inorganic aromaticity).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Q10 ====== -->
+<div class="q-card" id="q10">
+  <div class="q-header">
+    <div class="q-number">10</div>
+    <div class="q-meta">
+      <div class="q-title">Biological Importance of Ca²⁺ & Mg²⁺ · Oxygen Binding Curves</div>
+      <div class="q-marks">4 + 2½ marks</div>
+    </div>
+  </div>
+  <div class="q-body">
+
+    <div class="sub-q">
+      <span class="sub-label">Part A</span>
+      <div class="sub-question-text">Explain biological importance of calcium and magnesium ions.</div>
+      <div class="answer-block">
+        <h4>Biological Role of Calcium \((\text{Ca}^{2+})\)</h4>
+        <ul>
+          <li><strong>Bone and teeth:</strong> Major component as hydroxyapatite \(\text{Ca}_{10}(\text{PO}_4)_6(\text{OH})_2\)</li>
+          <li><strong>Muscle contraction:</strong> \(\text{Ca}^{2+}\) triggers release of neurotransmitters and activates troponin for muscle contraction</li>
+          <li><strong>Blood clotting:</strong> Acts as cofactor in the coagulation cascade (factors IX and X)</li>
+          <li><strong>Cell signalling:</strong> Acts as second messenger in hormone signalling pathways</li>
+          <li><strong>Membrane permeability:</strong> Regulates ion channels in cell membranes</li>
+          <li><strong>Enzyme activation:</strong> Activates enzymes like lipase and ATPase</li>
+        </ul>
+
+        <h4>Biological Role of Magnesium \((\text{Mg}^{2+})\)</h4>
+        <ul>
+          <li><strong>Chlorophyll:</strong> Central atom in chlorophyll — essential for photosynthesis</li>
+          <li><strong>ATP activation:</strong> \(\text{Mg}^{2+}\) binds to ATP to form Mg–ATP complex, required for almost all enzymatic reactions involving ATP</li>
+          <li><strong>DNA/RNA stability:</strong> Stabilises the negative charge of phosphate backbone in nucleic acids</li>
+          <li><strong>Enzyme cofactor:</strong> Activates over 300 enzymes including kinases, polymerases</li>
+          <li><strong>Bone formation:</strong> About 60% of body Mg²⁺ is found in bones</li>
+          <li><strong>Protein synthesis:</strong> Required for ribosome function</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-label">Part B</span>
+      <div class="sub-question-text">Draw the oxygen binding curve for Haemoglobin and Myoglobin.</div>
+      <div class="answer-block">
+        <h4>Oxygen Binding Curves</h4>
+        <p><strong>Myoglobin (Mb)</strong> — single polypeptide chain, one haem unit → gives a <strong>hyperbolic</strong> (steep) curve. It has a very high affinity for O₂ (half-saturation at very low \(p_{\text{O}_2}\)).</p>
+        <p><strong>Haemoglobin (Hb)</strong> — four subunits, shows <strong>cooperative binding</strong> → gives a characteristic <strong>sigmoidal (S-shaped)</strong> curve. Low initial affinity increases as more O₂ binds (positive cooperativity).</p>
+        <div style="background:#161513; border:1px solid var(--border); border-radius:10px; padding:1.25rem; margin:0.75rem 0; text-align:center;">
+          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:320px; height:auto;">
+            <!-- Axes -->
+            <line x1="40" y1="180" x2="300" y2="180" stroke="#4a4640" stroke-width="1.5"/>
+            <line x1="40" y1="180" x2="40" y2="20" stroke="#4a4640" stroke-width="1.5"/>
+            <!-- Y axis label -->
+            <text x="8" y="100" fill="#8a8278" font-size="9" transform="rotate(-90,8,100)" text-anchor="middle" font-family="monospace">% Saturation</text>
+            <!-- X axis label -->
+            <text x="170" y="200" fill="#8a8278" font-size="9" text-anchor="middle" font-family="monospace">pO₂ (mmHg)</text>
+            <!-- Y gridlines -->
+            <line x1="40" y1="100" x2="300" y2="100" stroke="#2e2b26" stroke-width="0.8" stroke-dasharray="3,3"/>
+            <text x="33" y="104" fill="#8a8278" font-size="8" text-anchor="end" font-family="monospace">50</text>
+            <text x="33" y="24" fill="#8a8278" font-size="8" text-anchor="end" font-family="monospace">100</text>
+            <!-- Myoglobin - hyperbolic curve -->
+            <path d="M40,180 C70,130 90,60 130,40 S230,30 300,28" fill="none" stroke="#7eb8a4" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Haemoglobin - sigmoidal curve -->
+            <path d="M40,180 C70,178 90,170 110,140 S150,60 200,38 S260,30 300,29" fill="none" stroke="#d4a853" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Legend -->
+            <rect x="160" y="130" width="130" height="42" rx="4" fill="#1a1814" stroke="#2e2b26" stroke-width="1"/>
+            <line x1="168" y1="144" x2="185" y2="144" stroke="#7eb8a4" stroke-width="2"/>
+            <text x="190" y="147" fill="#7eb8a4" font-size="8.5" font-family="monospace">Myoglobin (Mb)</text>
+            <line x1="168" y1="161" x2="185" y2="161" stroke="#d4a853" stroke-width="2"/>
+            <text x="190" y="164" fill="#d4a853" font-size="8.5" font-family="monospace">Haemoglobin (Hb)</text>
+            <!-- x tick marks -->
+            <text x="80" y="192" fill="#8a8278" font-size="8" text-anchor="middle" font-family="monospace">20</text>
+            <text x="145" y="192" fill="#8a8278" font-size="8" text-anchor="middle" font-family="monospace">60</text>
+            <text x="210" y="192" fill="#8a8278" font-size="8" text-anchor="middle" font-family="monospace">100</text>
+            <text x="275" y="192" fill="#8a8278" font-size="8" text-anchor="middle" font-family="monospace">140</text>
+          </svg>
+        </div>
+        <div class="info-box">
+          <p><strong>Key Difference:</strong> Mb (hyperbolic curve) always has higher O₂ affinity than Hb. At low pO₂ (tissues), Hb releases O₂ efficiently due to its sigmoidal behaviour — this is why Hb is ideal for O₂ transport.</p>
+        </div>
+        <p>The <strong>Bohr effect</strong>: Lower pH (higher CO₂ in tissues) shifts the Hb curve right → Hb releases more O₂ to active tissues.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  B.Sc.-B.Ed. Integrated Course (Part-III) · Chemistry Paper-I · Inorganic Chemistry · 2022
+</footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+    document.getElementById('prog').style.width = pct + '%';
+  });
+
+  // Highlight active nav pill on scroll
+  const cards = document.querySelectorAll('.q-card');
+  const pills = document.querySelectorAll('.nav-pill');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        pills.forEach(p => p.classList.remove('active'));
+        const id = e.target.id;
+        const pill = document.querySelector(`.nav-pill[href="#${id}"]`);
+        if (pill) {
+          pill.classList.add('active');
+          pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+  cards.forEach(c => observer.observe(c));
+</script>
+
+</body>
+</html>
