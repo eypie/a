@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc.-B.Ed. (Part-III) Examination, 2022 - Organic Chemistry Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .nav-container {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-tabs {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 10px;
+        }
+
+        .nav-tabs a {
+            display: inline-block;
+            padding: 15px 20px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs a:hover, .nav-tabs a:focus {
+            color: var(--secondary-color);
+        }
+
+        .nav-tabs a.active-tab {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .unit-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+            scroll-margin-top: 70px;
+        }
+
+        .unit-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-bottom: 3px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .question-block {
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .question-block.or-block {
+            border-left-color: var(--accent-color);
+            background-color: #f0fff4;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 40px;
+        }
+
+        .or-divider {
+            text-align: center;
+            margin: 30px 0;
+            font-weight: bold;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        .or-divider::before, .or-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .or-divider::before { left: 0; }
+        .or-divider::after { right: 0; }
+
+        .question-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .solution-text {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .solution-text p {
+            margin-bottom: 12px;
+        }
+
+        .sub-question {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        .sub-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .math-display {
+            overflow-x: auto;
+            padding: 10px 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #edf2f7;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .note-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            background-color: white;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .unit-section {
+                padding: 20px 15px;
+            }
+            .question-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>B.Sc.-B.Ed. Integrated Course (Part-III) Examination, 2022</h1>
+        <p>CHEMISTRY — Paper II (Organic Chemistry) | Complete Solution Manual</p>
+    </header>
+
+    <div class="nav-container">
+        <nav class="nav-tabs" id="nav-tabs">
+            <a href="#unit1" class="active-tab">Unit I</a>
+            <a href="#unit2">Unit II</a>
+            <a href="#unit3">Unit III</a>
+            <a href="#unit4">Unit IV</a>
+            <a href="#unit5">Unit V</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- UNIT I -->
+        <section id="unit1" class="unit-section">
+            <h2 class="unit-title">Unit - I</h2>
+            
+            <div class="question-block">
+                <div class="question-text">Question 1(a): Write short notes on:</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Nuclear shielding and deshielding</div>
+                        <p><strong>Nuclear Shielding:</strong> When a molecule is placed in an external magnetic field ($B_0$), its surrounding electrons circulate and generate a small, secondary magnetic field (induced magnetic field). If this induced field opposes the external magnetic field, the nucleus experiences a weaker effective magnetic field. The nucleus is said to be "shielded." This shifts the NMR signal <strong>upfield</strong> (to a lower chemical shift or $\delta$ value).</p>
+                        <p><strong>Nuclear Deshielding:</strong> If a nucleus is attached to an electronegative atom or group, electron density is pulled away from the nucleus. With fewer circulating electrons, the opposing induced magnetic field weakens. The nucleus now feels a stronger share of the external magnetic field and is said to be "deshielded." This shifts the NMR signal <strong>downfield</strong> (to a higher chemical shift or $\delta$ value).</p>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Spin-spin coupling</div>
+                        <p>Spin-spin coupling is the splitting of an NMR absorption signal into multiple peaks (multiplets). This happens because the magnetic field experienced by a set of protons is influenced by the spin states of neighboring, non-equivalent protons.</p>
+                        <p>The number of splits follows the <strong>$n+1$ rule</strong>, where $n$ is the number of chemically equivalent neighboring protons. For example, a proton with 2 neighboring protons will split into a triplet ($2 + 1 = 3$).</p>
+                    </div>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">(iii) Chemical Shift</div>
+                        <p>Chemical shift ($\delta$) is the difference between the resonance frequency of a specific proton in a molecule and a standard reference compound—typically <strong>Tetramethylsilane (TMS)</strong>.</p>
+                        <p>It is measured in parts per million (ppm) to keep the value independent of the operating frequency of the NMR spectrometer. The formula is expressed as:</p>
+                        <div class="math-display">
+                            $$\delta = \frac{\nu_{\text{sample}} - \nu_{\text{TMS}}}{\text{Operating frequency of spectrometer in MHz}}$$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Question 1(b): Explain chemical shift value for the following compounds:</div>
+                <div class="solution-text">
+                    <ul>
+                        <li><strong>Benzene ($\text{H}\ \delta\ 7.27$):</strong> The protons in benzene appear very far downfield because of a phenomenon called the <strong>aromatic ring current effect</strong>. When benzene is exposed to an external magnetic field, the delocalized $\pi$ electrons circulate in a ring, creating an induced magnetic field. At the positions where the aromatic protons sit (outside the ring), this induced field reinforces the external field, causing strong deshielding and a high $\delta$ value.</li>
+                        <li><strong>Toluene ($\text{CH}_3\ \delta\ 2.23$):</strong> The methyl protons in toluene are attached to an $sp^2$ hybridized aromatic carbon. Because $sp^2$ carbons are more electronegative than standard $sp^3$ aliphatic carbons, they pull electron density away from the methyl group. This deshielding effect, combined with a minor influence from the nearby aromatic ring current, shifts the signal downfield from a normal alkane ($\sim 0.9$ ppm) to $2.23$ ppm.</li>
+                        <li><strong>Cyclohexene ($\text{H}\ \delta\ 5.57$):</strong> These are vinylic protons (directly attached to double-bonded carbons). Double-bonded carbons are $sp^2$ hybridized and highly electronegative. The combination of this electronegativity and the magnetic anisotropy of the $\pi$ bond strongly deshields the protons, causing them to resonate further downfield at $5.57$ ppm.</li>
+                        <li><strong>1-methylcyclohexene ($\text{CH}_3\ \delta\ 1.16$):</strong> The methyl protons in this molecule are at an allylic position (attached to a carbon adjacent to the double bond). The adjacent $sp^2$ system exerts a mild electron-withdrawing effect, causing a slight downfield shift compared to normal alkane chains.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 2(a): Explain NMR spectra of $\text{C}_2\text{H}_5\text{OH}$ (Ethylalcohol) in respect to chemical shift and coupling.</div>
+                <div class="solution-text">
+                    <p>The $^1\text{H}$-NMR spectrum of ordinary, commercial ethyl alcohol ($\text{CH}_3\text{CH}_2\text{OH}$) exhibits <strong>three distinct signals</strong> because it contains three sets of chemically non-equivalent protons:</p>
+                    <ol>
+                        <li><strong>Methyl Protons ($-\text{CH}_3$):</strong> These 3 protons are shielded the most and appear <strong>upfield ($\delta \approx 1.2$ ppm)</strong>. They are split by the 2 neighboring $-\text{CH}_2-$ protons into a <strong>triplet</strong> ($2 + 1 = 3$) due to spin-spin coupling.</li>
+                        <li><strong>Methylene Protons ($-\text{CH}_2-$):</strong> These 2 protons are attached to a carbon directly bound to an electronegative oxygen atom, causing them to appear <strong>downfield ($\delta \approx 3.7$ ppm)</strong>. They are split by the 3 neighboring $-\text{CH}_3$ protons into a <strong>quartet</strong> ($3 + 1 = 4$).</li>
+                        <li><strong>Hydroxyl Proton ($-\text{OH}$):</strong> This proton appears as a clean <strong>singlet ($\delta \approx 4.0 - 5.0$ ppm)</strong> in ordinary ethanol.</li>
+                    </ol>
+                    <div class="note-box">
+                        <strong>Note on Proton Exchange:</strong> In ordinary ethanol, trace amounts of moisture or acid catalyze a rapid intermolecular exchange of the $-\text{OH}$ protons. Because this exchange happens faster than the NMR spectrometer can record it, the coupling between the $-\text{CH}_2-$ and $-\text{OH}$ protons is averaged out, turning the $-\text{OH}$ signal into a sharp singlet and preventing it from further splitting the $-\text{CH}_2-$ quartet.
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 2(b): Write the synthetic applications of ethylacetoacetate (minimum 2).</div>
+                <div class="solution-text">
+                    <p>Ethylacetoacetate (Acetoacetic ester) is a highly versatile reagent in organic synthesis due to its highly acidic reactive methylene group ($-\text{CH}_2-$). Two major applications include:</p>
+                    <ol>
+                        <li><strong>Synthesis of Alkyl Acetic Acids (Acid Hydrolysis):</strong> When ethylacetoacetate is treated with sodium ethoxide and an alkyl halide ($\text{R-X}$), it undergoes alkylation. When this alkylated product is heated with <strong>concentrated alcoholic KOH</strong> (acid hydrolysis), it cleaves to yield a substituted mono-alkyl or di-alkyl acetic acid.</li>
+                        <li><strong>Synthesis of Methyl Ketones (Ketonic Hydrolysis):</strong> Following the same alkylation step described above, if the alkylated intermediate is instead heated with <strong>dilute $\text{HCl}$ or dilute $\text{H}_2\text{SO}_4$</strong> (ketonic hydrolysis), it undergoes decarboxylation to yield a substituted methyl ketone (such as alkyl-substituted acetone).</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIT II -->
+        <section id="unit2" class="unit-section">
+            <h2 class="unit-title">Unit - II</h2>
+            
+            <div class="question-block">
+                <div class="question-text">Question 3(a): "Pyridine undergoes electrophilic substitution as well as nucleophilic substitution reactions at different positions". Give at least two examples in each case in support of your answer.</div>
+                <div class="solution-text">
+                    <p>Pyridine is a six-membered heterocycle containing a highly electronegative nitrogen atom. This makes the ring electron-deficient compared to benzene, altering how and where substitutions occur.</p>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">1. Electrophilic Substitution (Occurs at Position-3 / Meta Position)</div>
+                        <p>Electrophiles attack <strong>position-3</strong>. If an electrophile attacks position-2 or position-4, one of the resulting resonance structures places a highly unstable positive charge directly on the electronegative nitrogen atom. Attacking position-3 avoids this unstable arrangement completely.</p>
+                        <ul>
+                            <li><strong>Example 1 (Nitration):</strong> Pyridine reacts with $\text{KNO}_3$ and concentrated $\text{H}_2\text{SO}_4$ at 300°C to form <strong>3-nitropyridine</strong>.</li>
+                            <li><strong>Example 2 (Bromination):</strong> Pyridine reacts with $\text{Br}_2$ at 300°C to form <strong>3-bromopyridine</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">2. Nucleophilic Substitution (Occurs at Position-2 and Position-4)</div>
+                        <p>Nucleophiles attack positions 2 and 4 because the nitrogen atom pulls electron density away from these specific sites, making them electron-deficient. Attacking position-2 or 4 allows the resulting negative charge to be stabilized directly on the electronegative nitrogen atom.</p>
+                        <ul>
+                            <li><strong>Example 1 (Chichibabin Reaction):</strong> Pyridine reacts with sodium amide ($\text{NaNH}_2$) in liquid ammonia under heat to yield <strong>2-aminopyridine</strong>.</li>
+                            <li><strong>Example 2 (Reaction with Alkyllithium):</strong> Pyridine reacts with n-butyllithium ($\text{n-BuLi}$) to yield <strong>2-butylpyridine</strong> after heating.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Question 3(b): Explain why thiophene is more stable than furan?</div>
+                <div class="solution-text">
+                    <p>Thiophene is significantly more stable than furan due to two primary reasons:</p>
+                    <ol>
+                        <li><strong>Resonance Energy:</strong> Thiophene has a much higher resonance energy ($\sim 117\text{ kJ/mol}$) than furan ($\sim 67\text{ kJ/mol}$).</li>
+                        <li><strong>d-Orbital Participation:</strong> Thiophene contains a sulfur atom, which belongs to the third period of the periodic table and possesses vacant <strong>3d-orbitals</strong>. Furan contains an oxygen atom (second period), which lacks these d-orbitals. The vacant 3d-orbitals on sulfur can participate in extra resonance structures ($d$-orbital delocalization), making the aromatic system in thiophene much more stable.</li>
+                        <li><strong>Electronegativity:</strong> Oxygen is more electronegative than sulfur. It holds its lone pair of electrons more tightly, making them less willing to fully delocalize into the aromatic ring system compared to the lone pairs on sulfur.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 4: Explain why:</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Indole is a weaker base than quinoline.</div>
+                        <p>In <strong>indole</strong>, the lone pair of electrons on the nitrogen atom is actively involved in the $6\pi$ aromatic electron cloud to fulfill Hückel's rule. If indole accepts a proton, this lone pair is pulled out of circulation, completely breaking the molecule's aromaticity—a highly unfavorable process.</p>
+                        <p>In <strong>quinoline</strong>, the nitrogen atom is part of a pyridine-like ring. Its lone pair resides in an $sp^2$ hybrid orbital that sits perpendicular to the $\pi$-system. Because this lone pair is not needed to maintain the molecule's aromaticity, it remains readily available to accept a proton, making quinoline a much stronger base than indole.</p>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) The electrophilic substitution occurs at position-3 in indole.</div>
+                        <p>When an electrophile attacks indole at <strong>position-3</strong>, the positive charge in the resulting intermediate can be delocalized through resonance while leaving the stable aromatic benzene ring completely intact.</p>
+                        <p>If the electrophile attacks at <strong>position-2</strong>, delocalizing the positive charge requires disrupting the stable $\pi$-system of the benzene ring. Because preserving the benzene ring keeping energy lower is preferred, substitution happens almost exclusively at position-3.</p>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(iii) Quinoline undergoes electrophilic attack in the benzene ring while the nucleophilic attack takes place in pyridine ring.</div>
+                        <p>Quinoline contains a fused system of a benzene ring and a pyridine ring:</p>
+                        <ul>
+                            <li><strong>Electrophilic Attack:</strong> The nitrogen atom in the pyridine ring strongly withdraws electron density, leaving that ring electron-deficient (deactivated). The benzene ring retains its normal electron density and remains relatively electron-rich by comparison. Therefore, electron-seeking electrophiles selectively attack the benzene ring (typically at positions 5 and 8).</li>
+                            <li><strong>Nucleophilic Attack:</strong> Because the nitrogen atom drains electron density out of the pyridine ring, it creates highly electron-deficient centers within that ring. This makes the pyridine ring a prime target for nucleophiles, which selectively attack position-2.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIT III -->
+        <section id="unit3" class="unit-section">
+            <h2 class="unit-title">Unit - III</h2>
+            
+            <div class="question-block">
+                <div class="question-text">Question 5(a): How will you carry out the following conversions:</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Glucose to fructose</div>
+                        <ol>
+                            <li><strong>Osazone Formation:</strong> React D-glucose with excess phenylhydrazine ($\text{PhNHNH}_2$) to form <strong>glucosazone</strong>.</li>
+                            <li><strong>Hydrolysis:</strong> Treat the glucosazone with dilute $\text{HCl}$ (or benzaldehyde) to remove the phenylhydrazine groups, converting it into an aldosulose called <strong>glucosone</strong>.</li>
+                            <li><strong>Reduction:</strong> Selectively reduce the terminal aldehyde group of glucosone using Zinc and acetic acid ($\text{Zn / CH}_3\text{COOH}$). The ketone group remains untouched, yielding <strong>D-fructose</strong>.</li>
+                        </ol>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Fructose to glucose</div>
+                        <ol>
+                            <li><strong>Reduction:</strong> Reduce D-fructose with sodium amalgam ($\text{Na-Hg}$) and water to convert the ketone group into an alcohol. This forms a mixture of two epimeric alcohols: <strong>D-sorbitol</strong> and <strong>D-mannitol</strong>.</li>
+                            <li><strong>Oxidation:</strong> Perform controlled oxidation on this mixture using dilute nitric acid ($\text{HNO}_3$) to turn the terminal primary alcohol group into an aldehyde, yielding a mixture of <strong>D-glucose</strong> and <strong>D-mannose</strong>.</li>
+                            <li><strong>Separation:</strong> Separate the D-glucose from the mixture via fractional crystallization.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Question 5(b): Explain with reasons that Fructose reduces Tollen's and Fehling reagents although it does not contain aldehydic group.</div>
+                <div class="solution-text">
+                    <p>Tollen's and Fehling's tests are carried out in strongly <strong>alkaline mediums</strong>. Even though fructose is a ketohexose (containing a ketone group rather than an aldehyde), the basic environment causes it to undergo a reversible tautomeric rearrangement via a temporary <strong>enediol intermediate</strong>.</p>
+                    <p>This chemical shifting is known as the <strong>Lobry de Bruyn-Alberda van Ekenstein transformation</strong>. Under these conditions, fructose readily isomerizes into an equilibrium mixture containing D-glucose and D-mannose. Because these newly formed aldoses contain free, oxidizable aldehyde groups, they react positively with Tollen's and Fehling's reagents, causing the mixture to reduce them.</p>
+                </div>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 6: Write notes on the following:</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Maltose</div>
+                        <ul>
+                            <li>Maltose is a <strong>disaccharide</strong> formed by two $\alpha$-D-glucose units.</li>
+                            <li>The two units are linked together via an <strong>$\alpha(1\rightarrow4)$ glycosidic bond</strong> (the anomeric carbon-1 of one glucose connects to the carbon-4 of the second glucose).</li>
+                            <li>Because the second glucose molecule retains a free, unbonded anomeric hemiacetal carbon, maltose is a <strong>reducing sugar</strong>, shows mutarotation, and forms characteristic crystal osazones.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Lactose</div>
+                        <ul>
+                            <li>Lactose is a disaccharide primarily found in milk, consisting of one $\beta$-D-galactose unit and one $\beta$-D-glucose unit.</li>
+                            <li>They are connected by a <strong>$\beta(1\rightarrow4)$ glycosidic linkage</strong>.</li>
+                            <li>Just like maltose, the reducing glucose end retains a free hemiacetal group at carbon-1. As a result, lactose is classified as a <strong>reducing sugar</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(iii) Reducing and nonreducing Sugars</div>
+                        <ul>
+                            <li><strong>Reducing Sugars:</strong> These are carbohydrates that contain a free aldehyde or ketone group (or a hemiacetal/hemiketal group in cyclic form). They easily reduce weak oxidizing agents like Tollen's reagent, Fehling's solution, and Benedict's solution while being oxidized themselves. <em>Examples:</em> Glucose, Fructose, Maltose, Lactose.</li>
+                            <li><strong>Non-reducing Sugars:</strong> These are carbohydrates where the anomeric carbonyl carbons of all component monosaccharide units are locked up in a glycosidic linkage. Without a free hemiacetal or open-chain carbonyl group, they cannot reduce these reagents. <em>Example:</em> Sucrose.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIT IV -->
+        <section id="unit4" class="unit-section">
+            <h2 class="unit-title">Unit - IV</h2>
+            
+            <div class="question-block">
+                <div class="question-text">Question 7(a): Explain the following terms:</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Isoelectric point</div>
+                        <p>The isoelectric point ($\text{pI}$) is the specific $\text{pH}$ value at which an amino acid carries <strong>no net electrical charge</strong>. At this point, the entire sample exists as a neutral dipolar ion (Zwitterion). Because it lacks a net charge, the amino acid will not migrate toward either the positive cathode or negative anode when placed in an electric field.</p>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Zwitter ion</div>
+                        <p>An amino acid contains both an acidic group ($-\text{COOH}$) and a basic group ($-\text{NH}_2$) within the same molecule. A Zwitterion (or dipolar ion) is formed when the carboxyl group releases a hydrogen ion (${\text{H}^+}$) and the amino group captures it. This creates an internal salt containing a simultaneous negative charge ($-\text{COO}^-$) and positive charge ($-\text{NH}_3^+$), leaving the overall molecule electrically neutral.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Question 7(b): How are amino acids prepared from?</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">(i) An aldehyde (Strecker Synthesis)</div>
+                        <p>An aldehyde is treated with a mixture of ammonium chloride ($\text{NH}_4\text{Cl}$) and sodium cyanide ($\text{NaCN}$). The aldehyde reacts to form an intermediate $\alpha$-amino nitrile. When this intermediate is heated under <strong>acidic hydrolysis</strong> conditions, the nitrile group ($-\text{CN}$) converts into a carboxylic acid, yielding an $\alpha$-amino acid:</p>
+                        <div class="math-display">
+                            $$\text{R-CHO} + \text{NH}_3 + \text{HCN} \rightarrow \text{R-CH(NH}_2)\text{CN} \xrightarrow{\text{H}_3\text{O}^+} \text{R-CH(NH}_2)\text{COOH}$$
+                        </div>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Phthalic acid (Gabriel Phthalimide Synthesis)</div>
+                        <ol>
+                            <li>Convert phthalic acid into <strong>phthalimide</strong> by heating it with ammonia.</li>
+                            <li>React the phthalimide with $\text{KOH}$ to form potassium phthalimide.</li>
+                            <li>Treat potassium phthalimide with an $\alpha$-halogenated ester, such as ethyl chloroacetate ($\text{Cl-CH}_2\text{COOC}_2\text{H}_5$).</li>
+                            <li>Subject this alkylated intermediate to rigorous acid hydrolysis. This breaks the ring open, releasing <strong>glycine</strong> (the simplest amino acid) and regenerating the starting phthalic acid.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 8: What do you mean by nucleic acids, nucleosides and nucleotides? How are they related with each other. Discuss the synthesis of a pyrimidine nucleotide.</div>
+                <div class="solution-text">
+                    <div class="sub-question">
+                        <div class="sub-title">Definitions & Relationships</div>
+                        <ul>
+                            <li><strong>Nucleic Acids:</strong> These are vital biopolymers (such as DNA and RNA) that store and transmit genetic information. They are long chains built from repeating monomer units called nucleotides.</li>
+                            <li><strong>Nucleoside:</strong> A compound formed when a nitrogenous base (either a purine or pyrimidine) attaches to carbon-1 ($\text{C1'}$) of a pentose sugar (ribose or deoxyribose) via a $\beta$-N-glycosidic bond.
+                                <div class="math-display">$$\text{Nucleoside} = \text{Nitrogenous Base} + \text{Pentose Sugar}$$</div>
+                            </li>
+                            <li><strong>Nucleotide:</strong> A nucleotide is a phosphate ester of a nucleoside. It forms when a phosphate group binds to one of the hydroxyl groups (typically at the $\text{C5'}$ position) of the nucleoside sugar ring.
+                                <div class="math-display">$$\text{Nucleotide} = \text{Nucleoside} + \text{Phosphate} = \text{Base} + \text{Sugar} + \text{Phosphate}$$</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">Synthesis of a Pyrimidine Nucleotide (e.g., Uridine Monophosphate - UMP)</div>
+                        <ol>
+                            <li><strong>Base-Sugar Coupling:</strong> A pyrimidine base like Uracil is reacted with a protected, activated sugar such as 1-chloro-2,3,5-tri-O-benzoyl-$\beta$-D-ribofuranose. The reaction joins them via a glycosidic bond.</li>
+                            <li><strong>Deprotection:</strong> The ester protecting groups on the sugar ring are removed by treating the intermediate with sodium methoxide ($\text{CH}_3\text{ONa}$), yielding the free nucleoside <strong>Uridine</strong>.</li>
+                            <li><strong>Phosphorylation:</strong> Uridine is selectively phosphorylated at its primary $\text{C5'}$-hydroxyl group using phosphoryl chloride ($\text{POCl}_3$) in a solvent like pyridine. Hydrolysis of the resulting chlorophosphate intermediate completes the synthesis, yielding <strong>Uridine 5'-monophosphate (UMP)</strong>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIT V -->
+        <section id="unit5" class="unit-section">
+            <h2 class="unit-title">Unit - V</h2>
+            
+            <div class="question-block">
+                <div class="question-text">Question 9(a): Give the one synthesis of any two of the following sulpha drugs.</div>
+                <div class="solution-text">
+                    <p><em>(Note: Precursor for all choices is p-acetamidobenzenesulfonyl chloride, prepared by reacting acetanilide with chlorosulfonic acid).</em></p>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">(i) Sulphadiazine</div>
+                        <p>React p-acetamidobenzenesulfonyl chloride with <strong>2-aminopyrimidine</strong> in the presence of pyridine. This couples the fragments together. The protecting acetyl group is then removed using basic aqueous hydrolysis ($\text{NaOH}$) to yield Sulphadiazine.</p>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(ii) Sulphathiazole</div>
+                        <p>Mix p-acetamidobenzenesulfonyl chloride with <strong>2-aminothiazole</strong> in a pyridine medium. Following the coupling reaction, clear the protecting group away by boiling the intermediate with dilute sodium hydroxide solution to obtain Sulphathiazole.</p>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">(iii) Sulphaguanidine</div>
+                        <p>Condense p-acetamidobenzenesulfonyl chloride with <strong>guanidine</strong> under basic conditions. Hydrolyze the resulting acetylated intermediate with boiling dilute hydrochloric acid ($\text{HCl}$) to remove the acetyl shield, yielding Sulphaguanidine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Question 9(b): What is Ziegler-Natta catalyst? Giving the mechanism of coordination polymerisation, write down their utility.</div>
+                <div class="solution-text">
+                    <p><strong>Ziegler-Natta Catalyst:</strong> This is a highly specialized coordination catalyst system consisting of two primary parts: a transition metal halide (such as titanium tetrachloride, $\text{TiCl}_4$ or $\text{TiCl}_3$) combined with an organometallic compound from Group I-III metals (typically triethylaluminum, $\text{Al(C}_2\text{H}_5)_3$).</p>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">Mechanism of Coordination Polymerization</div>
+                        <ol>
+                            <li><strong>Coordination:</strong> A monomer molecule (like ethene or propene) coordinates with its $\pi$-electrons to an open, vacant d-orbital coordination site on the transition metal (Titanium) atom.</li>
+                            <li><strong>Insertion:</strong> The growing alkyl/polymer chain attached to the metal migrates and inserts itself directly into the coordinated monomer link. This steps the chain length forward and simultaneously regenerates a vacant coordination site on the metal center.</li>
+                            <li><strong>Propagation:</strong> New monomer units continually land on the vacant site and insert into the chain step-by-step, rapidly building the polymer.</li>
+                        </ol>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">Utility</div>
+                        <ul>
+                            <li>It allows polymerization to take place under incredibly mild conditions (low temperatures and low pressures).</li>
+                            <li>It produces highly linear polymers without side branches, resulting in strong high-density plastics like <strong>High-Density Polyethylene (HDPE)</strong>.</li>
+                            <li>It exhibits precise stereochemical control, enabling the manufacturing of <strong>stereoregular polymers</strong> (such as isotactic polypropylene).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="or-divider">OR</div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 10(a): Write down the formula and uses of the following polymers:</div>
+                <div class="solution-text">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Polymer</th>
+                                    <th>Chemical Structural Formula</th>
+                                    <th>Common Practical Uses</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>(i) Polystyrene</strong></td>
+                                    <td>$-\left[\text{CH}_2-\text{CH}(\text{C}_6\text{H}_5)\right]_n-$</td>
+                                    <td>Used to manufacture toys, CD cases, disposable plastic cutlery, food containers, and expanded structural foam (Styrofoam) for insulation and protective packaging.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>(ii) Polyacrylonitrile (PAN)</strong></td>
+                                    <td>$-\left[\text{CH}_2-\text{CH}(\text{CN})\right]_n-$</td>
+                                    <td>Used to make synthetic textiles and commercial acrylic fibers (such as Orlon and Acrilan) for carpets, blankets, and sweaters. It also serves as the primary raw material for making high-strength carbon fibers.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-block or-block">
+                <div class="question-text">Question 10(b): What are azo dyes? How many types of azo dyes are there? Give synthesis of (i) Congo red (ii) Malachite green.</div>
+                <div class="solution-text">
+                    <p><strong>Azo Dyes:</strong> These are synthetic organic compounds characterized by the presence of one or more <strong>azo groups ($-\text{N}=\text{N}-$)</strong> that connect two or more aromatic ring systems. They represent the largest and most widely used class of industrial dyes.</p>
+                    <p><strong>Types of Azo Dyes:</strong> They are classified based on the number of azo linkages present in their structure: <strong>Monoazo dyes</strong> (1 azo group), **Diazo dyes** (2 azo groups), **Triazo dyes** (3 azo groups), and **Polyazo dyes** (more than 3). They can also be categorized by application (e.g., Acidic, Basic, Direct, or Disperse azo dyes).</p>
+                    
+                    <div class="sub-question">
+                        <div class="sub-title">Synthesis of Congo Red (A Diazo Dye)</div>
+                        <ol>
+                            <li><strong>Diazotization:</strong> <strong>Benzidine</strong> is treated with nitrous acid ($\text{NaNO}_2 + \text{HCl}$) at 0–5°C to form a bis-diazonium salt.</li>
+                            <li><strong>Coupling:</strong> This diazonium salt is mixed with two equivalents of <strong>sodium naphthionate</strong> (sodium 4-aminonaphthalene-1-sulfonate) under basic conditions. The coupling reaction yields Congo Red, a brilliant red direct dye.</li>
+                        </ol>
+                    </div>
+
+                    <div class="sub-question">
+                        <div class="sub-title">Synthesis of Malachite Green</div>
+                        <p><em>Note: Malachite Green is classified chemically as a triarylmethane dye, not an azo dye, but its synthesis follows standard colorant preparations:</em></p>
+                        <ol>
+                            <li><strong>Condensation:</strong> One equivalent of <strong>benzaldehyde</strong> is heated with two equivalents of <strong>N,N-dimethylaniline</strong> in the presence of concentrated sulfuric acid ($\text{H}_2\text{SO}_4$) acting as a dehydrating agent. This produces a colorless intermediate called a <strong>leuco base</strong>.</li>
+                            <li><strong>Oxidation:</strong> The leuco base is oxidized using lead dioxide ($\text{PbO}_2$) in an acidic medium, converting the central carbon into a hydrol compound.</li>
+                            <li><strong>Salt Formation:</strong> Treatment with hydrochloric acid ($\text{HCl}$) eliminates water, establishing a highly stable conjugated carbocation structure that gives Malachite Green its deep, vibrant green color.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Complete Academic Resource Manual | Designed for GitHub Pages</p>
+    </footer>
+
+    <script>
+        // Simple active tab highlight on scroll setup
+        const sections = document.querySelectorAll('.unit-section');
+        const navLinks = document.querySelectorAll('.nav-tabs a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 80)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-tab');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active-tab');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
