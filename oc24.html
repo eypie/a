@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Chemistry Paper-II Solutions (2024)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #3182ce;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .toc {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .unit-title {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1.3rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .question {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .solution {
+            margin-top: 15px;
+        }
+
+        .solution h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #edf2f7;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .image-placeholder {
+            background-color: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            padding: 15px;
+            text-align: center;
+            color: #4a5568;
+            font-style: italic;
+            margin: 20px 0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .card {
+                padding: 15px;
+            }
+            .question {
+                font-size: 1.05rem;
+            }
+            .unit-title {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chemistry Paper-II (Organic Chemistry)</h1>
+        <p>B.A.B.Ed. / B.Sc.B.Ed. (Part-III) Examination, 2024 — Full Solutions</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="toc">
+            <h2>Jump to Unit</h2>
+            <ul>
+                <li><a href="#unit1">Unit I</a></li>
+                <li><a href="#unit2">Unit II</a></li>
+                <li><a href="#unit3">Unit III</a></li>
+                <li><a href="#unit4">Unit IV</a></li>
+                <li><a href="#unit5">Unit V</a></li>
+            </ul>
+        </div>
+
+        <div id="unit1" class="unit-title">UNIT - I</div>
+
+        <div class="card">
+            <div class="question">Question 1 (A) What is meant by Equivalent and Non-equivalent Protons?</div>
+            <div class="solution">
+                <p><strong>Equivalent Protons:</strong> These are protons in a molecule that share the exact same chemical, electronic, and magnetic environment. Because they experience identical shielding or deshielding effects, they resonate at the exact same chemical shift ($\delta$ value) in an $\text{^1H-NMR}$ spectrum and merge to form a <strong>single signal</strong>.</p>
+                <ul>
+                    <li><em>Example:</em> Ethane ($\text{CH}_3-\text{CH}_3$) has 6 equivalent protons, yielding just 1 NMR signal.</li>
+                </ul>
+                <p><strong>Non-equivalent Protons:</strong> These are protons that reside in different chemical or magnetic environments within the molecule due to different neighboring functional groups or stereochemical positions. They experience different shielding levels, have distinct chemical shifts, and produce <strong>separate, distinct NMR signals</strong>.</p>
+                <ul>
+                    <li><em>Example:</em> Ethanol ($\text{CH}_3-\text{CH}_2-\text{OH}$) contains three sets of non-equivalent protons, giving rise to 3 distinct signals.</li>
+                </ul>
+                <div class="image-placeholder"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 1 (B) What is the importance of TMS in NMR spectroscopy?</div>
+            <div class="solution">
+                <p><strong>Tetramethylsilane</strong> ($\text{Si(CH}_3)_4$), commonly known as <strong>TMS</strong>, is used as an internal standard reference compound in $\text{^1H}$ and $\text{^{13}C}$ NMR spectroscopy due to several unique properties:</p>
+                <ul>
+                    <li><strong>Zero Reference Point:</strong> Silicon is less electronegative than carbon, which heavily shields the protons of TMS. Its single intense signal appears at a higher field than almost all organic proton signals. This peak is arbitrarily assigned a position of exactly $\delta = 0.0\text{ ppm}$.</li>
+                    <li><strong>Single Sharp Peak:</strong> It features 12 chemically and magnetically equivalent protons, producing a single, very sharp, highly intense peak even at minimal concentrations.</li>
+                    <li><strong>Chemically Inert:</strong> It is highly unreactive with most organic samples, preventing unwanted side reactions during testing.</li>
+                    <li><strong>Volatile:</strong> With a very low boiling point ($27^\circ\text{C}$), it evaporates out of the sample easily after analysis, allowing clean recovery of the studied compound.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 1 (C) How many NMR signals would be obtained in following compounds?<br>
+            (i) $\text{CH}_3-\text{CH(Cl)}-\text{CH}_3$ &nbsp;&nbsp;&nbsp;&nbsp; (ii) $\text{CH}_3-\text{CH}_2-\text{CH}_3$</div>
+            <div class="solution">
+                <ul>
+                    <li><strong>(i) 2-Chloropropane ($\text{CH}_3-\text{CH(Cl)}-\text{CH}_3$):</strong>
+                        <br><strong>2 Signals.</strong> 
+                        <br><em>Reasoning:</em> The two terminal methyl groups ($-\text{CH}_3$) are in identical environments, forming one set of 6 equivalent protons (Signal A). The central $-\text{CH}-$ proton attached to the chlorine atom forms a unique second environment (Signal B).
+                    </li>
+                    <li style="margin-top: 15px;"><strong>(ii) Propane ($\text{CH}_3-\text{CH}_2-\text{CH}_3$):</strong>
+                        <br><strong>2 Signals.</strong>
+                        <br><em>Reasoning:</em> The two terminal methyl groups ($-\text{CH}_3$) form a set of 6 equivalent protons (Signal A). The central methylene group ($-\text{CH}_2-$) forms a distinct environment (Signal B).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 2 Write short notes on the following:<br>
+            (i) Alkylation of Acetoacetic Ester<br>
+            (ii) Knoevenagel's reaction<br>
+            (iii) Acidity of $\alpha$-hydrogens in reactive methylene compounds.</div>
+            <div class="solution">
+                <h4>(i) Alkylation of Acetoacetic Ester (AAE)</h4>
+                <p>Acetoacetic ester ($\text{CH}_3\text{COCH}_2\text{COOC}_2\text{H}_5$) contains a highly reactive methylene ($-\text{CH}_2-$) group trapped between two electron-withdrawing carbonyl species. This makes it a foundational building block in synthesis:</p>
+                <ol>
+                    <li><strong>Enolate Formation:</strong> Treating AAE with a strong base like sodium ethoxide ($\text{C}_2\text{H}_5\text{ONa}$) strips a proton from the active methylene carbon, generating a resonance-stabilized carbanion (enolate ion).</li>
+                    <li><strong>Nucleophilic Substitution:</strong> This carbanion acts as a nucleophile, attacking an alkyl halide ($\text{R}-\text{X}$) via an $\text{S}_\text{N}2$ mechanism to generate a <strong>monoalkylated acetoacetic ester</strong>.</li>
+                </ol>
+                <p>$$\text{CH}_3\text{COCH}_2\text{COOC}_2\text{H}_5 \xrightarrow{\text{C}_2\text{H}_5\text{ONa}} [\text{CH}_3\text{COCHCOOC}_2\text{H}_5]^- \xrightarrow{\text{R-X}} \text{CH}_3\text{COCHRCOOC}_2\text{H}_5 + \text{X}^-$$</p>
+                <p>A second alkylation cycle can be applied using another equivalent of base and a different alkyl halide ($\text{R}'-\text{X}$) to create a <strong>dialkylacetoacetic ester</strong>.</p>
+
+                <h4>(ii) Knoevenagel's Reaction</h4>
+                <p>This reaction involves the nucleophilic condensation of an aldehyde or ketone with a compound containing an active methylene group (e.g., malonic acid or diethyl malonate) in the presence of a weak base catalyst (such as ammonia, pyridine, or secondary amines). The resulting product eliminates water to yield an $\alpha,\beta$-unsaturated compound.</p>
+                <ul>
+                    <li><em>Example:</em> The synthesis of Cinnamic Acid by condensing Benzaldehyde with Malonic Acid in pyridine:</li>
+                </ul>
+                <p>$$\text{C}_6\text{H}_5\text{CHO} + \text{CH}_2(\text{COOH})_2 \xrightarrow{\text{Pyridine}, \Delta} \text{C}_6\text{H}_5\text{CH}=\text{CH-COOH} + \text{H}_2\text{O} + \text{CO}_2$$</p>
+
+                <h4>(iii) Acidity of $\alpha$-Hydrogens in Reactive Methylene Compounds</h4>
+                <p>In compounds like malonic ester or acetoacetic ester, the $-\text{CH}_2-$ protons are profoundly acidic ($pK_a \approx 9 - 13$) compared to standard alkanes ($pK_a \approx 50$). Two factors drive this properties:</p>
+                <ul>
+                    <li><strong>Inductive Effect:</strong> The carbon is flanked by two powerfully electron-withdrawing groups (like $-\text{C}=\text{O}$ or $-\text{C}\equiv\text{N}$). These groups strongly pull electron density away from the $\text{C}-\text{H}$ bonds, weakening them and letting bases easily pluck the proton away.</li>
+                    <li><strong>Resonance Stabilization:</strong> Once the proton is lost, the remaining negative charge on the carbanion is delocalized over the highly electronegative oxygen or nitrogen atoms across multiple resonance structures, making the resulting conjugate base exceptionally stable.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="unit2" class="unit-title">UNIT - II</div>
+
+        <div class="card">
+            <div class="question">Question 3 (i) Explain the following:<br>
+            (A) Thiophene is more stable than Furan.<br>
+            (B) Nitrogen atom in Pyridine is tertiary in character.</div>
+            <div class="solution">
+                <h4>(A) Thiophene is more stable than Furan</h4>
+                <ul>
+                    <li><strong>Resonance Energy:</strong> Thiophene features a significantly higher resonance energy ($\approx 117\text{ kJ/mol}$) than furan ($\approx 67\text{ kJ/mol}$), making it thermodynamically more stable.</li>
+                    <li><strong>Electronegativity:</strong> The heteroatom sulfur in thiophene is less electronegative ($\chi = 2.58$) than the oxygen in furan ($\chi = 3.44$). Because sulfur holds onto its lone pairs less tightly, it shares them more readily to sustain the aromatic $\pi$-cloud.</li>
+                    <li><strong>d-Orbital Participation:</strong> As a third-period element, sulfur possesses vacant $3d$ orbitals. This permits additional resonance contributors involving $d\pi-p\pi$ bonding, a stabilization route unavailable to oxygen.</li>
+                </ul>
+
+                <h4>(B) Nitrogen atom in Pyridine is tertiary in character</h4>
+                <p>In pyridine ($\text{C}_5\text{H}_5\text{N}$), the nitrogen atom is $\text{sp}^2$ hybridized. Two of these hybridized orbitals establish $\sigma$-bonds with adjacent carbon atoms within the ring, while its unhybridized $p$-orbital contributes one electron to populate the aromatic $\pi$-cloud.</p>
+                <p>Consequently, nitrogen's lone pair is localized entirely within the third $\text{sp}^2$ orbital, which juts outward in the plane of the ring, perfectly perpendicular to the aromatic system. Because this lone pair is free from resonance obligations, it behaves exactly like a <strong>tertiary amine</strong> ($\text{R}_3\text{N}$)—exhibiting basicity, acting as a nucleophile, and readily forming quaternary pyridinium salts when exposed to alkyl halides.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 3 (ii) Complete the following reaction:<br>
+            (a) $\text{Pyrrole} + \text{CH}_3\text{COCl} \xrightarrow{80^\circ\text{C}} A$<br>
+            (b) $\text{Furan} + \text{O}_2 \xrightarrow{h\nu} B$</div>
+            <div class="solution">
+                <div class="image-placeholder"></div>
+                <ul>
+                    <li><strong>(a) Product A is 2-Acetylpyrrole:</strong> Pyrrole is highly electron-rich ($\pi$-excessive) and undergoes electrophilic aromatic substitution easily without needing a Lewis acid catalyst. Substitution occurs selectively at the C-2 position due to greater resonance stabilization of the intermediate carbocation.
+                        <p>$$\text{C}_4\text{H}_4\text{NH} + \text{CH}_3\text{COCl} \xrightarrow{80^\circ\text{C}} \text{2-Acetylpyrrole} + \text{HCl}$$</p>
+                    </li>
+                    <li><strong>(b) Product B is Furan 2,5-endoperoxide:</strong> Furan acts as a conjugated diene. Under photochemical light ($h\nu$), it reacts with singlet oxygen ($\text{O}_2$) via a $[4+2]$ cycloaddition (Diels-Alder type mechanism) to yield an unstable cyclic endoperoxide bridge across positions 2 and 5.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 4 (i) Write short notes on the following:<br>
+            (A) Bischler-Napieralski synthesis<br>
+            (B) Reissert synthesis</div>
+            <div class="solution">
+                <h4>(A) Bischler-Napieralski Synthesis</h4>
+                <ol>
+                    <li><strong>Cyclodehydration:</strong> The reaction begins with a $\beta$-phenylethylamide, which is treated with a powerful dehydrating agent like phosphorus oxychloride ($\text{POCl}_3$) or phosphorus pentoxide ($\text{P}_2\text{O}_5$). This induces ring closure to produce a 3,4-dihydroisoquinoline intermediate.</li>
+                    <li><strong>Dehydrogenation:</strong> The intermediate is subsequently oxidized/dehydrogenated using a catalyst like Palladium on Carbon ($\text{Pd/C}$) or elemental sulfur at high heat to yield the fully aromatic isoquinoline molecule.</li>
+                </ol>
+
+                <h4>(B) Reissert Synthesis</h4>
+                <p>The Reissert synthesis is an efficient method designed to construct <strong>indole</strong> or indole-2-carboxylic acids:</p>
+                <ol>
+                    <li><strong>Condensation:</strong> It starts by condensing $o$-nitrotoluene with diethyl oxalate in the presence of a strong base (such as sodium ethoxide) to form $o$-nitrophenylpyruvic ester.</li>
+                    <li><strong>Reductive Cyclization:</strong> The nitro group is subsequently reduced to an amine using iron powder in acetic acid ($\text{Fe/CH}_3\text{COOH}$). The resulting amino group spontaneously attacks the adjacent ketone carbonyl within the same molecule, shedding water to close the ring and deliver indole-2-carboxylic acid. Decarboxylation yields pure indole.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 4 (ii) Complete the following reaction:<br>
+            (A) $\text{Pyridine} + \text{NaNH}_2 \rightarrow A$<br>
+            (B) $\text{Pyrrole} + \text{SO}_3/\text{Pyridine} \xrightarrow{120^\circ\text{C}} B$</div>
+            <div class="solution">
+                <ul>
+                    <li><strong>(A) Product A is 2-Aminopyridine:</strong> This transformation is known as the <strong>Chichibabin reaction</strong>. Pyridine is an electron-deficient heterocycle, making it prone to nucleophilic aromatic substitution. When heated with sodium amide ($\text{NaNH}_2$), the strong nucleophile $-\text{NH}_2^-$ attacks the highly electrophilic C-2 position, producing 2-aminopyridine upon hydrolytic workup.</li>
+                    <li style="margin-top: 15px;"><strong>(B) Product B is Pyrrole-2-sulfonic acid:</strong> Pyrrole is highly sensitive to strong mineral acids, which cause it to polymerize. Therefore, mild sulfonation is achieved using a sulfur trioxide-pyridine complex ($\text{SO}_3 \cdot \text{C}_5\text{H}_5\text{N}$) at $120^\circ\text{C}$, yielding pyrrole-2-sulfonic acid via selective C-2 electrophilic substitution.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="unit3" class="unit-title">UNIT - III</div>
+
+        <div class="card">
+            <div class="question">Question 5 Explain the following:<br>
+            (A) Mutarotation<br>
+            (B) Kiliani synthesis<br>
+            (C) Wohl's degradation method</div>
+            <div class="solution">
+                <h4>(A) Mutarotation</h4>
+                <p>Mutarotation is defined as the spontaneous shift in optical rotation observed in freshly prepared solutions of optically active sugars over time, continuing until a stable equilibrium value is established.</p>
+                <ul>
+                    <li><em>Mechanism:</em> For example, pure crystalline $\alpha\text{-D-glucopyranose}$ exhibits a specific rotation of $+112.2^\circ$, whereas pure $\beta\text{-D-glucopyranose}$ shows $+18.7^\circ$. When either pure isomer is dissolved in water, the cyclic hemiacetal ring slowly opens into a trace open-chain intermediate and re-closes. This creates an equilibrium blend consisting of roughly $36\%\ \alpha\text{-anomer}$ and $64\%\ \beta\text{-anomer}$, stabilizing the final specific rotation at $+52.7^\circ$.</li>
+                </ul>
+
+                <h4>(B) Kiliani Synthesis (Kiliani-Fischer Synthesis)</h4>
+                <p>This carbohydrate method is used to <strong>lengthen</strong> the carbon skeleton of an aldose by exactly one carbon atom, transforming a lower sugar into a pair of C-2 epimeric higher sugars.</p>
+                <ol>
+                    <li><strong>Cyanohydrin Formation:</strong> The starting aldose reacts with hydrogen cyanide ($\text{HCN}$), creating a new chiral center at C-2 and generating two cyanohydrin diastereomers.</li>
+                    <li><strong>Hydrolysis & Lactonization:</strong> The nitrile groups are hydrolyzed into aldonic acids, which easily lose water to form cyclic $\gamma$-lactones.</li>
+                    <li><strong>Reduction:</strong> These isolated lactones are reduced using sodium amalgam ($\text{Na-Hg}$) under acidic conditions to yield the extended aldohexoses (e.g., converting D-arabinose into a mixture of D-glucose and D-mannose).</li>
+                </ol>
+
+                <h4>(C) Wohl's Degradation Method</h4>
+                <p>This process functions as the exact opposite of the Kiliani synthesis, systematically <strong>shortening</strong> an aldose chain by removing the C-1 carbonyl carbon.</p>
+                <ol>
+                    <li><strong>Oxime Formation:</strong> The aldose is initially reacted with hydroxylamine ($\text{NH}_2\text{OH}$) to form an aldoxime.</li>
+                    <li><strong>Acetylation & Dehydration:</strong> Heating with acetic anhydride ($\text{Ac}_2\text{O}$) and sodium acetate completely acetylates the free hydroxyl groups while simultaneously dehydrating the oxime into a nitrile, forming an acetylated aldononitrile.</li>
+                    <li><strong>Elimination:</strong> Treatment with ammoniacal silver oxide (or sodium methoxide) strips away the protective acetyl groups and drives off $\text{HCN}$, yielding a new aldose containing one less carbon atom (e.g., degrading D-glucose into D-arabinose).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 6 (i) Differentiate between the structure of Starch and Cellulose.</div>
+            <div class="solution">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Structural Characteristic</th>
+                                <th>Starch</th>
+                                <th>Cellulose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Monomer Unit</strong></td>
+                                <td>$\alpha\text{-D-Glucose}$</td>
+                                <td>$\beta\text{-D-Glucose}$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Glycosidic Linkages</strong></td>
+                                <td>$\alpha(1 \rightarrow 4)$ and $\alpha(1 \rightarrow 6)$</td>
+                                <td>Exclusively $\beta(1 \rightarrow 4)$</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Components</strong></td>
+                                <td>Composed of two distinct fractions: **Amylose** (unbranched coil) and **Amylopectin** (highly branched).</td>
+                                <td>Consists of a singular, strictly linear, unbranched polymer chain.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3D Shape & Bonding</strong></td>
+                                <td>Folds into a hollow helical, coiled structure optimized for compact storage.</td>
+                                <td>Forms extended linear ribbons stabilized by intense intermolecular hydrogen bonding.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Biological Role</strong></td>
+                                <td>Serves as the primary energy storage polysaccharide in plants.</td>
+                                <td>Acts as the structural component forming plant cell walls.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="image-placeholder">
+
+[Image of comparison of Amylose and Cellulose structures]
+</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 6 (ii) Discuss the structure of Lactose.</div>
+            <div class="solution">
+                <p>Lactose ($\text{C}_{12}\text{H}_{22}\text{O}_{11}$) is a disaccharide commonly referred to as milk sugar:</p>
+                <ul>
+                    <li><strong>Monomeric Composition:</strong> Hydrolysis reveals that lactose is composed of one molecule of <strong>$\beta\text{-D-galactose}$</strong> and one molecule of <strong>$\text{D-glucose}$</strong>.</li>
+                    <li><strong>Glycosidic Linkage:</strong> The two monosaccharide units are linked together covalently by a <strong>$\beta(1 \rightarrow 4)$ glycosidic bond</strong>. This means the anomeric C-1 carbon of the $\beta\text{-D-galactose}$ unit links directly to the C-4 carbon of the neighboring $\text{D-glucose}$ unit.</li>
+                    <li><strong>Reducing Properties:</strong> Because the anomeric C-1 carbon of the glucose component is not engaged in the glycosidic bond, its hemiacetal ring can open up in solution. Consequently, lactose is a reducing sugar: it forms an osazone, exhibits mutarotation, and reduces Tollen's and Fehling's reagents.</li>
+                </ul>
+                <div class="image-placeholder"></div>
+            </div>
+        </div>
+
+        <div id="unit4" class="unit-title">UNIT - IV</div>
+
+        <div class="card">
+            <div class="question">Question 7 Write short notes on the following:<br>
+            (A) Zwitter ion structure<br>
+            (B) Essential Amino acids<br>
+            (C) Tertiary structure of Proteins</div>
+            <div class="solution">
+                <h4>(A) Zwitter Ion Structure</h4>
+                <p>Amino acids carry an acidic carboxylic acid group ($-\text{COOH}$) alongside a basic amino group ($-\text{NH}_2$) on the same molecule. In solid form or within aqueous solutions, an internal acid-base neutralization takes place: the $-\text{COOH}$ group yields its proton to the $-\text{NH}_2$ group.</p>
+                <p>This generates a dipolar, overall neutral ion containing separate positive and negative formal charges, known as a <strong>Zwitterion</strong>.</p>
+                <p>$$\text{R-CH(NH}_2)\text{COOH} \rightleftharpoons \text{R-CH(NH}_3^+)\text{COO}^-$$</p>
+                <p>Zwitterionic character gives amino acids salt-like physical traits, including high water solubility, high melting points, and minimal migration in an electric field at their specific <strong>isoelectric point</strong> ($pI$).</p>
+                <div class="image-placeholder"></div>
+
+                <h4>(B) Essential Amino Acids</h4>
+                <p>Essential amino acids are those specific amino acids that the human body cannot synthesize on its own from metabolic intermediates at an adequate rate. Therefore, they <strong>must be supplied via daily dietary intake</strong>. Out of the 20 standard amino acids, 10 are classified as essential:</p>
+                <ul>
+                    <li>Phenylalanine, Valine, Threonine, Tryptophan, Isoleucine, Methionine, Histidine, Arginine, Leucine, and Lysine <em>(often remembered via the mnemonic <strong>PVT TIM HALL</strong>)</em>.</li>
+                </ul>
+
+                <h4>(C) Tertiary Structure of Proteins</h4>
+                <p>The tertiary structure describes the full, long-range three-dimensional folding and spatial organization of a single polypeptide chain. It dictates how secondary motifs like $\alpha$-helices and $\beta$-sheets twist and pack closely together to form functional, compact globular shapes. This structural tier is locked in place by diverse interactions between amino acid $R$-group side chains:</p>
+                <ol>
+                    <li><strong>Hydrogen Bonds:</strong> Between polar side chains (e.g., Serine and Threonine).</li>
+                    <li><strong>Hydrophobic Interactions:</strong> Non-polar side chains cluster together inside the core to hide from surrounding water.</li>
+                    <li><strong>Electrostatic / Ionic Bonds (Salt Bridges):</strong> Attractive forces between fully charged groups like $-\text{COO}^-$ and $-\text{NH}_3^+$.</li>
+                    <li><strong>Disulfide Bonds:</strong> Covalent $-\text{S}-\text{S}-$ linkages formed via oxidation of neighboring cysteine residues.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 8 (i) Explain the Solid-phase Peptide synthesis.</div>
+            <div class="solution">
+                <p>Developed by R.B. Merrifield, <strong>Solid-Phase Peptide Synthesis (SPPS)</strong> is a technique used to assemble peptide chains while they remain covalently anchored to an insoluble solid support, such as chloromethylated polystyrene resin beads:</p>
+                <ol>
+                    <li><strong>Anchoring:</strong> The first amino acid (with its amino group chemically protected, typically by a Boc or Fmoc group) is attached at its carboxyl end to the resin bead.</li>
+                    <li><strong>Deprotection:</strong> The protecting group (Boc or Fmoc) is selectively stripped away using a chemical agent (like TFA or piperidine) to expose a free $\alpha$-amino terminal.</li>
+                    <li><strong>Coupling:</strong> The next protected amino acid is added along with a coupling promoter like <strong>DCC</strong> (Dicyclohexylcarbodiimide). DCC activates the incoming carboxyl group, driving the clean formation of a new peptide bond.</li>
+                    <li><strong>Washing:</strong> Because the growing peptide is anchored to the solid bead, any excess reagents, unreacted monomers, or soluble byproducts are quickly and cleanly filtered away.</li>
+                    <li><strong>Cleavage:</strong> Steps 2–4 are repeated in sequence until the full target peptide chain is built. Finally, a strong chemical treatment (such as anhydrous $\text{HF}$) is applied to cleave the finished peptide from the resin bead.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 8 (ii) What are the Biological functions of Nucleic acids?</div>
+            <div class="solution">
+                <p>Nucleic acids ($\text{DNA}$ and $\text{RNA}$) direct and manage the fundamental biochemistry of life:</p>
+                <ul>
+                    <li><strong>Genetic Information Storage:</strong> $\text{DNA}$ serves as the permanent molecular archive, encoding the entire hereditary manual needed to construct, maintain, and reproduce an organism.</li>
+                    <li><strong>Replication & Transmission:</strong> Thanks to strict complementary base pairing, $\text{DNA}$ can make exact duplicates of its sequence during cell division, ensuring flawless transmission of genetic blueprints from parent to offspring cells.</li>
+                    <li><strong>Protein Expression (Transcription and Translation):</strong> $\text{RNA}$ molecules read and execute the instructions sealed inside $\text{DNA}$:
+                        <ul>
+                            <li><strong>mRNA</strong> transcribes the genetic blueprints from $\text{DNA}$.</li>
+                            <li><strong>tRNA</strong> carries the correct amino acid building blocks to the assembly site.</li>
+                            <li><strong>rRNA</strong> builds the ribosome factory itself to synthesize functional proteins.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 8 (iii) Discuss the Peptide bond.</div>
+            <div class="solution">
+                <p>A peptide bond is an amide covalent linkage established when the $\alpha$-carboxyl group ($-\text{COOH}$) of one amino acid condenses with the $\alpha$-amino group ($-\text{NH}_2$) of another, accompanied by the loss of a water molecule:</p>
+                <p>$$\text{-COOH} + \text{NH}_2\text{-} \rightarrow \text{-CONH-} + \text{H}_2\text{O}$$</p>
+                <ul>
+                    <li><strong>Partial Double Bond Character:</strong> Due to resonance delocalization of nitrogen's lone pair into the carbonyl oxygen, the $\text{C}-\text{N}$ link possesses nearly $40\%$ double-bond character.</li>
+                    <li><strong>Planar and Rigid:</strong> This partial double bond restricts free rotation around the $\text{C}-\text{N}$ axis, forcing the six atoms of the peptide backbone unit to reside within a rigid, flat plane.</li>
+                    <li><strong>Trans Orientation:</strong> To minimize steric crowding between bulky side-chain $R$-groups, the consecutive amino acid residues are almost exclusively arranged in a stable <em>trans</em> configuration across the peptide bond.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="unit5" class="unit-title">UNIT - V</div>
+
+        <div class="card">
+            <div class="question">Question 9 (i) Write three methods for the preparation of Ethane Thiol.</div>
+            <div class="solution">
+                <p>Ethane thiol ($\text{C}_2\text{H}_5\text{SH}$) can be synthesized using these three industrial and laboratory pathways:</p>
+                <ol>
+                    <li><strong>From Ethyl Halides (Nucleophilic Substitution):</strong> Heating ethyl bromide or ethyl chloride with an alcoholic solution of sodium hydrosulfide ($\text{NaSH}$) undergoes a straightforward $\text{S}_\text{N}2$ substitution:
+                        <p>$$\text{C}_2\text{H}_5\text{Br} + \text{NaSH} \rightarrow \text{C}_2\text{H}_5\text{SH} + \text{NaBr}$$</p>
+                    </li>
+                    <li><strong>From Ethanol (Vapor-Phase Reaction):</strong> Passing a gaseous mixture of ethanol and hydrogen sulfide ($\text{H}_2\text{S}$) over a heated thorium oxide ($\text{ThO}_2$) or alumina ($\text{Al}_2\text{O}_3$) catalyst bed at $300^\circ\text{C}-350^\circ\text{C}$ replaces the hydroxyl group:
+                        <p>$$\text{C}_2\text{H}_5\text{OH} + \text{H}_2\text{S} \xrightarrow{\text{ThO}_2, \Delta} \text{C}_2\text{H}_5\text{SH} + \text{H}_2\text{O}$$</p>
+                    </li>
+                    <li><strong>Via Grignard Reagent:</strong> Reacting ethyl magnesium bromide ($\text{C}_2\text{H}_5\text{MgBr}$) with elemental sulfur inserts sulfur into the magnesium bond. Subsequent acidic hydrolysis yields ethane thiol:
+                        <p>$$\text{C}_2\text{H}_5\text{MgBr} + \text{S} \rightarrow \text{C}_2\text{H}_5\text{-S-MgBr} \xrightarrow{\text{H}_3\text{O}^+} \text{C}_2\text{H}_5\text{SH} + \text{Mg(OH)Br}$$</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 9 (ii) How will you synthesize?<br>
+            (A) Sulphamethoxazole<br>
+            (B) Sulphacetamide</div>
+            <div class="solution">
+                <h4>(A) Sulphamethoxazole</h4>
+                <ol>
+                    <li><strong>Coupling Reaction:</strong> The synthesis is achieved by reacting <strong>p-acetamidobenzenesulfonyl chloride</strong> with <strong>3-amino-5-methylisoxazole</strong> in an anhydrous organic solvent containing a base like pyridine to absorb liberated $\text{HCl}$.</li>
+                    <li><strong>Selective Hydrolysis:</strong> This yields an acetamido intermediate. Treating this intermediate with aqueous sodium hydroxide selectively hydrolyzes the protective acetyl group on the aromatic amine without harming the sulfonamide linkage, delivering pure Sulphamethoxazole.</li>
+                </ol>
+
+                <h4>(B) Sulphacetamide</h4>
+                <ol>
+                    <li><strong>Acetylation:</strong> The starting material, <strong>Sulfanilamide</strong> ($\text{p-NH}_2-\text{C}_6\text{H}_4-\text{SO}_2\text{NH}_2$), is reacted with acetic anhydride ($\text{Ac}_2\text{O}$) in the presence of pyridine. This completely acetylates both nitrogen sites, yielding a diacetylated derivative.</li>
+                    <li><strong>Partial Hydrolysis:</strong> The crude product is subjected to mild, controlled alkaline hydrolysis. The acetyl group bound to the highly nucleophilic aromatic ring nitrogen drops off easily, while the acetyl group bound to the sulfonamide nitrogen remains intact, isolating Sulphacetamide ($\text{p-NH}_2-\text{C}_6\text{H}_4-\text{SO}_2\text{NHCOCH}_3$).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 10 (i) What are the differences between addition Polymerisation and Condensation polymerisation?</div>
+            <div class="solution">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comparison Feature</th>
+                                <th>Addition Polymerisation</th>
+                                <th>Condensation Polymerisation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Reaction Mechanism</strong></td>
+                                <td>Follows a <strong>chain-growth</strong> mechanism (free radical, cationic, or anionic).</td>
+                                <td>Follows a slower <strong>step-growth</strong> mechanism.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monomer Criteria</strong></td>
+                                <td>Monomers must possess unsaturated multiple bonds ($\text{C}=\text{C}$ or $\text{C}\equiv\text{C}$).</td>
+                                <td>Monomers must possess two or more reactive functional groups ($-\text{COOH}, -\text{OH}, -\text{NH}_2$).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elimination Products</strong></td>
+                                <td>No secondary molecules are shed; the polymer is the sole product.</td>
+                                <td>Small molecules like $\text{H}_2\text{O}$, $\text{HCl}$, or $\text{NH}_3$ are expelled at each step.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mass Composition</strong></td>
+                                <td>The molecular formula of the polymer repeat unit is identical to the monomer.</td>
+                                <td>The molecular formula of the polymer repeat unit differs from the starting monomers.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Common Examples</strong></td>
+                                <td>Polyethylene, Polyvinyl Chloride (PVC), Polystyrene.</td>
+                                <td>Nylon-6,6, Dacron (Polyester), Bakelite.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="question">Question 10 (ii) Write short notes on the following:<br>
+            (A) Phenol-Formaldehyde resin<br>
+            (B) Phenolphthalein</div>
+            <div class="solution">
+                <h4>(A) Phenol-Formaldehyde Resin (Bakelite)</h4>
+                <p>Bakelite is a rigid, cross-linked thermosetting polymer produced via the step-growth condensation of phenol with formaldehyde, driven by either an acidic or basic catalyst:</p>
+                <ul>
+                    <li><strong>Novolac Intermediate:</strong> Under acidic conditions with excess phenol, the reaction links components via methylene ($-\text{CH}_2-$) bridges to create a linear polymer called Novolac, primarily used in protective coatings and paints.</li>
+                    <li><strong>Cross-linking into Bakelite:</strong> When Novolac is heated further with additional formaldehyde under basic conditions, the polymer chains develop extensive cross-links across three dimensions. This yields a highly hard, infusible, heat-resistant, and scratch-resistant material. It serves as an electrical insulator for manufacturing switches, plugs, and heat-resistant kitchen handles.</li>
+                </ul>
+
+                <h4>(B) Phenolphthalein</h4>
+                <p>Phenolphthalein is a well-known organic compound used extensively as an acid-base indicator in volumetric titrations:</p>
+                <ul>
+                    <li><strong>Synthesis:</strong> It is synthesized by heating one equivalent of <strong>phthalic anhydride</strong> with two equivalents of <strong>phenol</strong> at high temperatures, using concentrated sulfuric acid ($\text{H}_2\text{SO}_4$) as a dehydrating agent:</li>
+                </ul>
+                <p>$$\text{Phthalic Anhydride} + 2\text{ Phenol} \xrightarrow{\text{conc. H}_2\text{SO}_4, \Delta} \text{Phenolphthalein} + \text{H}_2\text{O}$$</p>
+                <ul>
+                    <li><strong>Indicator Action:</strong> Its utility stems from its pH-dependent structural rearrangement:
+                        <ul>
+                            <li><strong>Acidic/Neutral Medium ($\text{pH} < 8.2$):</strong> It adopts a neutral lactone structure that is completely <strong>colorless</strong>.</li>
+                            <li><strong>Alkaline Medium ($\text{pH } 8.2 - 10.0$):</strong> Hydroxide ions deprotonate the phenolic groups, opening the central lactone ring into a highly conjugated quinonoid dianion structure. This extended conjugation alters light absorption, shifting the solution to an <strong>intense pink/magenta</strong> color.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
