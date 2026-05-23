@@ -1,89 +1,1374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B.Sc.-B.Ed. Part-III Chemistry Paper-III (Physical Chemistry) 2025 - Detailed Solutions</title>
-    <!-- Updated MathJax configuration for better compatibility -->
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
-        h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px; }
-        h2 { color: #e74c3c; margin-top: 40px; border-bottom: 1px solid #bdc3c7; }
-        .question { font-weight: bold; font-size: 1.1em; margin-top: 20px; color: #2c3e50; background-color: #e9ecef; padding: 15px; border-radius: 5px; }
-        .solution { background-color: #ffffff; padding: 20px; margin-top: 10px; border-left: 4px solid #e74c3c; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-radius: 0 5px 5px 0; }
-        .marks { float: right; color: #2980b9; font-weight: bold; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        th, td { border: 1px solid #dee2e6; padding: 10px; text-align: left; }
-        th { background-color: #f1f3f5; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Chemistry – 355-III | Detailed Solutions 2025</title>
+
+<!-- MathJax for LaTeX rendering -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    packages: {'[+]': ['ams']}
+  },
+  options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+
+<style>
+  /* ── Global Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #f7f6f2;
+    --surface:   #ffffff;
+    --border:    #e2ddd6;
+    --accent:    #1a4fa0;
+    --accent2:   #c8410a;
+    --text:      #1c1c1e;
+    --muted:     #6b6b6b;
+    --highlight: #eef3fc;
+    --formula:   #f0f7ee;
+    --warn:      #fff8e1;
+    --radius:    10px;
+    --shadow:    0 2px 12px rgba(0,0,0,0.07);
+    --font:      'Arial', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 28px 20px 22px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 16px rgba(0,0,0,0.18);
+  }
+  header h1 { font-size: clamp(16px, 4vw, 22px); letter-spacing: 0.3px; font-weight: 700; }
+  header p  { font-size: 12px; margin-top: 4px; opacity: 0.82; }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 20px auto;
+    padding: 18px 22px;
+    max-width: 760px;
+    box-shadow: var(--shadow);
+  }
+  .toc h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; }
+  .toc ol { padding-left: 18px; }
+  .toc li { margin: 4px 0; }
+  .toc a  { color: var(--accent); text-decoration: none; font-size: 13px; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── Layout ── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 14px 60px;
+  }
+
+  /* ── Unit Headers ── */
+  .unit-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #2563c4 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    margin: 32px 0 16px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Question Card ── */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .q-card-header {
+    background: var(--highlight);
+    border-bottom: 2px solid var(--accent);
+    padding: 12px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .q-num {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    min-width: 36px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .q-text { font-size: 14px; font-weight: 600; color: var(--accent); line-height: 1.5; }
+  .q-marks { margin-left: auto; font-size: 12px; background: var(--accent2); color: #fff; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+
+  .q-body { padding: 18px 18px; }
+
+  /* ── Sub-parts ── */
+  .part {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .part:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .part-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent2);
+    background: #fff0eb;
+    border: 1px solid #f5c9b5;
+    border-radius: 4px;
+    padding: 1px 8px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .q-statement {
+    background: var(--warn);
+    border-left: 3px solid #f5a623;
+    padding: 9px 13px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: #5a4000;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  /* ── Answer sections ── */
+  .ans-section { margin-bottom: 14px; }
+  .ans-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 8px;
+    margin: 14px 0 6px;
+  }
+
+  p { margin-bottom: 10px; font-size: 14px; }
+
+  /* ── Formula Boxes ── */
+  .formula-box {
+    background: var(--formula);
+    border: 1px solid #b8ddb0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .derivation-box {
+    background: #f5f5ff;
+    border: 1px solid #c5c5f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+  }
+
+  .result-box {
+    background: #e8f5e9;
+    border: 1.5px solid #66bb6a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    text-align: center;
+  }
+  .result-box strong { color: #2e7d32; font-size: 14px; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--highlight); }
+
+  /* ── Info Boxes ── */
+  .info-box {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: 13.5px;
+  }
+  .important-box {
+    background: #fce4ec;
+    border-left: 4px solid #c62828;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: 13.5px;
+  }
+
+  /* ── Lists ── */
+  ul, ol { padding-left: 20px; margin: 8px 0; }
+  li { margin: 5px 0; font-size: 14px; }
+
+  /* ── Step-by-step calculation ── */
+  .steps { counter-reset: step; }
+  .step {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    counter-increment: step;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-content { font-size: 14px; flex: 1; }
+
+  /* ── Diagram placeholder ── */
+  .diagram {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 12px 0;
+  }
+
+  /* ── Back to top ── */
+  .back-top {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 6px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 520px) {
+    header h1 { font-size: 15px; }
+    .q-card-header { flex-wrap: wrap; }
+    .q-marks { margin-left: 0; }
+    .formula-box, .derivation-box { font-size: 13px; }
+    body { font-size: 14px; }
+  }
+</style>
 </head>
 <body>
 
-    <h1>B.Sc.-B.Ed. Four Year (Part - III) EXAMINATION - 2025<br>CHEMISTRY - III (Physical Chemistry)<br>Detailed Solutions</h1>
+<header>
+  <h1>Physical Chemistry – Paper CH-303 III &nbsp;|&nbsp; 355-III &nbsp;|&nbsp; 2025</h1>
+  <p>B.Sc.–B.Ed. Part III Examination &nbsp;·&nbsp; Detailed Solutions &nbsp;·&nbsp; Max Marks: 34 &nbsp;·&nbsp; Time: 3 Hours</p>
+</header>
 
-    <h2>UNIT - I</h2>
-    <div class="question">
-        1. (a) Derive de-Broglie's Equation. How does this equation explain the dual nature of wave? <span class="marks">[2½+1½]</span>
-    </div>
-    <div class="solution">
-        <p><strong>Derivation:</strong> From Planck's theory, $E = h\nu = hc/\lambda$. From Einstein, $E = mc^2$. Equating them: $mc^2 = hc/\lambda$, which simplifies to $\lambda = h/mc$. Replacing $c$ with $v$ for a material particle, we get $\lambda = h/mv = h/p$. This equation relates the wave nature ($\lambda$) to the particle nature ($p$), demonstrating the dual nature of matter.</p>
+<!-- TOC -->
+<div class="toc" id="top">
+  <h2>📋 Table of Contents</h2>
+  <ol>
+    <li><a href="#unit1">Unit I – Quantum Mechanics</a>
+      <ol>
+        <li><a href="#q1">Q1 – de-Broglie Equation & Dual Nature of Wave</a></li>
+        <li><a href="#q2">Q2 – Heisenberg's Principle, Hamiltonian Operator, Postulates of QM</a></li>
+      </ol>
+    </li>
+    <li><a href="#unit2">Unit II – Chemical Bonding (MOT & VBT)</a>
+      <ol>
+        <li><a href="#q3">Q3 – Molecular Orbital Theory (H₂ molecule)</a></li>
+        <li><a href="#q4">Q4 – Hybrid Orbitals, Bonding/Antibonding, MOT vs VBT</a></li>
+      </ol>
+    </li>
+    <li><a href="#unit3">Unit III – Spectroscopy</a>
+      <ol>
+        <li><a href="#q5">Q5 – Isotope Effect, Pure Vibrational Spectrum, Selection Rules</a></li>
+        <li><a href="#q6">Q6 – Simple Harmonic Oscillator; Rotational Energy of Diatomic Molecule</a></li>
+      </ol>
+    </li>
+    <li><a href="#unit4">Unit IV – Photochemistry & Magnetism</a>
+      <ol>
+        <li><a href="#q7">Q7 – Jablonski Diagram; Radiative & Non-Radiative Processes</a></li>
+        <li><a href="#q8">Q8 – Grothus-Drapper Law, Photosensitized Reactions, Diamagnetism</a></li>
+      </ol>
+    </li>
+    <li><a href="#unit5">Unit V – Colligative Properties</a>
+      <ol>
+        <li><a href="#q9">Q9 – Depression of Freezing Point, Abnormal Molecular Mass; Numerical</a></li>
+        <li><a href="#q10">Q10 – Osmotic Pressure; Laws; Numerical (5% Urea)</a></li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     UNIT I
+══════════════════════════════════════════ -->
+<div class="unit-header" id="unit1">📐 UNIT – I &nbsp;|&nbsp; Quantum Mechanics</div>
+
+<!-- Q1 -->
+<div class="q-card" id="q1">
+  <div class="q-card-header">
+    <div class="q-num">Q1</div>
+    <div class="q-text">Derive de-Broglie's Equation. How does this equation explain the dual nature of wave? Also calculate the velocity and energy of an electron if the de-Broglie wavelength is 10⁻¹⁰ m.</div>
+    <div class="q-marks">2½+1½+2½</div>
+  </div>
+  <div class="q-body">
+
+    <!-- Part a -->
+    <div class="part">
+      <span class="part-label">Part (a) — Derivation of de-Broglie's Equation</span>
+      <div class="q-statement">Derive de-Broglie's Equation. How does this equation explain the dual nature of wave?</div>
+
+      <div class="ans-heading">📌 Background & Concept</div>
+      <p>In 1924, French physicist <strong>Louis de-Broglie</strong> proposed that every moving material particle (not just photons) has a wave associated with it. He based this on the symmetry of nature — if light (which is a wave) can behave as a particle, then particles should also show wave nature.</p>
+
+      <div class="ans-heading">🔬 Derivation</div>
+      <p><strong>Step 1:</strong> From Einstein's mass-energy equivalence and Planck's quantum theory:</p>
+      <div class="formula-box">
+        $$E = mc^2 \quad \text{(Einstein)} \qquad \text{and} \qquad E = h\nu \quad \text{(Planck)}$$
+      </div>
+
+      <p><strong>Step 2:</strong> Equating both expressions:</p>
+      <div class="formula-box">
+        $$mc^2 = h\nu$$
+      </div>
+
+      <p><strong>Step 3:</strong> Since $\nu = \dfrac{c}{\lambda}$ (frequency × wavelength = speed of light):</p>
+      <div class="formula-box">
+        $$mc^2 = h \cdot \frac{c}{\lambda} \implies mc = \frac{h}{\lambda}$$
+      </div>
+
+      <p><strong>Step 4:</strong> Here $mc = p$ (momentum of the photon). For a material particle moving with velocity $v$, momentum $p = mv$. Replacing $c$ with $v$:</p>
+      <div class="result-box">
+        <strong>de-Broglie Equation:</strong><br>
+        $$\boxed{\lambda = \frac{h}{mv} = \frac{h}{p}}$$
+        <br>
+        where $h = 6.626 \times 10^{-34}$ J·s (Planck's constant), $m$ = mass, $v$ = velocity, $p$ = momentum
+      </div>
+
+      <div class="ans-heading">🌊 Explanation of Dual Nature</div>
+      <p>The de-Broglie equation $\lambda = h/mv$ contains:</p>
+      <ul>
+        <li><strong>$\lambda$ (wavelength)</strong> — a wave property</li>
+        <li><strong>$m$ and $v$ (mass and velocity)</strong> — particle properties</li>
+      </ul>
+      <p>This means every moving particle simultaneously possesses <em>both</em> wave nature and particle nature. This is called <strong>wave-particle duality</strong>.</p>
+      <div class="info-box">
+        <strong>Key Point:</strong> The wavelength is significant only for very small particles like electrons (mass ≈ 9.1×10⁻³¹ kg). For macroscopic objects (cricket balls, cars), the wavelength is so tiny that wave nature is undetectable.
+      </div>
     </div>
 
-    <div class="question">
-        1. (b) Calculate the velocity and energy of an electron if the de-Broglie wavelength is $10^{-10}m$. <span class="marks">[2½]</span>
-    </div>
-    <div class="solution">
-        <p><strong>Calculation:</strong> Using $v = h/(m\lambda)$, where $h = 6.626 \times 10^{-34} J\cdot s$ and $m = 9.11 \times 10^{-31} kg$:<br>
-        $v = 6.626 \times 10^{-34} / (9.11 \times 10^{-31} \times 10^{-10}) = 7.273 \times 10^6 m/s$.<br>
-        Energy $E = 1/2 mv^2 = 0.5 \times 9.11 \times 10^{-31} \times (7.273 \times 10^6)^2 \approx 2.41 \times 10^{-17} J$.</p>
+    <!-- Part b -->
+    <div class="part">
+      <span class="part-label">Part (b) — Numerical: λ = 10⁻¹⁰ m</span>
+      <div class="q-statement">Calculate the velocity and energy of an electron if the de-Broglie wavelength is 10⁻¹⁰ m.</div>
+
+      <div class="ans-heading">📋 Given Data</div>
+      <ul>
+        <li>$\lambda = 10^{-10}$ m</li>
+        <li>Mass of electron, $m = 9.11 \times 10^{-31}$ kg</li>
+        <li>Planck's constant, $h = 6.626 \times 10^{-34}$ J·s</li>
+      </ul>
+
+      <div class="ans-heading">🧮 Step 1 — Calculate Velocity</div>
+      <p>From de-Broglie equation:</p>
+      <div class="formula-box">
+        $$v = \frac{h}{m\lambda} = \frac{6.626 \times 10^{-34}}{9.11 \times 10^{-31} \times 10^{-10}}$$
+      </div>
+      <div class="formula-box">
+        $$v = \frac{6.626 \times 10^{-34}}{9.11 \times 10^{-41}} = \frac{6.626}{9.11} \times 10^{7}$$
+      </div>
+      <div class="result-box">
+        <strong>$$v \approx 7.27 \times 10^{6} \text{ m/s}$$</strong>
+      </div>
+
+      <div class="ans-heading">🧮 Step 2 — Calculate Kinetic Energy</div>
+      <div class="formula-box">
+        $$E = \frac{1}{2}mv^2 = \frac{1}{2} \times 9.11 \times 10^{-31} \times (7.27 \times 10^{6})^2$$
+      </div>
+      <div class="formula-box">
+        $$E = \frac{1}{2} \times 9.11 \times 10^{-31} \times 5.285 \times 10^{13}$$
+      </div>
+      <div class="result-box">
+        <strong>$$E \approx 2.41 \times 10^{-17} \text{ J} \approx 150 \text{ eV}$$</strong>
+        <br><small>(1 eV = 1.6 × 10⁻¹⁹ J)</small>
+      </div>
     </div>
 
-    <div class="question">
-        2. Write short notes on: (i) Heisenberg's uncertainty principle (ii) Hamiltonian operator (iii) Postulates of Quantum Mechanics. <span class="marks">[7]</span>
-    </div>
-    <div class="solution">
-        <p>(i) <strong>Heisenberg's Principle:</strong> $\Delta x \cdot \Delta p \geq h/4\pi$. It is impossible to know both position and momentum of a particle simultaneously with perfect precision.</p>
-        <p>(ii) <strong>Hamiltonian Operator:</strong> Represents total energy; $\hat{H} = \hat{T} + \hat{V}$. It is used in the Schrödinger equation $\hat{H}\psi = E\psi$.</p>
-        <p>(iii) <strong>Postulates:</strong> Define the state of a system via wave function $\psi$, assign linear operators to observables, and dictate that measurement yields eigenvalues.</p>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="q2">
+  <div class="q-card-header">
+    <div class="q-num">Q2</div>
+    <div class="q-text">Write short notes on: (i) Heisenberg's Uncertainty Principle (ii) Hamiltonian Operator (iii) Postulates of Quantum Mechanics</div>
+    <div class="q-marks">2½+2+2½</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (i) — Heisenberg's Uncertainty Principle</span>
+
+      <div class="ans-heading">📌 Statement</div>
+      <p>Proposed by Werner Heisenberg in 1927: <em>"It is impossible to simultaneously determine the exact position and exact momentum (velocity) of a microscopic particle with perfect accuracy."</em></p>
+
+      <div class="formula-box">
+        $$\Delta x \cdot \Delta p \geq \frac{h}{4\pi}$$
+      </div>
+      <p>where $\Delta x$ = uncertainty in position, $\Delta p$ = uncertainty in momentum, $h$ = Planck's constant.</p>
+
+      <div class="ans-heading">💡 Explanation</div>
+      <ul>
+        <li>The more precisely we know the <strong>position</strong> of a particle ($\Delta x$ small), the less precisely we can know its <strong>momentum</strong> ($\Delta p$ large), and vice versa.</li>
+        <li>This is not a limitation of our instruments — it is a <em>fundamental property of nature</em>.</li>
+        <li>For a particle at rest ($\Delta p = 0$), the position would be completely unknown ($\Delta x = \infty$).</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>Also applies to Energy–Time:</strong> $\Delta E \cdot \Delta t \geq \dfrac{h}{4\pi}$
+      </div>
+
+      <div class="ans-heading">🌟 Significance</div>
+      <p>This principle explains why the concept of fixed orbits (Bohr's model) is not valid for electrons. Instead of orbits, we use <strong>orbitals</strong> (probability regions).</p>
     </div>
 
-    <h2>UNIT - II</h2>
-    <div class="question">
-        3. Explain Molecular Orbital Theory for $H_2$. Discuss its superiority over VBT. <span class="marks">[7]</span>
-    </div>
-    <div class="solution">
-        <p>In MOT, $1s$ orbitals of two H atoms overlap to form a bonding ($\sigma$) and an antibonding ($\sigma^*$) orbital. The electrons occupy the lower-energy $\sigma$ orbital. MOT is superior because it successfully predicts the paramagnetic nature of $O_2$ and explains molecular stability using bond orders, which VBT fails to address.</p>
+    <div class="part">
+      <span class="part-label">Part (ii) — Hamiltonian Operator</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p>The <strong>Hamiltonian operator</strong> ($\hat{H}$) is a mathematical operator in quantum mechanics that represents the <em>total energy</em> (kinetic + potential) of a system.</p>
+
+      <div class="formula-box">
+        $$\hat{H} = \hat{T} + \hat{V}$$
+      </div>
+      <p>where $\hat{T}$ = kinetic energy operator and $\hat{V}$ = potential energy operator.</p>
+
+      <div class="ans-heading">📐 Mathematical Form</div>
+      <p>The kinetic energy operator in one dimension:</p>
+      <div class="formula-box">
+        $$\hat{T} = -\frac{\hbar^2}{2m} \nabla^2 \qquad \text{where } \hbar = \frac{h}{2\pi}$$
+      </div>
+      <p>In 3D, the Laplacian operator:</p>
+      <div class="formula-box">
+        $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
+      </div>
+
+      <p>So the complete Hamiltonian:</p>
+      <div class="formula-box">
+        $$\hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(x,y,z)$$
+      </div>
+
+      <div class="ans-heading">🔑 Role in Schrödinger Equation</div>
+      <p>The time-independent Schrödinger equation is:</p>
+      <div class="formula-box">
+        $$\hat{H}\psi = E\psi$$
+      </div>
+      <p>When the Hamiltonian operator acts on the wavefunction $\psi$, it gives back the energy eigenvalue $E$ multiplied by $\psi$. This is an <strong>eigenvalue equation</strong>.</p>
     </div>
 
-    <h2>UNIT - III</h2>
-    <div class="question">
-        6. (b) Prove $E_j = \overline{B}J(J+1)cm^{-1}$. Give selection rules. <span class="marks">[4]</span>
-    </div>
-    <div class="solution">
-        <p>Starting from $E_J = h^2 / (8\pi^2 I) \cdot J(J+1)$ Joules, we convert to $cm^{-1}$ by dividing by $hc$:<br>
-        $E_J = h / (8\pi^2 Ic) \cdot J(J+1)$.<br>
-        Defining $\overline{B} = h / (8\pi^2 Ic)$, we get $E_J = \overline{B}J(J+1) cm^{-1}$. Selection rule: $\Delta J = \pm 1$.</p>
+    <div class="part">
+      <span class="part-label">Part (iii) — Postulates of Quantum Mechanics</span>
+
+      <div class="ans-heading">📌 The Five Key Postulates</div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Postulate 1 – Wave Function:</strong><br>
+        The state of a quantum mechanical system is completely described by a wave function $\psi(x,y,z,t)$. The wave function must be single-valued, continuous, finite, and normalizable.
+        $$\int_{-\infty}^{+\infty} |\psi|^2 \, d\tau = 1$$
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Postulate 2 – Physical Observables as Operators:</strong><br>
+        Every physical observable (position, momentum, energy) corresponds to a Hermitian operator. E.g., momentum operator: $\hat{p} = -i\hbar \dfrac{\partial}{\partial x}$
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Postulate 3 – Eigenvalue Equation:</strong><br>
+        A measurement of an observable $A$ gives values that are eigenvalues of the operator $\hat{A}$: $\hat{A}\psi = a\psi$, where $a$ is the measured value.
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Postulate 4 – Schrödinger Wave Equation:</strong><br>
+        The time evolution of $\psi$ is governed by:<br>
+        $\hat{H}\psi = E\psi$ (time-independent)<br>
+        $\hat{H}\psi = i\hbar \dfrac{\partial \psi}{\partial t}$ (time-dependent)
+      </div>
+
+      <div class="info-box">
+        <strong>Postulate 5 – Probability Interpretation (Born):</strong><br>
+        $|\psi|^2 d\tau$ gives the probability of finding the particle in volume element $d\tau$. This is the <em>probability density</em>.
+      </div>
     </div>
 
-    <h2>UNIT - V</h2>
-    <div class="question">
-        9. (b) Calculate molar mass of a substance if 10g in 250ml water has $\pi = 600 mm Hg$ at 15°C. <span class="marks">[4]</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     UNIT II
+══════════════════════════════════════════ -->
+<div class="unit-header" id="unit2">⚛️ UNIT – II &nbsp;|&nbsp; Chemical Bonding — MOT & VBT</div>
+
+<!-- Q3 -->
+<div class="q-card" id="q3">
+  <div class="q-card-header">
+    <div class="q-num">Q3</div>
+    <div class="q-text">Taking the example of hydrogen molecule, explain Molecular Orbital Theory. Compare MOT with VBT and discuss which theory is superior.</div>
+    <div class="q-marks">3+2+2</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Molecular Orbital Theory (MOT) — H₂ Molecule</span>
+
+      <div class="ans-heading">📌 Basic Concept of MOT</div>
+      <p>Molecular Orbital Theory was proposed by <strong>Hund and Mulliken</strong>. The key ideas are:</p>
+      <ul>
+        <li>Atomic orbitals of individual atoms combine (overlap) to form <strong>molecular orbitals (MOs)</strong>.</li>
+        <li>Molecular orbitals belong to the <em>entire molecule</em>, not to individual atoms.</li>
+        <li>The number of MOs formed = Number of atomic orbitals combined.</li>
+        <li>MOs are filled following <strong>Aufbau principle, Hund's rule, and Pauli exclusion principle</strong> — just like atomic orbitals.</li>
+      </ul>
+
+      <div class="ans-heading">🔬 Formation of MOs (LCAO Method)</div>
+      <p>When two atomic orbitals $\phi_A$ and $\phi_B$ combine, they form two MOs by <strong>Linear Combination of Atomic Orbitals (LCAO)</strong>:</p>
+      <div class="formula-box">
+        $$\psi_{BMO} = \phi_A + \phi_B \quad \Rightarrow \text{Bonding MO (lower energy)}$$
+        $$\psi_{ABMO} = \phi_A - \phi_B \quad \Rightarrow \text{Antibonding MO (higher energy)}$$
+      </div>
+
+      <div class="ans-heading">🧪 MOT for H₂ Molecule</div>
+      <p>Each hydrogen atom has one electron in 1s orbital. When they combine:</p>
+      <ul>
+        <li>Two 1s orbitals → one $\sigma_{1s}$ (bonding) + one $\sigma^*_{1s}$ (antibonding)</li>
+        <li>Both electrons (one from each H) enter the $\sigma_{1s}$ bonding MO (lower energy, more stable)</li>
+        <li>$\sigma^*_{1s}$ remains empty</li>
+      </ul>
+
+      <div class="formula-box">
+        $$\text{Electronic configuration of H}_2: \quad (\sigma_{1s})^2$$
+      </div>
+
+      <div class="ans-heading">📊 Bond Order Calculation</div>
+      <div class="formula-box">
+        $$\text{Bond Order} = \frac{N_b - N_a}{2} = \frac{2 - 0}{2} = 1$$
+      </div>
+      <p>Bond order = 1 → H₂ has a single covalent bond. ✓ This matches experimental observation.</p>
+
+      <div class="ans-heading">🆚 Comparison: MOT vs VBT</div>
+      <table>
+        <tr><th>Aspect</th><th>MOT</th><th>VBT (Valence Bond Theory)</th></tr>
+        <tr><td>Origin of bond</td><td>Electrons delocalized over the whole molecule</td><td>Overlap of atomic orbitals of two atoms</td></tr>
+        <tr><td>Electron description</td><td>Electrons in molecular orbitals</td><td>Electrons remain in atomic orbitals (overlap region)</td></tr>
+        <tr><td>Paramagnetism of O₂</td><td>✅ Correctly predicts O₂ is paramagnetic (2 unpaired e⁻)</td><td>❌ Incorrectly predicts O₂ is diamagnetic</td></tr>
+        <tr><td>Bond order</td><td>Easily calculated from (Nb - Na)/2</td><td>Qualitative — not easy to calculate</td></tr>
+        <tr><td>Delocalization</td><td>✅ Accounts for delocalization</td><td>❌ Primarily localized bonds</td></tr>
+        <tr><td>Excited states</td><td>✅ Can explain electronic excited states (spectroscopy)</td><td>Limited in explaining excited states</td></tr>
+        <tr><td>Simplicity</td><td>More mathematical</td><td>More intuitive for simple molecules</td></tr>
+      </table>
+
+      <div class="important-box">
+        <strong>Which is superior?</strong> MOT is generally considered superior because it:
+        <ul>
+          <li>Correctly explains the paramagnetism of O₂</li>
+          <li>Can explain fractional bond orders (e.g., in He₂⁺)</li>
+          <li>Better accounts for electron delocalization (e.g., benzene)</li>
+          <li>Provides a framework for understanding UV-Vis spectroscopy</li>
+        </ul>
+        However, VBT is still useful for explaining geometry, hybridization, and resonance in simple organic molecules.
+      </div>
     </div>
-    <div class="solution">
-        <p>Using $\pi V = (W/M)RT$:<br>
-        $\pi = 600/760 \approx 0.7895 atm$, $V = 0.25 L$, $T = 288 K$, $R = 0.0821$.<br>
-        $M = (10 \times 0.0821 \times 288) / (0.7895 \times 0.25) \approx 1198 g/mol$.</p>
+
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="q4">
+  <div class="q-card-header">
+    <div class="q-num">Q4</div>
+    <div class="q-text">Write notes on: (i) Hybrid Orbital (ii) Bonding and Antibonding Orbitals (iii) Dissimilarities of MOT & VBT</div>
+    <div class="q-marks">~7</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (i) — Hybrid Orbitals</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p><strong>Hybridization</strong> is the mixing of two or more atomic orbitals of nearly equal energy within the same atom to form a new set of equivalent orbitals called <strong>hybrid orbitals</strong>.</p>
+
+      <div class="ans-heading">📐 Types of Hybridization</div>
+      <table>
+        <tr><th>Type</th><th>Orbitals Mixed</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
+        <tr><td>sp</td><td>1s + 1p</td><td>Linear</td><td>180°</td><td>BeCl₂, C₂H₂</td></tr>
+        <tr><td>sp²</td><td>1s + 2p</td><td>Trigonal planar</td><td>120°</td><td>BF₃, C₂H₄</td></tr>
+        <tr><td>sp³</td><td>1s + 3p</td><td>Tetrahedral</td><td>109.5°</td><td>CH₄, NH₃</td></tr>
+        <tr><td>sp³d</td><td>1s + 3p + 1d</td><td>Trigonal bipyramidal</td><td>90°/120°</td><td>PCl₅</td></tr>
+        <tr><td>sp³d²</td><td>1s + 3p + 2d</td><td>Octahedral</td><td>90°</td><td>SF₆</td></tr>
+      </table>
+
+      <div class="ans-heading">🌟 Properties of Hybrid Orbitals</div>
+      <ul>
+        <li>All hybrid orbitals of the same type are <em>equivalent in energy and shape</em></li>
+        <li>They have one large lobe and one small lobe — better overlap than pure orbitals</li>
+        <li>Number of hybrid orbitals = Number of atomic orbitals mixed</li>
+      </ul>
     </div>
+
+    <div class="part">
+      <span class="part-label">Part (ii) — Bonding and Antibonding Orbitals</span>
+
+      <div class="ans-heading">📌 Bonding Molecular Orbital (BMO)</div>
+      <ul>
+        <li>Formed by <strong>constructive interference</strong> (addition) of atomic orbitals: $\psi_{BMO} = \phi_A + \phi_B$</li>
+        <li>Electron density is <em>concentrated between</em> the two nuclei → holds them together</li>
+        <li><strong>Lower energy</strong> than the parent atomic orbitals</li>
+        <li>Stabilizes the molecule</li>
+        <li>Represented as: $\sigma$, $\pi$ (without asterisk)</li>
+      </ul>
+
+      <div class="ans-heading">📌 Antibonding Molecular Orbital (ABMO)</div>
+      <ul>
+        <li>Formed by <strong>destructive interference</strong> (subtraction): $\psi_{ABMO} = \phi_A - \phi_B$</li>
+        <li>Has a <strong>nodal plane</strong> between the two nuclei — electron density is reduced there</li>
+        <li><strong>Higher energy</strong> than the parent atomic orbitals</li>
+        <li>Destabilizes the molecule if occupied</li>
+        <li>Represented as: $\sigma^*$, $\pi^*$ (with asterisk)</li>
+      </ul>
+
+      <div class="formula-box">
+        $$E_{ABMO} > E_{AO} > E_{BMO}$$
+      </div>
+      <p>Energy diagram: Antibonding (top) → Atomic Orbital levels (middle) → Bonding (bottom)</p>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (iii) — Dissimilarities Between MOT & VBT</span>
+
+      <table>
+        <tr><th>MOT</th><th>VBT</th></tr>
+        <tr><td>Electrons are in molecular orbitals covering the whole molecule</td><td>Electrons are localized between two bonding atoms</td></tr>
+        <tr><td>Uses LCAO method; wave functions are added/subtracted</td><td>Uses overlap of atomic wave functions; electron pairing</td></tr>
+        <tr><td>Bond order = (Nb - Na)/2</td><td>Bond order = number of shared pairs</td></tr>
+        <tr><td>Successfully explains paramagnetism of O₂</td><td>Fails to explain paramagnetism of O₂</td></tr>
+        <tr><td>Gives antibonding MOs — explains instability of some molecules</td><td>No concept of antibonding orbitals</td></tr>
+        <tr><td>Predicts delocalization naturally</td><td>Requires resonance concept for delocalization</td></tr>
+        <tr><td>Can predict magnetic and spectroscopic properties</td><td>Better for geometry and local bond descriptions</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     UNIT III
+══════════════════════════════════════════ -->
+<div class="unit-header" id="unit3">🌈 UNIT – III &nbsp;|&nbsp; Molecular Spectroscopy</div>
+
+<!-- Q5 -->
+<div class="q-card" id="q5">
+  <div class="q-card-header">
+    <div class="q-num">Q5</div>
+    <div class="q-text">Explain in detail: (i) Isotope Effect (ii) Pure Vibrational Spectrum (iii) Selection Rule for Electronic Transitions</div>
+    <div class="q-marks">~7</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (i) — Isotope Effect</span>
+
+      <div class="ans-heading">📌 What is the Isotope Effect?</div>
+      <p>When one isotope of an element in a molecule is replaced by another isotope, the <strong>vibrational frequency</strong> of the molecule changes. This is called the <strong>Isotope Effect</strong>.</p>
+
+      <div class="ans-heading">📐 Theory</div>
+      <p>The vibrational frequency $\nu$ of a diatomic molecule (treated as a harmonic oscillator) is:</p>
+      <div class="formula-box">
+        $$\nu = \frac{1}{2\pi}\sqrt{\frac{k}{\mu}}$$
+      </div>
+      <p>where $k$ = force constant (bond stiffness, unchanged by isotope substitution) and $\mu$ = reduced mass:</p>
+      <div class="formula-box">
+        $$\mu = \frac{m_1 m_2}{m_1 + m_2}$$
+      </div>
+
+      <div class="ans-heading">🔬 Example: HCl vs DCl</div>
+      <p>When H (mass 1) in HCl is replaced by D (deuterium, mass 2):</p>
+      <ul>
+        <li>$\mu_{HCl} = \dfrac{1 \times 35}{1+35} \approx 0.972$ amu</li>
+        <li>$\mu_{DCl} = \dfrac{2 \times 35}{2+35} \approx 1.892$ amu</li>
+        <li>Since $\mu_{DCl} > \mu_{HCl}$, the frequency $\nu_{DCl} < \nu_{HCl}$</li>
+      </ul>
+      <div class="formula-box">
+        $$\frac{\nu_{HCl}}{\nu_{DCl}} = \sqrt{\frac{\mu_{DCl}}{\mu_{HCl}}} \approx \sqrt{2} \approx 1.414$$
+      </div>
+
+      <div class="ans-heading">🌟 Applications</div>
+      <ul>
+        <li>Used to identify which atoms are involved in a particular vibration</li>
+        <li>Used to determine the structure of molecules</li>
+        <li>Helps in calculating force constants</li>
+        <li>Proof of quantized vibrational energy levels</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (ii) — Pure Vibrational Spectrum</span>
+
+      <div class="ans-heading">📌 What is it?</div>
+      <p>A <strong>pure vibrational spectrum</strong> arises when a molecule absorbs <strong>infrared (IR) radiation</strong> and undergoes transitions between <em>vibrational energy levels only</em> (no rotational changes). It appears in the mid-IR region (~500–4000 cm⁻¹).</p>
+
+      <div class="ans-heading">📐 Vibrational Energy Levels</div>
+      <p>For a simple harmonic oscillator, the vibrational energy levels are quantized:</p>
+      <div class="formula-box">
+        $$E_v = \left(v + \frac{1}{2}\right)h\nu \quad \text{where } v = 0, 1, 2, 3, \ldots$$
+      </div>
+      <p>$v$ = vibrational quantum number, $\nu$ = fundamental vibrational frequency</p>
+
+      <div class="info-box">
+        <strong>Zero-Point Energy:</strong> Even at $v=0$, the molecule has energy $E_0 = \frac{1}{2}h\nu$. A molecule can never be completely at rest! This is a consequence of the uncertainty principle.
+      </div>
+
+      <div class="ans-heading">📋 Selection Rule</div>
+      <div class="important-box">
+        <strong>Selection Rule for IR (Vibrational) Spectrum:</strong><br>
+        1. The vibrational quantum number must change by ±1: $\Delta v = \pm 1$<br>
+        2. The molecule must have a <em>changing dipole moment</em> during vibration (IR active condition)
+      </div>
+
+      <div class="ans-heading">📊 Features of the Spectrum</div>
+      <ul>
+        <li><strong>Fundamental band:</strong> Transition $v=0 \to v=1$, most intense absorption</li>
+        <li><strong>Overtones:</strong> $v=0 \to v=2, 3, \ldots$ (weak, forbidden by selection rule but allowed in real anharmonic molecules)</li>
+        <li>Homonuclear diatomics (H₂, N₂, O₂) have no dipole change → IR inactive (no spectrum)</li>
+        <li>Heteronuclear diatomics (HCl, CO) have dipole change → IR active</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (iii) — Selection Rules for Electronic Transitions</span>
+
+      <div class="ans-heading">📌 What are Electronic Transitions?</div>
+      <p>Electronic transitions occur when a molecule absorbs UV/Visible light and electrons jump from a lower energy molecular orbital to a higher energy one. These appear in the UV-Vis absorption spectrum.</p>
+
+      <div class="ans-heading">📋 Selection Rules</div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Rule 1 – Spin Selection Rule (ΔS = 0):</strong><br>
+        The total spin quantum number must not change during an electronic transition.<br>
+        → Singlet to singlet (S→S) and Triplet to triplet (T→T) transitions are <em>allowed</em>.<br>
+        → Singlet to triplet (S→T) transitions are <em>forbidden</em> (but can occur weakly — spin-orbit coupling).
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Rule 2 – Laporte Selection Rule (for centrosymmetric molecules):</strong><br>
+        Transitions between orbitals of the same symmetry (g→g or u→u) are <em>forbidden</em>.<br>
+        Only g→u or u→g transitions are <em>allowed</em> (change in parity required).
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Rule 3 – Orbital Angular Momentum (ΔΛ = 0, ±1):</strong><br>
+        The change in orbital angular momentum quantum number must be 0 or ±1.
+      </div>
+
+      <div class="info-box">
+        <strong>Rule 4 – Frank-Condon Principle:</strong><br>
+        Electronic transitions are so fast (10⁻¹⁵ s) that the nuclear positions (and momenta) don't change during the transition. The most intense electronic transitions occur between vibrational levels with maximum wavefunction overlap.
+      </div>
+
+      <table>
+        <tr><th>Transition Type</th><th>Orbital Type</th><th>Region</th><th>ε (molar absorptivity)</th></tr>
+        <tr><td>$\pi \to \pi^*$</td><td>Conjugated π systems</td><td>~200 nm</td><td>Very high (10⁴–10⁵)</td></tr>
+        <tr><td>$n \to \pi^*$</td><td>Non-bonding to π*</td><td>~300–400 nm</td><td>Low (10–100)</td></tr>
+        <tr><td>$n \to \sigma^*$</td><td>Non-bonding to σ*</td><td>~150–250 nm</td><td>Medium</td></tr>
+        <tr><td>$\sigma \to \sigma^*$</td><td>Saturated molecules</td><td>&lt;150 nm (vacuum UV)</td><td>High</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card" id="q6">
+  <div class="q-card-header">
+    <div class="q-num">Q6</div>
+    <div class="q-text">(a) Explain energy levels and selection rules of simple harmonic oscillator. (b) Prove rotational energy of a diatomic molecule = B̄J(J+1) cm⁻¹. Give selection rules for rotational spectrum.</div>
+    <div class="q-marks">3+4</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (a) — Simple Harmonic Oscillator: Energy Levels & Selection Rules</span>
+
+      <div class="ans-heading">📌 Model</div>
+      <p>A diatomic molecule vibrating about its equilibrium bond length is modelled as a <strong>simple harmonic oscillator (SHO)</strong>. The restoring force is proportional to the displacement: $F = -kx$.</p>
+
+      <div class="ans-heading">📐 Energy Levels</div>
+      <p>Solving the Schrödinger equation for the SHO potential $V = \frac{1}{2}kx^2$:</p>
+      <div class="formula-box">
+        $$E_v = \left(v + \frac{1}{2}\right)h\nu_0 \qquad v = 0, 1, 2, 3, \ldots$$
+      </div>
+      <p>where the fundamental frequency:</p>
+      <div class="formula-box">
+        $$\nu_0 = \frac{1}{2\pi}\sqrt{\frac{k}{\mu}}$$
+      </div>
+
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Energy levels are <em>equally spaced</em> with spacing $h\nu_0$</li>
+        <li>Lowest energy (zero-point energy) at $v=0$: $E_0 = \frac{1}{2}h\nu_0 \neq 0$</li>
+        <li>This zero-point energy is a purely quantum mechanical effect</li>
+      </ul>
+
+      <div class="ans-heading">📋 Selection Rule</div>
+      <div class="important-box">
+        <strong>Selection Rule for SHO:</strong> $\Delta v = \pm 1$ (only adjacent level transitions allowed)<br>
+        The dipole moment of the molecule must change during vibration (IR active rule).
+      </div>
+
+      <p>Under this rule, the observed vibrational frequency is:</p>
+      <div class="formula-box">
+        $$\tilde{\nu}_{obs} = \frac{E_{v+1} - E_v}{hc} = \frac{h\nu_0}{hc} = \frac{\nu_0}{c} = \bar{\nu}_0 \text{ cm}^{-1}$$
+      </div>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (b) — Rotational Energy of Diatomic Molecule = B̄J(J+1)</span>
+
+      <div class="ans-heading">📌 Model: Rigid Rotor</div>
+      <p>A diatomic molecule rotating about its centre of mass is treated as a <strong>rigid rotor</strong>. The two atoms are at fixed distances $r_1$ and $r_2$ from the centre of mass.</p>
+
+      <div class="ans-heading">📐 Derivation</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            The moment of inertia of the molecule:
+            $$I = \mu r^2 \quad \text{where } \mu = \frac{m_1 m_2}{m_1+m_2}, \; r = r_1+r_2$$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            Classical rotational kinetic energy:
+            $$E_{rot} = \frac{L^2}{2I}$$
+            where $L$ = angular momentum.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            In quantum mechanics, angular momentum is quantized:
+            $$L^2 = J(J+1)\hbar^2 \qquad J = 0, 1, 2, 3, \ldots$$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            Substituting into the energy equation:
+            $$E_J = \frac{J(J+1)\hbar^2}{2I} = \frac{h^2}{8\pi^2 I} J(J+1)$$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            Converting to wavenumber (cm⁻¹) by dividing by $hc$:
+            $$\bar{E}_J = \frac{h}{8\pi^2 Ic} J(J+1) \text{ cm}^{-1}$$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            Define the <strong>Rotational constant</strong>:
+            $$\bar{B} = \frac{h}{8\pi^2 Ic} \text{ cm}^{-1}$$
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <strong>Therefore, Rotational Energy:</strong>
+        $$\boxed{E_J = \bar{B}J(J+1) \text{ cm}^{-1}}$$
+        <br>Proved! ✓
+      </div>
+
+      <div class="ans-heading">📋 Selection Rules for Rotational Spectrum</div>
+      <div class="important-box">
+        <strong>Selection Rule 1:</strong> The molecule must have a <em>permanent electric dipole moment</em> to show a pure rotational spectrum (microwave active).<br>
+        → HCl, CO, HBr: active &nbsp;|&nbsp; N₂, H₂, O₂: inactive (no dipole)<br><br>
+        <strong>Selection Rule 2:</strong> The rotational quantum number must change by ±1:
+        $$\Delta J = \pm 1$$
+        → Absorption: $\Delta J = +1$ &nbsp;|&nbsp; Emission: $\Delta J = -1$
+      </div>
+
+      <div class="ans-heading">📊 Spectral Lines</div>
+      <p>The wavenumber of observed lines:</p>
+      <div class="formula-box">
+        $$\tilde{\nu} = E_{J+1} - E_J = \bar{B}(J+1)(J+2) - \bar{B}J(J+1) = 2\bar{B}(J+1)$$
+      </div>
+      <p>For $J = 0, 1, 2, \ldots$ we get lines at $2\bar{B}, 4\bar{B}, 6\bar{B}, \ldots$ — equally spaced lines separated by $2\bar{B}$.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     UNIT IV
+══════════════════════════════════════════ -->
+<div class="unit-header" id="unit4">☀️ UNIT – IV &nbsp;|&nbsp; Photochemistry & Magnetism</div>
+
+<!-- Q7 -->
+<div class="q-card" id="q7">
+  <div class="q-card-header">
+    <div class="q-num">Q7</div>
+    <div class="q-text">Draw Jablonski diagram and explain different processes. What are radiative and non-radiative processes? Explain.</div>
+    <div class="q-marks">2+2+3</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Jablonski Diagram — Complete Explanation</span>
+
+      <div class="ans-heading">📌 What is a Jablonski Diagram?</div>
+      <p>A <strong>Jablonski diagram</strong> is an energy level diagram that illustrates the electronic energy levels of a molecule (singlet and triplet states) and all possible photophysical processes — absorption and deactivation — that can occur after a molecule absorbs light.</p>
+
+      <div class="diagram">
+        <strong>📊 Jablonski Diagram (Schematic)</strong><br><br>
+        <div style="text-align:left; font-size:13px; max-width:500px; margin:0 auto; font-family:monospace; line-height:1.8">
+          Energy ↑<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S₂ ————————— (Second Excited Singlet)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ IC (Internal Conversion)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S₁ ————————— (First Excited Singlet) ···→ T₁ (ISC)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ Fluorescence &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ Phosphorescence<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S₀ ————————— (Ground Singlet State)<br><br>
+          Absorption (S₀→S₁, S₀→S₂): Vertical upward arrow
+        </div>
+      </div>
+
+      <div class="ans-heading">📐 Processes in the Jablonski Diagram</div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>1. Absorption:</strong><br>
+        A molecule in the ground state S₀ absorbs a photon and jumps to an excited singlet state (S₁ or S₂). This is instantaneous (~10⁻¹⁵ s). $S_0 + h\nu \to S_1^*$
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>2. Vibrational Relaxation (VR):</strong><br>
+        Within the same electronic state, the molecule loses vibrational energy to surroundings as heat, reaching the lowest vibrational level of S₁. (~10⁻¹² s). <em>Non-radiative.</em>
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>3. Internal Conversion (IC):</strong><br>
+        Radiationless transition between electronic states of the <em>same multiplicity</em> (e.g., S₂→S₁ or S₁→S₀). No photon emitted. (~10⁻¹¹ s). <em>Non-radiative.</em>
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>4. Fluorescence:</strong><br>
+        Emission of a photon from S₁→S₀. Spin-allowed transition. Fast lifetime (~10⁻⁸ s). Stops immediately when light source is removed. <em>Radiative.</em>
+        $$S_1 \to S_0 + h\nu_{fluorescence}$$
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>5. Intersystem Crossing (ISC):</strong><br>
+        Radiationless transition between states of <em>different multiplicity</em> (S₁→T₁). Spin is flipped. Forbidden by spin selection rule but can occur by spin-orbit coupling. <em>Non-radiative.</em>
+      </div>
+
+      <div class="info-box">
+        <strong>6. Phosphorescence:</strong><br>
+        Emission of a photon from T₁→S₀. Spin-forbidden, so very slow (~10⁻³ to 10² s). Persists even after removing the light source (glow-in-the-dark). <em>Radiative.</em>
+        $$T_1 \to S_0 + h\nu_{phosphorescence}$$
+      </div>
+
+      <div class="ans-heading">⚡ Radiative vs Non-Radiative Processes</div>
+      <table>
+        <tr><th>Radiative Processes</th><th>Non-Radiative Processes</th></tr>
+        <tr><td>Involve emission of a photon</td><td>Energy is lost as heat/vibration — no photon</td></tr>
+        <tr><td>Fluorescence (S₁→S₀)</td><td>Vibrational Relaxation (VR)</td></tr>
+        <tr><td>Phosphorescence (T₁→S₀)</td><td>Internal Conversion (IC)</td></tr>
+        <tr><td>Fast (fluorescence) or slow (phosphorescence)</td><td>Intersystem Crossing (ISC)</td></tr>
+        <tr><td>Emit light of longer wavelength than absorbed (Stokes shift)</td><td>No emission of radiation</td></tr>
+      </table>
+
+      <div class="info-box">
+        <strong>Stokes Shift:</strong> The emitted fluorescence light always has a longer wavelength (lower energy) than the absorbed light, because some energy is lost through vibrational relaxation before emission.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-card" id="q8">
+  <div class="q-card-header">
+    <div class="q-num">Q8</div>
+    <div class="q-text">Write short notes on: (i) Grothus-Drapper Law (ii) Photosensitized Reactions (iii) Diamagnetism</div>
+    <div class="q-marks">2½+2½+2</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (i) — Grothus-Drapper Law</span>
+
+      <div class="ans-heading">📌 Statement</div>
+      <p>The <strong>Grothus-Drapper Law</strong> (also called the First Law of Photochemistry) states:</p>
+      <div class="important-box">
+        <em>"Only that light which is <strong>absorbed</strong> by a substance can be effective in producing a photochemical change. Light that is transmitted, reflected, or scattered cannot produce any photochemical reaction."</em>
+      </div>
+
+      <div class="ans-heading">💡 Explanation</div>
+      <ul>
+        <li>First proposed by Grothus (1817) and extended by Drapper (1841)</li>
+        <li>Not all wavelengths of light can cause photochemical reactions — only those that are actually absorbed</li>
+        <li>For light to be absorbed, its energy must match the energy gap between the ground state and an excited state of the molecule</li>
+        <li>Example: Chlorine gas (Cl₂) absorbs visible light (yellow-green) and undergoes photodissociation. But hydrogen gas (H₂) does not absorb visible light and shows no photochemical reaction in visible light.</li>
+      </ul>
+
+      <div class="formula-box">
+        $$\text{Absorbed light} \to \text{Photochemical reaction possible}$$
+        $$\text{Transmitted/Reflected light} \to \text{No photochemical reaction}$$
+      </div>
+
+      <div class="ans-heading">📏 Significance</div>
+      <p>This law is the foundation of all photochemistry. It is related to Beer-Lambert Law of absorption: $A = \epsilon c l$</p>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (ii) — Photosensitized Reactions</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p>A <strong>photosensitized reaction</strong> is one in which a substance (called the <em>sensitizer</em>) absorbs light and transfers the energy to another substance (the <em>acceptor</em>), which then undergoes a photochemical reaction — even though the acceptor itself cannot absorb the light used.</p>
+
+      <div class="ans-heading">⚙️ Mechanism</div>
+      <div class="formula-box">
+        $$\text{Sensitizer (S)} + h\nu \to \text{S}^* \quad \text{(Sensitizer absorbs light)}$$
+        $$\text{S}^* + \text{Acceptor (A)} \to \text{S} + \text{A}^* \quad \text{(Energy transfer)}$$
+        $$\text{A}^* \to \text{Products} \quad \text{(Acceptor reacts)}$$
+      </div>
+
+      <div class="ans-heading">🌟 Classic Example: Mercury Photosensitization</div>
+      <ul>
+        <li>Mercury vapor absorbs UV light (253.7 nm): $\text{Hg} + h\nu \to \text{Hg}^*$</li>
+        <li>Excited Hg* transfers energy to H₂: $\text{Hg}^* + \text{H}_2 \to \text{Hg} + 2\text{H}^{\cdot}$</li>
+        <li>H₂ alone cannot absorb this wavelength, but thanks to Hg, it dissociates.</li>
+      </ul>
+
+      <div class="ans-heading">🌿 Biological Example</div>
+      <p><strong>Photosynthesis:</strong> Chlorophyll acts as the sensitizer. It absorbs sunlight and uses the energy to drive the conversion of CO₂ and H₂O into glucose — a reaction that cannot occur without chlorophyll.</p>
+
+      <div class="info-box">
+        <strong>Photodynamic Therapy (PDT):</strong> A modern medical application where a sensitizer dye is activated by light to produce reactive oxygen species that kill cancer cells.
+      </div>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (iii) — Diamagnetism</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p><strong>Diamagnetism</strong> is the property of a substance that causes it to be <em>weakly repelled</em> by an external magnetic field. It arises from substances that have <em>all electrons paired</em>.</p>
+
+      <div class="ans-heading">⚙️ Origin</div>
+      <ul>
+        <li>When a substance with all paired electrons is placed in a magnetic field, the field induces a tiny magnetic moment in the <em>opposite direction</em> (Lenz's law applied to electron motion)</li>
+        <li>This results in repulsion from the applied field</li>
+        <li>Every substance has some diamagnetic contribution, but it is very weak and often masked by paramagnetic effects</li>
+      </ul>
+
+      <div class="ans-heading">📋 Properties</div>
+      <table>
+        <tr><th>Property</th><th>Diamagnetic Substances</th></tr>
+        <tr><td>Electron configuration</td><td>All electrons paired (no unpaired electrons)</td></tr>
+        <tr><td>Effect in magnetic field</td><td>Weakly repelled</td></tr>
+        <tr><td>Magnetic susceptibility ($\chi$)</td><td>Small and negative ($\chi < 0$)</td></tr>
+        <tr><td>Temperature dependence</td><td>Independent of temperature</td></tr>
+        <tr><td>Examples</td><td>He, Ne, H₂O, NaCl, Cu(I) compounds, Zn²⁺ compounds, most organic compounds</td></tr>
+      </table>
+
+      <div class="formula-box">
+        $$\chi_m = -\frac{N_A e^2}{6mc^2}\sum_i \langle r_i^2 \rangle \quad \text{(negative value confirms diamagnetism)}$$
+      </div>
+
+      <div class="info-box">
+        <strong>Contrast with Paramagnetism:</strong> Paramagnetic substances have unpaired electrons, have positive $\chi$, and are attracted to magnetic fields. Their susceptibility follows the Curie Law: $\chi = C/T$.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     UNIT V
+══════════════════════════════════════════ -->
+<div class="unit-header" id="unit5">🧪 UNIT – V &nbsp;|&nbsp; Colligative Properties</div>
+
+<!-- Q9 -->
+<div class="q-card" id="q9">
+  <div class="q-card-header">
+    <div class="q-num">Q9</div>
+    <div class="q-text">(a) Write short notes on: (i) Depression of Freezing Point (ii) Abnormal Molecular Mass. (b) 10 g of substance dissolved in 250 mL water; osmotic pressure = 600 mm Hg at 15°C. Calculate molar mass.</div>
+    <div class="q-marks">1+2+2</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (a-i) — Depression of Freezing Point</span>
+
+      <div class="ans-heading">📌 Concept</div>
+      <p>When a <strong>non-volatile solute</strong> is dissolved in a solvent, the freezing point of the resulting solution is <em>lower</em> than that of the pure solvent. This lowering of the freezing point is called <strong>Depression of Freezing Point</strong> and is denoted by $\Delta T_f$.</p>
+
+      <div class="ans-heading">📐 Formula</div>
+      <div class="formula-box">
+        $$\Delta T_f = T_f^0 - T_f = K_f \cdot m$$
+      </div>
+      <p>where:</p>
+      <ul>
+        <li>$T_f^0$ = freezing point of pure solvent</li>
+        <li>$T_f$ = freezing point of solution (always lower)</li>
+        <li>$K_f$ = Cryoscopic constant (molal freezing point depression constant), depends only on solvent</li>
+        <li>$m$ = molality of solution (mol solute per kg solvent)</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>$K_f$ values:</strong> Water = 1.86 K·kg/mol &nbsp;|&nbsp; Benzene = 5.12 K·kg/mol &nbsp;|&nbsp; Camphor = 37.7 K·kg/mol
+      </div>
+
+      <div class="ans-heading">💡 Explanation</div>
+      <p>The solute particles disrupt the formation of the solid crystal structure. More energy must be removed (i.e., temperature must drop lower) to overcome the dissolved particles and achieve freezing. This is a <strong>colligative property</strong> — it depends only on the number of solute particles, not their identity.</p>
+
+      <div class="ans-heading">🌍 Applications</div>
+      <ul>
+        <li>Antifreeze in car radiators (ethylene glycol lowers freezing point of water)</li>
+        <li>Salt spread on icy roads in winter</li>
+        <li>Determination of molar mass of unknown solutes</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (a-ii) — Abnormal Molecular Mass</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p>The molecular mass calculated from colligative properties (e.g., freezing point depression, osmotic pressure) sometimes differs from the actual/true molecular mass. This calculated value is called the <strong>Abnormal Molecular Mass</strong>.</p>
+
+      <div class="ans-heading">⚙️ Causes</div>
+      <p>Abnormal molecular mass arises in two situations:</p>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Case 1 — Dissociation (Apparent mass &lt; True mass):</strong><br>
+        When a solute dissociates in solution, the number of particles increases. Since colligative properties depend on the number of particles, the effect is greater than expected, making the calculated molar mass smaller than the true value.<br>
+        Example: NaCl → Na⁺ + Cl⁻ (2 particles instead of 1)
+      </div>
+
+      <div class="info-box">
+        <strong>Case 2 — Association (Apparent mass &gt; True mass):</strong><br>
+        When solute molecules associate/aggregate in solution, the number of effective particles decreases. The colligative effect is smaller than expected, making the calculated molar mass larger than the true value.<br>
+        Example: Acetic acid (CH₃COOH) dimerizes in benzene solvent → apparent mass ≈ 2× true mass.
+      </div>
+
+      <div class="ans-heading">📐 Van't Hoff Factor (i)</div>
+      <p>To account for abnormal molecular mass, Van't Hoff introduced a correction factor $i$:</p>
+      <div class="formula-box">
+        $$i = \frac{\text{Observed colligative property}}{\text{Calculated (normal) colligative property}} = \frac{\text{True molar mass}}{\text{Observed molar mass}}$$
+      </div>
+      <ul>
+        <li>$i = 1$: No dissociation or association (normal)</li>
+        <li>$i > 1$: Dissociation occurs</li>
+        <li>$i < 1$: Association occurs</li>
+      </ul>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (b) — Numerical: Osmotic Pressure → Molar Mass</span>
+      <div class="q-statement">10 g of substance dissolved in 250 mL water. Osmotic pressure = 600 mm Hg at 15°C. Find molar mass.</div>
+
+      <div class="ans-heading">📋 Given Data</div>
+      <ul>
+        <li>Mass of solute $w = 10$ g</li>
+        <li>Volume of solution $V = 250$ mL = 0.25 L</li>
+        <li>Osmotic pressure $\pi = 600$ mm Hg</li>
+        <li>Temperature $T = 15°C = 15 + 273 = 288$ K</li>
+        <li>$R = 0.0821$ L·atm/(mol·K)</li>
+      </ul>
+
+      <div class="ans-heading">🔄 Step 1 — Convert Osmotic Pressure to atm</div>
+      <div class="formula-box">
+        $$\pi = \frac{600 \text{ mm Hg}}{760 \text{ mm Hg/atm}} = 0.7895 \text{ atm}$$
+      </div>
+
+      <div class="ans-heading">🧮 Step 2 — Apply Osmotic Pressure Equation</div>
+      <p>Van't Hoff equation for osmotic pressure:</p>
+      <div class="formula-box">
+        $$\pi V = nRT \implies \pi V = \frac{w}{M} RT$$
+      </div>
+      <p>Solving for molar mass $M$:</p>
+      <div class="formula-box">
+        $$M = \frac{wRT}{\pi V}$$
+      </div>
+
+      <div class="ans-heading">🧮 Step 3 — Substitute Values</div>
+      <div class="formula-box">
+        $$M = \frac{10 \times 0.0821 \times 288}{0.7895 \times 0.25}$$
+      </div>
+      <div class="formula-box">
+        $$M = \frac{10 \times 23.64}{0.1974} = \frac{236.4}{0.1974}$$
+      </div>
+      <div class="result-box">
+        <strong>$$M \approx 1198 \text{ g/mol}$$</strong>
+        The molar mass of the substance ≈ 1198 g/mol
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card" id="q10">
+  <div class="q-card-header">
+    <div class="q-num">Q10</div>
+    <div class="q-text">(a) What is osmotic pressure? How is it determined experimentally? Discuss different laws related to osmotic pressure. (b) Calculate osmotic pressure of 5% urea solution at 0°C.</div>
+    <div class="q-marks">1+2+2+2</div>
+  </div>
+  <div class="q-body">
+
+    <div class="part">
+      <span class="part-label">Part (a) — Osmotic Pressure: Definition, Experiment, Laws</span>
+
+      <div class="ans-heading">📌 Definition</div>
+      <p><strong>Osmosis</strong> is the spontaneous flow of solvent molecules from a region of lower solute concentration (dilute solution or pure solvent) to a region of higher solute concentration, through a <em>semipermeable membrane</em>.</p>
+      <p>The <strong>Osmotic Pressure ($\pi$)</strong> is the minimum external pressure that must be applied on the solution side to stop the flow of solvent through the semipermeable membrane. It is a measure of the tendency of solvent to enter the solution.</p>
+
+      <div class="ans-heading">🔬 Experimental Determination (Pfeffer's Method)</div>
+      <ul>
+        <li>A porous pot is impregnated with copper ferrocyanide [Cu₂[Fe(CN)₆]] — a semipermeable membrane</li>
+        <li>The pot is filled with a solution of known concentration and submerged in pure solvent (water)</li>
+        <li>Solvent molecules flow into the pot through the membrane (osmosis)</li>
+        <li>Pressure builds up inside — measured by an attached manometer or pressure gauge</li>
+        <li>The pressure at which osmosis stops = osmotic pressure $\pi$</li>
+      </ul>
+
+      <div class="ans-heading">📐 Laws of Osmotic Pressure</div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Law 1 — Van't Hoff's Law of Concentration (at constant T):</strong><br>
+        At constant temperature, osmotic pressure is directly proportional to the molar concentration of the solution:
+        $$\pi \propto C \quad \Rightarrow \quad \pi = CRT$$
+        where $C$ = molar concentration (mol/L), $R$ = gas constant, $T$ = temperature
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Law 2 — Van't Hoff's Law of Temperature (at constant C):</strong><br>
+        At constant concentration, osmotic pressure is directly proportional to the absolute temperature:
+        $$\pi \propto T \quad \text{(at constant } C\text{)}$$
+      </div>
+
+      <div class="info-box" style="margin-bottom:8px">
+        <strong>Law 3 — Pfeffer's Law (Dilute Solutions):</strong><br>
+        For dilute solutions, the osmotic pressure of a solution is equal to the pressure that the solute would exert if it were a gas occupying the same volume at the same temperature (analogy with ideal gas law):
+        $$\pi V = nRT$$
+        This is the <strong>Van't Hoff equation</strong> — identical in form to the ideal gas law ($PV = nRT$).
+      </div>
+
+      <div class="info-box">
+        <strong>Law 4 — Isotonic Solutions:</strong><br>
+        Solutions having the same osmotic pressure at the same temperature are called <em>isotonic solutions</em>. They show no net osmotic flow when separated by a semipermeable membrane. Example: 0.9% NaCl (saline) is isotonic with blood.
+      </div>
+    </div>
+
+    <div class="part">
+      <span class="part-label">Part (b) — Numerical: 5% Urea at 0°C</span>
+      <div class="q-statement">Calculate osmotic pressure of 5% urea solution at 0°C.</div>
+
+      <div class="ans-heading">📋 Given Data</div>
+      <ul>
+        <li>5% urea solution means 5 g of urea dissolved in 100 g of water (or 100 mL solution, approximation)</li>
+        <li>Molar mass of urea [CO(NH₂)₂] = 12 + 16 + 2(14 + 2×1) = 12 + 16 + 2(16) = 60 g/mol</li>
+        <li>Temperature $T = 0°C = 273$ K</li>
+        <li>$R = 0.0821$ L·atm/(mol·K)</li>
+        <li>Volume of solution: 5 g urea in 100 mL solution → $V = 0.1$ L</li>
+      </ul>
+
+      <div class="ans-heading">🧮 Step 1 — Calculate Moles of Urea</div>
+      <div class="formula-box">
+        $$n = \frac{\text{mass}}{\text{molar mass}} = \frac{5 \text{ g}}{60 \text{ g/mol}} = 0.0833 \text{ mol}$$
+      </div>
+
+      <div class="ans-heading">🧮 Step 2 — Apply Van't Hoff Equation</div>
+      <div class="formula-box">
+        $$\pi = \frac{nRT}{V} = \frac{0.0833 \times 0.0821 \times 273}{0.1}$$
+      </div>
+      <div class="formula-box">
+        $$\pi = \frac{0.0833 \times 22.41}{0.1} = \frac{1.867}{0.1}$$
+      </div>
+      <div class="result-box">
+        <strong>$$\pi \approx 18.67 \text{ atm}$$</strong>
+        <br>
+        Converting: $18.67 \text{ atm} \times 760 \text{ mmHg/atm} \approx 14,189 \text{ mm Hg}$<br>
+        <small>(Urea is a non-electrolyte, so Van't Hoff factor $i = 1$)</small>
+      </div>
+
+      <div class="info-box">
+        <strong>Note:</strong> 5% urea solution has a very high osmotic pressure (~18.67 atm) because the molecule has a small molar mass (60 g/mol), meaning 5 g contains a relatively large number of moles. This is why urea is used clinically to reduce intracranial and intraocular pressure.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a href="#top" class="back-top">↑ Back to Top</a>
+
+</main>
+
+<!-- Footer -->
+<footer style="background:#1c1c1e; color:#ccc; text-align:center; padding:20px; font-size:12px; font-family:Arial,sans-serif;">
+  B.Sc.–B.Ed. Part III &nbsp;|&nbsp; Chemistry-III (Physical Chemistry) &nbsp;|&nbsp; Paper 355-III &nbsp;|&nbsp; Detailed Solutions 2025<br>
+  <span style="color:#888; margin-top:6px; display:block;">Prepared for academic study purposes. Verify numerical answers with your textbook values.</span>
+</footer>
 
 </body>
 </html>
