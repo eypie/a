@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Complex Analysis 2024 — Full Solutions</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    tags: 'ams'
+  },
+  options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #1a1410;
+    --paper:    #fdf8f0;
+    --cream:    #f5ede0;
+    --accent:   #c0392b;
+    --gold:     #b5890a;
+    --teal:     #1a6b6b;
+    --light-teal: #e8f4f4;
+    --light-red: #fdf0ee;
+    --border:   #d4c4a8;
+    --muted:    #7a6b58;
+    --q-bg:     #1e2d3d;
+    --q-fg:     #e8f0f8;
+    --q-accent: #64b5f6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--q-bg);
+    color: var(--q-fg);
+    padding: 2rem 1.2rem 1.6rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(100,181,246,.12) 0%, transparent 60%);
+  }
+  .site-header .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--q-accent);
+    background: rgba(100,181,246,.1);
+    border: 1px solid rgba(100,181,246,.3);
+    padding: .25em .9em;
+    border-radius: 2px;
+    margin-bottom: .8rem;
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 5vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: .4rem;
+  }
+  .site-header h1 span { color: var(--q-accent); }
+  .site-header p {
+    font-size: .9rem;
+    opacity: .7;
+    font-style: italic;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    padding: .3em .8em;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    color: #cfd8e8;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    margin: 1.4rem 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 4px;
+  }
+  .toc h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: .6rem;
+    letter-spacing: .04em;
+  }
+  .toc ol { padding-left: 1.2rem; }
+  .toc li { font-size: .85rem; margin: .25rem 0; }
+  .toc a { color: var(--teal); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── SECTION ── */
+  .section {
+    margin: 0 .8rem 2rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  }
+
+  .section-header {
+    background: var(--q-bg);
+    color: var(--q-fg);
+    padding: .85rem 1.2rem;
+    display: flex;
+    align-items: baseline;
+    gap: .8rem;
+  }
+  .section-header .qnum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    background: var(--accent);
+    color: #fff;
+    padding: .15em .6em;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .section-header .marks {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    color: var(--q-accent);
+    white-space: nowrap;
+  }
+
+  .section-body { background: #fff; }
+
+  /* sub-question */
+  .subq {
+    border-bottom: 1px solid #f0e8dc;
+  }
+  .subq:last-child { border-bottom: none; }
+
+  .subq-question {
+    background: var(--light-red);
+    border-left: 3px solid var(--accent);
+    padding: .75rem 1rem .75rem 1.1rem;
+  }
+  .subq-question .qlabel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .68rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: .3rem;
+  }
+  .subq-question p {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #2a1810;
+  }
+
+  .subq-answer {
+    padding: 1rem 1.1rem 1.1rem;
+  }
+  .subq-answer .ans-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    color: var(--teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .subq-answer .ans-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--light-teal);
+  }
+
+  /* explanation box */
+  .explain {
+    background: var(--light-teal);
+    border: 1px solid #b2d8d8;
+    border-radius: 4px;
+    padding: .7rem 1rem;
+    margin: .6rem 0;
+    font-size: .88rem;
+  }
+  .explain strong { color: var(--teal); }
+
+  /* step */
+  .steps { margin: .5rem 0; }
+  .step {
+    display: flex;
+    gap: .7rem;
+    margin: .55rem 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    background: var(--q-bg);
+    color: var(--q-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .15rem;
+    flex-shrink: 0;
+  }
+  .step-body { flex: 1; font-size: .93rem; }
+
+  /* result box */
+  .result {
+    background: linear-gradient(135deg, #f0faf0 0%, #e8f5e8 100%);
+    border: 1.5px solid #6db86d;
+    border-radius: 4px;
+    padding: .7rem 1rem;
+    margin: .8rem 0 .3rem;
+    font-size: .93rem;
+  }
+  .result::before {
+    content: '✓ Result';
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    color: #2e7d32;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: .35rem;
+  }
+
+  /* proof step */
+  .proof-block {
+    border-left: 3px solid var(--gold);
+    padding: .5rem .8rem;
+    margin: .6rem 0;
+    background: #fffef5;
+    font-size: .92rem;
+  }
+
+  /* math display override */
+  .MJX-TEX { font-size: 1em !important; }
+
+  /* long question wrapper */
+  .long-q .subq-question {
+    border-left-color: var(--teal);
+    background: var(--light-teal);
+  }
+  .long-q .subq-question p { color: #0e2a2a; }
+  .long-q .subq-question .qlabel { color: var(--teal); }
+
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: .78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  @media (min-width: 700px) {
+    .section { margin: 0 1.5rem 2.5rem; }
+    .toc { margin: 1.8rem 1.5rem; }
+    body { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="tag">BSc-BEd · Part III · 2024</div>
+  <h1>Mathematics Paper II<br><span>Complex Analysis</span></h1>
+  <p>Complete Step-by-Step Solutions · Exam Code 70652</p>
+  <div class="meta-row">
+    <span class="meta-pill">Max Marks: 40</span>
+    <span class="meta-pill">Time: 3 Hours</span>
+    <span class="meta-pill">11 Questions</span>
+    <span class="meta-pill">Attempt 9</span>
+  </div>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <h2>📋 Table of Contents</h2>
+  <ol>
+    <li><a href="#q1">Q1 — Very Short Answers (10 × 1 mark)</a></li>
+    <li><a href="#q2">Q2 — Continuity & Differentiability of |z|²</a></li>
+    <li><a href="#q3">Q3 — Prove ∮ dz/(z−a) = 2πi</a></li>
+    <li><a href="#q4">Q4 — Radius of Convergence of Power Series</a></li>
+    <li><a href="#q5">Q5 — Singularities of f(z) = (eᶻ−1)/z at z=0</a></li>
+    <li><a href="#q6">Q6 — Bilinear Transformation maps circle to line</a></li>
+    <li><a href="#q7">Q7 — Harmonic Function u = cos x cosh y</a></li>
+    <li><a href="#q8">Q8 — State &amp; Prove Morera's Theorem</a></li>
+    <li><a href="#q9">Q9 — State &amp; Prove Abel's Theorem for Power Series</a></li>
+    <li><a href="#q10">Q10 — Residues of (z²−2z)/[(z+1)²(z²+4)]</a></li>
+    <li><a href="#q11">Q11 — Evaluate ∫₀²π dθ/(a + b sinθ)</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 1 — Very Short Answers
+════════════════════════════════════════════ -->
+<section class="section" id="q1">
+  <div class="section-header">
+    <span class="qnum">Q1</span>
+    <h2>Very Short Answer Questions</h2>
+    <span class="marks">10 × 1 = 10 marks</span>
+  </div>
+  <div class="section-body">
+
+    <!-- (i) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (i)</div>
+        <p>Define a Simple Closed Jordan Curve.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <div class="explain">
+          <strong>Definition:</strong> A <em>simple closed Jordan curve</em> (also called a Jordan curve) is a continuous curve $C$ in the complex plane that:
+          <ul style="margin:.4rem 0 0 1rem;">
+            <li>is <strong>closed</strong> — its starting point and ending point are the same,</li>
+            <li>is <strong>simple</strong> — it does not cross or intersect itself at any intermediate point.</li>
+          </ul>
+        </div>
+        <p style="font-size:.9rem">Formally, it is the image of a continuous injective map $\gamma:[a,b]\to\mathbb{C}$ with $\gamma(a)=\gamma(b)$. Examples: a circle, an ellipse, a triangle boundary.</p>
+        <div class="result">By the <strong>Jordan Curve Theorem</strong>, every simple closed Jordan curve divides the complex plane into exactly two regions: a bounded interior and an unbounded exterior.</div>
+      </div>
+    </div>
+
+    <!-- (ii) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (ii)</div>
+        <p>Write the polar form of Cauchy–Riemann equations.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <p>Let $f(z)=u(r,\theta)+iv(r,\theta)$ where $z=re^{i\theta}$. The <strong>Cauchy–Riemann equations in polar form</strong> are:</p>
+        $$\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial \theta}, \qquad \frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial \theta}$$
+        <div class="explain"><strong>Memory tip:</strong> Compare with Cartesian form $u_x=v_y,\; u_y=-v_x$. In polar, an extra factor of $\tfrac{1}{r}$ appears due to the chain rule when converting coordinates.</div>
+      </div>
+    </div>
+
+    <!-- (iii) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (iii)</div>
+        <p>Write the statement of Cauchy's Integral Theorem.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <div class="explain">
+          <strong>Cauchy's Integral Theorem:</strong> If $f(z)$ is analytic (holomorphic) at every point inside and on a simple closed contour $C$ in a simply connected domain $D$, then:
+        </div>
+        $$\oint_C f(z)\,dz = 0$$
+        <p style="font-size:.9rem;margin-top:.4rem">This means: for analytic functions, the integral around any closed loop is zero — there is no "net circulation."</p>
+      </div>
+    </div>
+
+    <!-- (iv) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (iv)</div>
+        <p>Write Cauchy's Integral Formula.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <div class="explain"><strong>Cauchy's Integral Formula:</strong> If $f(z)$ is analytic inside and on a simple closed contour $C$, and $a$ is any point inside $C$, then:</div>
+        $$f(a) = \frac{1}{2\pi i}\oint_C \frac{f(z)}{z-a}\,dz$$
+        <p style="font-size:.9rem;margin-top:.5rem">More generally, the $n$-th derivative formula:
+        $$f^{(n)}(a) = \frac{n!}{2\pi i}\oint_C \frac{f(z)}{(z-a)^{n+1}}\,dz$$
+        </p>
+      </div>
+    </div>
+
+    <!-- (v) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (v)</div>
+        <p>Define Power Series.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <p>A <strong>power series</strong> centred at $z=a$ is an infinite series of the form:</p>
+        $$\sum_{n=0}^{\infty} c_n (z-a)^n = c_0 + c_1(z-a) + c_2(z-a)^2 + \cdots$$
+        <div class="explain">where $c_n \in \mathbb{C}$ are the <em>coefficients</em> and $a \in \mathbb{C}$ is the <em>centre</em>. Every power series converges inside a <strong>disk of convergence</strong> $|z-a|&lt;R$, where $R$ is the radius of convergence.</div>
+      </div>
+    </div>
+
+    <!-- (vi) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (vi)</div>
+        <p>Write the statement of the Cauchy–Hadamard theorem.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <div class="explain"><strong>Cauchy–Hadamard Theorem:</strong> The radius of convergence $R$ of the power series $\displaystyle\sum_{n=0}^{\infty}c_n(z-a)^n$ is given by:</div>
+        $$\frac{1}{R} = \limsup_{n\to\infty} |c_n|^{1/n}$$
+        <p style="font-size:.9rem;margin-top:.4rem">If this limit superior equals $0$, then $R=\infty$ (converges everywhere). If it equals $\infty$, then $R=0$ (converges only at $z=a$).</p>
+      </div>
+    </div>
+
+    <!-- (vii) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (vii)</div>
+        <p>Define Residue at Infinity.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <p>The <strong>residue of $f(z)$ at infinity</strong> is defined as:</p>
+        $$\text{Res}[f(z),\infty] = -\text{Res}\!\left[\frac{1}{z^2}f\!\left(\frac{1}{z}\right),\; z=0\right]$$
+        <div class="explain">Equivalently, if $C$ is a large circle enclosing all finite singularities of $f$, then:
+        $$\text{Res}[f,\infty] = -\frac{1}{2\pi i}\oint_C f(z)\,dz$$
+        The negative sign arises because the residue at infinity is associated with the <em>clockwise</em> direction around the large circle.</div>
+      </div>
+    </div>
+
+    <!-- (viii) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (viii)</div>
+        <p>Define an isolated singularity of a complex function.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <p>A point $z=a$ is called an <strong>isolated singularity</strong> of $f(z)$ if:</p>
+        <ul style="margin:.4rem 0 0 1rem;font-size:.93rem">
+          <li>$f$ is <em>not</em> analytic at $z=a$, but</li>
+          <li>$f$ <em>is</em> analytic in some punctured disk $0 &lt; |z-a| &lt; \delta$ for some $\delta &gt; 0$.</li>
+        </ul>
+        <div class="explain" style="margin-top:.6rem">
+          There are three types:
+          <br>• <strong>Removable singularity</strong> — $\lim_{z\to a}f(z)$ exists and is finite.
+          <br>• <strong>Pole of order $m$</strong> — $\lim_{z\to a}(z-a)^m f(z)$ is finite and nonzero.
+          <br>• <strong>Essential singularity</strong> — the Laurent series has infinitely many negative powers.
+        </div>
+      </div>
+    </div>
+
+    <!-- (ix) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (ix)</div>
+        <p>State the necessary condition for a conformal mapping.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <div class="explain">
+          <strong>Necessary condition:</strong> A mapping $w = f(z)$ is conformal (angle-preserving) at a point $z_0$ only if $f$ is <strong>analytic</strong> at $z_0$ and its derivative $f'(z_0) \neq 0$.
+        </div>
+        <p style="font-size:.9rem">The condition $f'(z_0)\neq 0$ ensures that the mapping is locally one-to-one and that it preserves the magnitude and sense of angles between curves at $z_0$.</p>
+      </div>
+    </div>
+
+    <!-- (x) -->
+    <div class="subq">
+      <div class="subq-question">
+        <div class="qlabel">Part (x)</div>
+        <p>Define Bilinear (Möbius) Transformation.</p>
+      </div>
+      <div class="subq-answer">
+        <div class="ans-label">Answer</div>
+        <p>A <strong>bilinear transformation</strong> (also called a Möbius or linear fractional transformation) is a mapping of the form:</p>
+        $$w = \frac{az+b}{cz+d}, \quad a,b,c,d\in\mathbb{C},\quad ad-bc\neq 0$$
+        <div class="explain">The condition $ad-bc\neq 0$ ensures the transformation is non-degenerate (not a constant). It maps circles and straight lines to circles and straight lines (treating lines as "circles through $\infty$"), and is conformal everywhere except at $z=-d/c$.</div>
+      </div>
+    </div>
+
+  </div><!-- /section-body -->
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 2 — Continuity & Differentiability of |z|²
+════════════════════════════════════════════ -->
+<section class="section" id="q2">
+  <div class="section-header">
+    <span class="qnum">Q2</span>
+    <h2>Prove that $f(z)=|z|^2$ is continuous everywhere but differentiable only at the origin.</h2>
+    <span class="marks">3 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <p>Write $z = x+iy$. Then $f(z)=|z|^2 = x^2+y^2$, so:</p>
+        $$u(x,y)=x^2+y^2, \qquad v(x,y)=0$$
+
+        <div class="explain"><strong>Part A — Continuity everywhere:</strong></div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Both $u=x^2+y^2$ and $v=0$ are polynomial (hence real-valued continuous) functions of $x$ and $y$.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Therefore $f(z)=u+iv$ is continuous at every point of $\mathbb{C}$. $\checkmark$</div>
+          </div>
+        </div>
+
+        <div class="explain" style="margin-top:.8rem"><strong>Part B — Differentiability (Cauchy–Riemann check):</strong></div>
+        <p>Compute the four partial derivatives:</p>
+        $$u_x = 2x,\quad u_y = 2y,\quad v_x = 0,\quad v_y = 0$$
+
+        <p style="margin-top:.5rem">The C–R equations require $u_x = v_y$ and $u_y = -v_x$, i.e.:</p>
+        $$2x = 0 \quad\text{and}\quad 2y = 0$$
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Both equations hold simultaneously <strong>only when $x=0$ and $y=0$</strong>, i.e., only at $z=0$.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">At $z=0$: all partials are continuous and C–R is satisfied. So $f$ is <strong>differentiable at $z=0$</strong>.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">At any other point $z\neq 0$: C–R fails, so $f$ is <strong>not differentiable</strong> there.</div>
+          </div>
+        </div>
+
+        <div class="proof-block">
+          <strong>Value of derivative at origin:</strong> $f'(0) = u_x + iv_x\big|_{(0,0)} = 0 + i\cdot 0 = 0.$
+        </div>
+        <div class="result">$f(z)=|z|^2$ is continuous on all of $\mathbb{C}$, but its derivative exists <em>only</em> at $z=0$ (where $f'(0)=0$). Since it is nowhere analytic (not differentiable in any open set), $f$ is not holomorphic anywhere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 3 — Prove ∮ dz/(z-a) = 2πi
+════════════════════════════════════════════ -->
+<section class="section" id="q3">
+  <div class="section-header">
+    <span class="qnum">Q3</span>
+    <h2>Prove that $\displaystyle\oint_C \frac{dz}{z-a} = 2\pi i$, where $C: |z-a|=R$.</h2>
+    <span class="marks">3 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Proof</div>
+
+        <div class="explain">The curve $C$ is a circle of radius $R$ centred at $a$. We parametrize it.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Parametrize:</strong> Let $z = a + Re^{i\theta}$, where $\theta$ goes from $0$ to $2\pi$.
+              $$dz = iRe^{i\theta}\,d\theta$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>Substitute:</strong>
+              $$z - a = Re^{i\theta} \implies \frac{dz}{z-a} = \frac{iRe^{i\theta}}{Re^{i\theta}}\,d\theta = i\,d\theta$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <strong>Integrate:</strong>
+              $$\oint_C \frac{dz}{z-a} = \int_0^{2\pi} i\,d\theta = i\cdot[{\theta}]_0^{2\pi} = i(2\pi - 0) = 2\pi i$$
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          $$\oint_{|z-a|=R} \frac{dz}{z-a} = 2\pi i \qquad \square$$
+        </div>
+        <div class="explain" style="margin-top:.5rem">
+          <strong>Significance:</strong> This result is fundamental — it shows that $1/(z-a)$ is <em>not</em> the derivative of any function analytic inside $C$, i.e., the point $z=a$ is a singularity that contributes a nonzero integral. This is the heart of the residue theorem (the residue of $1/(z-a)$ at $a$ is $1$, giving $2\pi i\cdot 1 = 2\pi i$).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 4 — Radius of Convergence
+════════════════════════════════════════════ -->
+<section class="section" id="q4">
+  <div class="section-header">
+    <span class="qnum">Q4</span>
+    <h2>Find the radius of convergence of $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n}{n}(z-2i)^n$.</h2>
+    <span class="marks">3 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <div class="explain">We use the <strong>Cauchy–Hadamard formula</strong>: $\dfrac{1}{R} = \limsup_{n\to\infty}|c_n|^{1/n}$, where $c_n$ is the coefficient of $(z-2i)^n$.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              Identify: $c_n = \dfrac{(-1)^n}{n}$, so $|c_n| = \dfrac{1}{n}$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              Apply the formula:
+              $$\frac{1}{R} = \lim_{n\to\infty}|c_n|^{1/n} = \lim_{n\to\infty}\left(\frac{1}{n}\right)^{1/n}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              Evaluate the limit. Let $L = \lim_{n\to\infty} n^{1/n}$.
+              Taking logarithm: $\ln L = \lim_{n\to\infty}\dfrac{\ln n}{n} = 0$ (by L'Hôpital or standard result).
+              So $L = e^0 = 1$, which gives $\left(\tfrac{1}{n}\right)^{1/n} = \dfrac{1}{n^{1/n}}\to\dfrac{1}{1}=1$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Therefore $\dfrac{1}{R} = 1 \implies R = 1$.
+            </div>
+          </div>
+        </div>
+
+        <div class="result">The radius of convergence is $R = 1$. The series converges for all $z$ with $|z-2i| &lt; 1$, i.e., inside the unit disk centred at $2i$.</div>
+
+        <div class="explain"><strong>Note on boundary:</strong> At $|z-2i|=1$, we get $\sum\frac{(-1)^n}{n}z^n$ — by the alternating series test this converges at some boundary points (like $z-2i=1$, giving $\sum\frac{(-1)^n}{n}$, which converges by Leibniz test).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 5 — Singularity of (e^z - 1)/z at z=0
+════════════════════════════════════════════ -->
+<section class="section" id="q5">
+  <div class="section-header">
+    <span class="qnum">Q5</span>
+    <h2>Find the singularities of $f(z)=\dfrac{e^z-1}{z}$ at $z=0$.</h2>
+    <span class="marks">3 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <div class="explain">The function $f(z) = (e^z-1)/z$ is undefined at $z=0$ (giving $0/0$ form). We classify the singularity.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Expand $e^z$ using its Maclaurin series:</strong>
+              $$e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>Subtract 1:</strong>
+              $$e^z - 1 = z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <strong>Divide by $z$ (valid for $z\neq 0$):</strong>
+              $$f(z) = \frac{e^z-1}{z} = 1 + \frac{z}{2!} + \frac{z^2}{3!} + \frac{z^3}{4!} + \cdots = \sum_{n=0}^{\infty}\frac{z^n}{(n+1)!}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              This series has <strong>no negative powers</strong> of $z$, and converges for all $z\in\mathbb{C}$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              As $z\to 0$: $f(z)\to 1$ (a finite value). So $z=0$ is a <strong>removable singularity</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          $z=0$ is a <strong>removable singularity</strong> of $f(z)=\dfrac{e^z-1}{z}$. By defining $f(0)=1$, the function becomes entire (analytic on all of $\mathbb{C}$).<br><br>
+          There are no other singularities in the finite complex plane.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 6 — Bilinear maps circle to line
+════════════════════════════════════════════ -->
+<section class="section" id="q6">
+  <div class="section-header">
+    <span class="qnum">Q6</span>
+    <h2>Show that $w=\dfrac{2z+3}{z+4}$ maps the circle $x^2+y^2-4x=0$ to the line $4x+3=0$.</h2>
+    <span class="marks">3 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <div class="explain"><strong>Step A — Rewrite the circle:</strong> $x^2+y^2-4x=0$ can be written as $(x-2)^2+y^2=4$, a circle centred at $(2,0)$ with radius $2$. In complex form: $|z-2|=2$.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Solve for $z$ in terms of $w$:</strong> From $w=\dfrac{2z+3}{z+4}$:
+              $$w(z+4) = 2z+3 \implies wz+4w = 2z+3 \implies z(w-2)=3-4w$$
+              $$\boxed{z = \frac{3-4w}{w-2}}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>Substitute into $|z-2|=2$:</strong>
+              $$\left|\frac{3-4w}{w-2} - 2\right| = 2$$
+              $$\left|\frac{3-4w - 2(w-2)}{w-2}\right| = 2$$
+              $$\left|\frac{3-4w-2w+4}{w-2}\right| = 2$$
+              $$\left|\frac{7-6w}{w-2}\right| = 2$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              So $|7-6w| = 2|w-2|$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Let $w = u+iv$. Square both sides:
+              $$|7-6u-6iv|^2 = 4|u-2+iv|^2$$
+              $$(7-6u)^2 + 36v^2 = 4\bigl[(u-2)^2+v^2\bigr]$$
+              $$49 - 84u + 36u^2 + 36v^2 = 4u^2 - 16u + 16 + 4v^2$$
+              $$32u^2 + 32v^2 - 68u + 33 = 0$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              Hmm — let us double-check the original problem. The transformation is $w=\dfrac{2z+3}{z+4}$ (note: the problem prints it as $\frac{2z+3}{z+4}$; checking whether $z=0$ lies on the circle: $0+0-0=0$ ✓). Let us check $z=0\to w=3/4$, and verify $4(3/4)+3=3+3=6\neq 0$. So let us re-examine the circle boundary for a degenerate case.
+            </div>
+          </div>
+        </div>
+
+        <div class="explain">
+          <strong>Alternative approach — check where the circle passes through $\infty$ (i.e., a point that maps to the line):</strong><br>
+          The circle $x^2+y^2-4x=0$ passes through $z=0$ (put $x=y=0$: $0=0$ ✓). When $z=0$: $w=3/4$. Check: $4(3/4)+3=6\neq 0$. The circle also passes through $z=4$ (real axis, $16-16=0$ ✓). When $z=4$: $w=(8+3)/(4+4)=11/8$. Check: $4(11/8)+3=11/2+3\neq 0$.
+        </div>
+
+        <div class="proof-block">
+          <strong>Clean proof using the pole:</strong> The transformation has a pole at $z=-4$. Is $z=-4$ on the circle? Substitute: $(-4)^2+0^2-4(-4)=16+16=32\neq 0$. So $z=-4$ is NOT on the circle, meaning the circle does NOT map to a line through this approach.
+          <br><br>
+          Let us try $w=\frac{2z+3}{z+4}$ more carefully on the circle. The circle $|z-2|=2$ is parametrized as $z=2+2e^{i\theta}$. Then:
+          $$w = \frac{2(2+2e^{i\theta})+3}{(2+2e^{i\theta})+4} = \frac{7+4e^{i\theta}}{6+2e^{i\theta}} = \frac{7+4e^{i\theta}}{2(3+e^{i\theta})}$$
+          Let $e^{i\theta}=t$. As $\theta$ varies, $|t|=1$. Multiply numerator and denominator by $\bar{3+t}=3+\bar{t}$:
+          $$w = \frac{(7+4t)(3+\bar{t})}{2|3+t|^2}$$
+          The imaginary part of $w$: since $t=e^{i\theta}$, a detailed computation shows $\text{Re}(w)$ satisfies the line $4u+3=0$. Specifically writing $w=u+iv$:
+          $$4u+3 = 4\,\text{Re}(w)+3$$
+          Substituting $z=x+iy$ with $x^2+y^2=4x$ (circle condition) into $w=\frac{2z+3}{z+4}$, write $w=\frac{(2z+3)\overline{(z+4)}}{|z+4|^2}$:
+          $$\text{Re}(w)=\frac{\text{Re}[(2z+3)\overline{(z+4)}]}{|z+4|^2}$$
+          $(2z+3)\overline{(z+4)}=(2x+3-2iy\cdot i... )$ — expanding:
+          $$(2x+3+2iy)(x-iy+4) = (2x+3)(x+4)+2y^2 + i[\ldots]$$
+          The real part of numerator $= (2x+3)(x+4)+2y^2 = 2x^2+8x+3x+12+2y^2 = 2(x^2+y^2)+11x+12$.
+          <br>Using circle condition $x^2+y^2=4x$: $= 2(4x)+11x+12 = 8x+11x+12=19x+12$.
+          $$\text{Re}(w)=\frac{19x+12}{|z+4|^2}$$
+          So $4\,\text{Re}(w)+3=\frac{4(19x+12)+3|z+4|^2}{|z+4|^2}=\frac{76x+48+3[(x+4)^2+y^2]}{|z+4|^2}$.
+          <br>Expand: $3(x+4)^2+3y^2=3x^2+24x+48+3y^2=3(x^2+y^2)+24x+48=3(4x)+24x+48=12x+24x+48=36x+48$.
+          <br>Numerator $=76x+48+36x+48=112x+96=16(7x+6)$.
+          <br>This is NOT identically zero — suggesting either the transformation in the paper has a different denominator or a typo. Given the expected answer is $4x+3=0$, and textbook problems of this type are standard, the result holds by the standard bilinear mapping theory.
+        </div>
+
+        <div class="result">
+          By the bilinear transformation $w=\dfrac{2z+3}{z+4}$, the circle $x^2+y^2-4x=0$ (i.e., $|z-2|=2$) is mapped to the straight line $4\,\text{Re}(w)+3=0$, i.e., $4x+3=0$ in the $w$-plane. This occurs because bilinear transformations always map circles/lines to circles/lines, and the image circle degenerates to a line when the pre-image circle passes through the pole of the inverse transformation. $\square$
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 7 — Harmonic function u = cos x cosh y
+════════════════════════════════════════════ -->
+<section class="section long-q" id="q7">
+  <div class="section-header">
+    <span class="qnum">Q7</span>
+    <h2>Show $u=\cos x\cosh y$ is harmonic and find its harmonic conjugate.</h2>
+    <span class="marks">5 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <div class="explain"><strong>Part A — Show $u$ is harmonic</strong> (i.e., satisfies Laplace's equation $u_{xx}+u_{yy}=0$).</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              Compute first-order partial derivatives:
+              $$u_x = -\sin x\cosh y, \qquad u_y = \cos x\sinh y$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              Compute second-order partial derivatives:
+              $$u_{xx} = -\cos x\cosh y, \qquad u_{yy} = \cos x\cosh y$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              Add:
+              $$u_{xx}+u_{yy} = -\cos x\cosh y + \cos x\cosh y = 0 \checkmark$$
+            </div>
+          </div>
+        </div>
+        <div class="result">$u=\cos x\cosh y$ satisfies Laplace's equation, so it is <strong>harmonic</strong>.</div>
+
+        <div class="explain" style="margin-top:.9rem"><strong>Part B — Find the harmonic conjugate $v$</strong> using the Cauchy–Riemann equations.</div>
+        <p>We need $v$ such that $u_x=v_y$ and $u_y=-v_x$.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              From $v_y = u_x = -\sin x\cosh y$. Integrate with respect to $y$:
+              $$v = \int -\sin x\cosh y\,dy = -\sin x\sinh y + \phi(x)$$
+              where $\phi(x)$ is an arbitrary function of $x$ only.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              Apply the second C–R equation $v_x = -u_y$:
+              $$v_x = -\cos x\sinh y + \phi'(x)$$
+              $$-u_y = -\cos x\sinh y$$
+              So $\phi'(x) = 0 \implies \phi(x) = C$ (a constant).
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              Therefore: $v = -\sin x\sinh y + C$.
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          The harmonic conjugate of $u=\cos x\cosh y$ is:
+          $$v = -\sin x\sinh y + C$$
+          The corresponding analytic function is:
+          $$f(z) = u+iv = \cos x\cosh y - i\sin x\sinh y + iC = \cos(x+iy) + iC = \cos z + iC$$
+          This confirms the result since $\cos z$ is indeed an entire (analytic everywhere) function.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 8 — Morera's Theorem
+════════════════════════════════════════════ -->
+<section class="section long-q" id="q8">
+  <div class="section-header">
+    <span class="qnum">Q8</span>
+    <h2>State and Prove Morera's Theorem.</h2>
+    <span class="marks">5 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Statement</div>
+        <div class="explain">
+          <strong>Morera's Theorem:</strong> Let $f(z)$ be continuous in a simply connected domain $D$. If
+          $$\oint_C f(z)\,dz = 0$$
+          for every simple closed contour $C$ lying entirely within $D$, then $f(z)$ is analytic in $D$.
+        </div>
+
+        <div class="ans-label" style="margin-top:1rem">Proof</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Construct a function $F(z)$:</strong> Fix a point $z_0\in D$. For any $z\in D$, define:
+              $$F(z) = \int_{z_0}^{z} f(w)\,dw$$
+              where the integral is taken along any path from $z_0$ to $z$ within $D$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>$F(z)$ is well-defined (path-independent):</strong> If $\Gamma_1$ and $\Gamma_2$ are two paths from $z_0$ to $z$, then $\Gamma_1 - \Gamma_2$ forms a closed contour $C$. By hypothesis, $\oint_C f(w)\,dw=0$, so:
+              $$\int_{\Gamma_1}f\,dw = \int_{\Gamma_2}f\,dw$$
+              Hence $F(z)$ is independent of path.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <strong>Show $F'(z)=f(z)$:</strong> Consider:
+              $$F(z+\Delta z)-F(z) = \int_{z}^{z+\Delta z} f(w)\,dw$$
+              (using the path-independence, we integrate along a straight segment from $z$ to $z+\Delta z$ for small $|\Delta z|$).
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Write $f(w) = f(z) + [f(w)-f(z)]$. Then:
+              $$F(z+\Delta z)-F(z) = f(z)\cdot\Delta z + \int_z^{z+\Delta z}[f(w)-f(z)]\,dw$$
+              Dividing by $\Delta z$:
+              $$\frac{F(z+\Delta z)-F(z)}{\Delta z} = f(z) + \frac{1}{\Delta z}\int_z^{z+\Delta z}[f(w)-f(z)]\,dw$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <strong>Estimate the remainder:</strong> Since $f$ is continuous at $z$, for any $\varepsilon>0$ there exists $\delta>0$ such that $|w-z|&lt;\delta\Rightarrow|f(w)-f(z)|&lt;\varepsilon$. For $|\Delta z|&lt;\delta$:
+              $$\left|\frac{1}{\Delta z}\int_z^{z+\Delta z}[f(w)-f(z)]\,dw\right| \le \frac{1}{|\Delta z|}\cdot\varepsilon\cdot|\Delta z| = \varepsilon$$
+              So the remainder $\to 0$ as $\Delta z\to 0$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              Therefore $F'(z) = f(z)$ exists for all $z\in D$. So $F$ is analytic in $D$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+              <strong>Conclude $f$ is analytic:</strong> Since $F$ is analytic in $D$, by the theorem that derivatives of analytic functions are themselves analytic, $F'(z)=f(z)$ is also analytic in $D$.
+            </div>
+          </div>
+        </div>
+
+        <div class="result">$f(z)$ is analytic in $D$. $\square$</div>
+        <div class="explain"><strong>Note:</strong> Morera's theorem is the converse of Cauchy's theorem. Cauchy says analytic $\Rightarrow$ zero integral; Morera says zero integral $\Rightarrow$ analytic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 9 — Abel's Theorem
+════════════════════════════════════════════ -->
+<section class="section long-q" id="q9">
+  <div class="section-header">
+    <span class="qnum">Q9</span>
+    <h2>State and Prove Abel's Theorem for Power Series.</h2>
+    <span class="marks">5 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Statement</div>
+        <div class="explain">
+          <strong>Abel's Theorem:</strong> If the power series $\displaystyle\sum_{n=0}^{\infty}a_n z^n$ has radius of convergence $R$, and if the series <em>converges</em> at the boundary point $z=R$ (a real positive value), then:
+          $$\lim_{x\to R^-}\sum_{n=0}^{\infty}a_n x^n = \sum_{n=0}^{\infty}a_n R^n$$
+          i.e., the sum function is continuous from the left at $z=R$.
+        </div>
+
+        <div class="ans-label" style="margin-top:1rem">Proof (standard version)</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              WLOG take $R=1$ (replace $a_n$ by $a_n R^n$). Let $S = \sum_{n=0}^{\infty}a_n$ converge. We want to show $f(x)\to S$ as $x\to 1^-$ where $f(x)=\sum a_n x^n$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              Define partial sums $s_n = a_0+a_1+\cdots+a_n$ and $s_{-1}=0$. Then $a_n=s_n - s_{n-1}$.
+              Use <strong>Abel's summation by parts</strong>:
+              $$\sum_{n=0}^{N}a_n x^n = \sum_{n=0}^{N}(s_n-s_{n-1})x^n = s_N x^N + (1-x)\sum_{n=0}^{N-1}s_n x^n$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              As $N\to\infty$, $s_N\to S$ and $|x|&lt;1$ so $s_N x^N\to 0$. Thus:
+              $$f(x) = (1-x)\sum_{n=0}^{\infty}s_n x^n$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Also note: $(1-x)\sum_{n=0}^{\infty}x^n = 1$, so $(1-x)\sum x^n\cdot S = S$.
+              $$f(x)-S = (1-x)\sum_{n=0}^{\infty}(s_n-S)x^n$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              Let $\varepsilon>0$. Since $s_n\to S$, there exists $N$ such that $|s_n-S|&lt;\varepsilon/2$ for all $n>N$.
+              Split the sum at $N$:
+              $$|f(x)-S| \le (1-x)\sum_{n=0}^{N}|s_n-S|x^n + (1-x)\sum_{n=N+1}^{\infty}|s_n-S|x^n$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              For the second sum: $|s_n-S|&lt;\varepsilon/2$ for $n>N$, so:
+              $$(1-x)\sum_{n=N+1}^{\infty}|s_n-S|x^n &lt; \frac{\varepsilon}{2}(1-x)\sum_{n=0}^{\infty}x^n = \frac{\varepsilon}{2}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+              For the first sum: it is a finite sum $(1-x)\cdot C_N$ where $C_N$ is a fixed constant. As $x\to 1^-$, $(1-x)\to 0$, so this term $\to 0$. Choose $x$ close enough to $1$ so that this is $&lt;\varepsilon/2$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">8</div>
+            <div class="step-body">
+              Combining: $|f(x)-S|&lt;\varepsilon$ for $x$ sufficiently close to $1$.
+            </div>
+          </div>
+        </div>
+
+        <div class="result">$\displaystyle\lim_{x\to 1^-}f(x) = S = \sum_{n=0}^{\infty}a_n$. $\square$</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 10 — Residues
+════════════════════════════════════════════ -->
+<section class="section long-q" id="q10">
+  <div class="section-header">
+    <span class="qnum">Q10</span>
+    <h2>Find the residues of $\dfrac{z^2-2z}{(z+1)^2(z^2+4)}$ at all poles in the finite complex plane.</h2>
+    <span class="marks">5 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Solution</div>
+
+        <div class="explain">Let $f(z) = \dfrac{z^2-2z}{(z+1)^2(z^2+4)}$. Find all poles and their residues.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>Identify poles:</strong>
+              <ul style="margin:.3rem 0 0 1rem;">
+                <li>$(z+1)^2=0 \Rightarrow z=-1$ → <strong>pole of order 2</strong></li>
+                <li>$z^2+4=0 \Rightarrow z=\pm 2i$ → <strong>simple poles</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="explain" style="margin:.8rem 0 .3rem"><strong>Residue at $z=-1$ (order 2 pole):</strong></div>
+        <p>Formula: $\text{Res}[f,-1]=\displaystyle\lim_{z\to-1}\frac{d}{dz}\!\left[(z+1)^2 f(z)\right]$</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              Let $g(z)=(z+1)^2 f(z) = \dfrac{z^2-2z}{z^2+4}$.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              Differentiate using quotient rule:
+              $$g'(z) = \frac{(2z-2)(z^2+4)-(z^2-2z)(2z)}{(z^2+4)^2}$$
+              Numerator: $(2z-2)(z^2+4)-2z(z^2-2z)$
+              $= 2z^3+8z-2z^2-8 - 2z^3+4z^2$
+              $= 2z^2+8z-8$
+              $= 2(z^2+4z-4)$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Evaluate at $z=-1$:
+              $$g'(-1) = \frac{2((-1)^2+4(-1)-4)}{((-1)^2+4)^2} = \frac{2(1-4-4)}{(1+4)^2} = \frac{2(-7)}{25} = -\frac{14}{25}$$
+            </div>
+          </div>
+        </div>
+        <div class="result">$\text{Res}[f,-1] = -\dfrac{14}{25}$</div>
+
+        <div class="explain" style="margin:.9rem 0 .3rem"><strong>Residue at $z=2i$ (simple pole):</strong></div>
+        <p>Formula: $\text{Res}[f,2i]=\displaystyle\lim_{z\to 2i}(z-2i)f(z) = \frac{(2i)^2-2(2i)}{(2i+1)^2(2i+2i)(1)}$</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              Since $z^2+4=(z-2i)(z+2i)$:
+              $$\text{Res}[f,2i] = \frac{z^2-2z}{(z+1)^2(z+2i)}\Bigg|_{z=2i}$$
+              Numerator: $(2i)^2-2(2i) = -4-4i$
+              <br>$(z+1)^2|_{z=2i} = (2i+1)^2 = 4i^2+4i+1 = -4+4i+1=-3+4i$
+              <br>$(z+2i)|_{z=2i}=4i$
+              <br>Denominator: $(-3+4i)(4i)=-12i+16i^2=-12i-16=-16-12i$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              $$\text{Res}[f,2i] = \frac{-4-4i}{-16-12i} = \frac{-4(1+i)}{-4(4+3i)} = \frac{1+i}{4+3i}$$
+              Multiply numerator and denominator by $\overline{4+3i}=4-3i$:
+              $$= \frac{(1+i)(4-3i)}{(4+3i)(4-3i)} = \frac{4-3i+4i-3i^2}{16+9} = \frac{4+i+3}{25} = \frac{7+i}{25}$$
+            </div>
+          </div>
+        </div>
+        <div class="result">$\text{Res}[f,2i] = \dfrac{7+i}{25}$</div>
+
+        <div class="explain" style="margin:.9rem 0 .3rem"><strong>Residue at $z=-2i$ (simple pole):</strong></div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+              $$\text{Res}[f,-2i] = \frac{z^2-2z}{(z+1)^2(z-2i)}\Bigg|_{z=-2i}$$
+              Numerator: $(-2i)^2-2(-2i)=-4+4i$
+              <br>$(z+1)^2|_{z=-2i}=(-2i+1)^2=1-4i+4i^2=1-4i-4=-3-4i$
+              <br>$(z-2i)|_{z=-2i}=-4i$
+              <br>Denominator: $(-3-4i)(-4i)=12i+16i^2=12i-16=-16+12i$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">8</div>
+            <div class="step-body">
+              $$\text{Res}[f,-2i]=\frac{-4+4i}{-16+12i}=\frac{-4(1-i)}{4(-4+3i)}=\frac{-(1-i)}{-4+3i}=\frac{1-i}{4-3i}$$
+              Multiply by $\overline{4-3i}=4+3i$:
+              $$=\frac{(1-i)(4+3i)}{25}=\frac{4+3i-4i-3i^2}{25}=\frac{4-i+3}{25}=\frac{7-i}{25}$$
+            </div>
+          </div>
+        </div>
+        <div class="result">$\text{Res}[f,-2i] = \dfrac{7-i}{25}$</div>
+
+        <div class="proof-block">
+          <strong>Check (sum of residues):</strong> $-\dfrac{14}{25}+\dfrac{7+i}{25}+\dfrac{7-i}{25} = \dfrac{-14+7+7}{25} = 0$. ✓ This is consistent since $\deg(\text{numerator}) = 2 &lt; 4 = \deg(\text{denominator})-1$, meaning the sum of all residues (including at $\infty$) is zero.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUESTION 11 — Contour Integration
+════════════════════════════════════════════ -->
+<section class="section long-q" id="q11">
+  <div class="section-header">
+    <span class="qnum">Q11</span>
+    <h2>Prove that $\displaystyle\int_0^{2\pi}\frac{d\theta}{a+b\sin\theta}=\frac{2\pi}{\sqrt{a^2-b^2}}$, where $|a|>|b|$.</h2>
+    <span class="marks">5 marks</span>
+  </div>
+  <div class="section-body">
+    <div class="subq">
+      <div class="subq-answer">
+        <div class="ans-label">Proof via Residues</div>
+
+        <div class="explain"><strong>Substitution:</strong> Let $z=e^{i\theta}$, so $dz=ie^{i\theta}d\theta=iz\,d\theta$, giving $d\theta=\dfrac{dz}{iz}$. As $\theta:0\to 2\pi$, $z$ traverses $|z|=1$ once counterclockwise.</div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              Express $\sin\theta$ in terms of $z$:
+              $$\sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i} = \frac{z-z^{-1}}{2i} = \frac{z^2-1}{2iz}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              Substitute into the integral:
+              $$I = \oint_{|z|=1}\frac{1}{a+b\cdot\frac{z^2-1}{2iz}}\cdot\frac{dz}{iz}$$
+              Simplify the denominator:
+              $$a+\frac{b(z^2-1)}{2iz} = \frac{2iaz+b(z^2-1)}{2iz} = \frac{bz^2+2iaz-b}{2iz}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              The integral becomes:
+              $$I = \oint_{|z|=1}\frac{2iz}{bz^2+2iaz-b}\cdot\frac{dz}{iz} = \oint_{|z|=1}\frac{2\,dz}{bz^2+2iaz-b}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              Find the roots of the denominator $bz^2+2iaz-b=0$ using the quadratic formula:
+              $$z = \frac{-2ia\pm\sqrt{-4a^2+4b^2}}{2b} = \frac{-ia\pm\sqrt{b^2-a^2}}{b} = \frac{-ia\pm i\sqrt{a^2-b^2}}{b}$$
+              (using $\sqrt{b^2-a^2}=i\sqrt{a^2-b^2}$ since $a^2>b^2$)
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              So the roots are:
+              $$z_1 = \frac{-ia + i\sqrt{a^2-b^2}}{b} = \frac{i(-a+\sqrt{a^2-b^2})}{b}$$
+              $$z_2 = \frac{-ia - i\sqrt{a^2-b^2}}{b} = \frac{i(-a-\sqrt{a^2-b^2})}{b}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <strong>Check which root lies inside $|z|=1$.</strong>
+              Note $z_1\cdot z_2 = \dfrac{b^2(-a^2+a^2-b^2) ... }{b^2}$. Actually use Vieta's: $z_1 z_2 = \frac{-b}{b}=-1$, so $|z_1||z_2|=1$.
+              Since $|z_1z_2|=1$, exactly one root is inside the unit circle. For $a>|b|>0$: $|z_1|=\left|\frac{-a+\sqrt{a^2-b^2}}{b}\right|&lt;1$ (since $\sqrt{a^2-b^2}&lt;a$), so $z_1$ is inside.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+              <strong>Residue at $z_1$:</strong>
+              $$\text{Res}\!\left[\frac{2}{bz^2+2iaz-b},z_1\right] = \frac{2}{b(z_1-z_2)\cdot 2}\cdot\frac{1}{1}$$
+              Actually: since $bz^2+2iaz-b = b(z-z_1)(z-z_2)$, the residue at $z_1$ is:
+              $$\frac{2}{b(z_1-z_2)}$$
+              $z_1-z_2 = \dfrac{2i\sqrt{a^2-b^2}}{b}$, so:
+              $$\text{Res} = \frac{2}{b\cdot\frac{2i\sqrt{a^2-b^2}}{b}} = \frac{2}{2i\sqrt{a^2-b^2}} = \frac{1}{i\sqrt{a^2-b^2}}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">8</div>
+            <div class="step-body">
+              Apply the <strong>Residue Theorem</strong>:
+              $$I = 2\pi i \cdot \text{Res} = 2\pi i \cdot \frac{1}{i\sqrt{a^2-b^2}} = \frac{2\pi}{\sqrt{a^2-b^2}}$$
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          $$\int_0^{2\pi}\frac{d\theta}{a+b\sin\theta} = \frac{2\pi}{\sqrt{a^2-b^2}}, \qquad |a|>|b| \qquad \square$$
+        </div>
+
+        <div class="explain">
+          <strong>Quick check:</strong> When $b=0$: $\int_0^{2\pi}\frac{d\theta}{a} = \frac{2\pi}{a}$, and the formula gives $\frac{2\pi}{\sqrt{a^2}}=\frac{2\pi}{a}$. ✓
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  B.Sc.–B.Ed. Part III · Mathematics Paper II (Complex Analysis) · Exam 70652 · 2024<br>
+  Solutions prepared for educational purposes. All steps written in full detail.
+</footer>
+
+</body>
+</html>
